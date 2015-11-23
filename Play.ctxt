@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=mainMenuTheme
+comment0.target=Play(greenfoot.GreenfootSound)
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=boolean\ checkMouse()
+numComments=3

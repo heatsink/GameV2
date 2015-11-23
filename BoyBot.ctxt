@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=BoyBot()
+comment1.params=
+comment1.target=void\ act()
+comment2.params=up1\ up2
+comment2.target=void\ moveUp(greenfoot.GreenfootImage,\ greenfoot.GreenfootImage)
+comment3.params=down1\ down2
+comment3.target=void\ moveDown(greenfoot.GreenfootImage,\ greenfoot.GreenfootImage)
+comment4.params=left1\ left2
+comment4.target=void\ moveLeft(greenfoot.GreenfootImage,\ greenfoot.GreenfootImage)
+comment5.params=right1\ right2
+comment5.target=void\ moveRight(greenfoot.GreenfootImage,\ greenfoot.GreenfootImage)
+numComments=6

@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=infernoBossHealth
+comment0.target=InfernoBoss(int)
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=int\ getHealth()
+comment3.params=
+comment3.target=InfernoBoss\ getThis()
+comment4.params=
+comment4.target=void\ ninjaattack()
+comment5.params=
+comment5.target=void\ IBDied()
+numComments=6

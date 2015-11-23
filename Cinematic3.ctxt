@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.params=ninja
+comment0.target=Cinematic3(Ninja)
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Cinematic3.\n\ \n
+comment1.params=
+comment1.target=void\ prepare()
+comment2.params=
+comment2.target=void\ prepareHUD()
+comment3.params=
+comment3.target=void\ makedoor()
+comment4.params=
+comment4.target=void\ checkDoor()
+comment5.params=
+comment5.target=void\ act()
+numComments=6

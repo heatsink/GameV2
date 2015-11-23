@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.params=boy
+comment0.target=NewIntro2(Boy)
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Intro1.\n\ \n
+comment1.params=
+comment1.target=void\ prepare()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ makeAllIcons()
+comment4.params=
+comment4.target=void\ makeSwordIcon()
+comment5.params=
+comment5.target=void\ checkDoor()
+comment6.params=
+comment6.target=Boy\ getBoy()
+comment7.params=
+comment7.target=Trap\ getThisWorld()
+comment8.params=
+comment8.target=void\ gameover()
+numComments=9

@@ -1,0 +1,29 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ act()
+comment1.params=up1\ down1\ left1\ right1
+comment1.target=void\ keyState(greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage)
+comment10.params=
+comment10.target=boolean\ canMoveUp()
+comment11.params=
+comment11.target=boolean\ canMoveDown()
+comment12.params=
+comment12.target=int\ getSwordRotation()
+comment2.params=speedMultiplier\ up1\ up2\ up3\ down1\ down2\ down3\ left1\ left2\ left3\ right1\ right2\ right3
+comment2.target=void\ betaMovement(int,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage)
+comment3.params=up1\ up2\ up3
+comment3.target=void\ animateUp(greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage)
+comment4.params=down1\ down2\ down3
+comment4.target=void\ animateDown(greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage)
+comment5.params=left1\ left2\ left3
+comment5.target=void\ animateLeft(greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage)
+comment6.params=right1\ right2\ right3
+comment6.target=void\ animateRight(greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage)
+comment7.params=
+comment7.target=void\ powerBarCount()
+comment8.params=
+comment8.target=boolean\ canMoveRight()
+comment8.text=public\ void\ powerUpTwo(){\n\ \ \ \ \ \ \ \ \ \ \ \ if(powerBar>0&&(Greenfoot.isKeyDown("'")\ ||\ Greenfoot.isKeyDown("r")))\n\ \ \ \ \ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ getImage().setTransparency(100);\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ powerBar-\=1;\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ powerUpTwo\ \=\ true;\n\ \ \ \ \ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ \ \ \ \ else\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ powerUpTwo\ \=\ false;\n\ \ \ \ \n}
+comment9.params=
+comment9.target=boolean\ canMoveLeft()
+numComments=13

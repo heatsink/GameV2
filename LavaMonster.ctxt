@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=RMHP\ damage\ xPos\ xPos2\ yPos\ yPos2
+comment0.target=LavaMonster(int,\ int,\ int,\ int,\ int,\ int)
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ horizontalPatrol()
+comment3.params=
+comment3.target=void\ verticalPatrol()
+comment4.params=
+comment4.target=void\ RMDied()
+comment5.params=
+comment5.target=void\ detectHit()
+comment6.params=
+comment6.target=void\ detect()
+comment7.params=
+comment7.target=void\ animate()
+numComments=8

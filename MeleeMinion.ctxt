@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=RMHP\ damage
+comment0.target=MeleeMinion(int,\ int)
+comment1.params=
+comment1.target=void\ act()
+comment2.params=distance
+comment2.target=void\ patrolHorizontal(int)
+comment3.params=distance
+comment3.target=void\ patrolVertical(int)
+comment4.params=up1\ up2\ up3
+comment4.target=void\ moveUp(greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage)
+comment5.params=down1\ down2\ down3
+comment5.target=void\ moveDown(greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage)
+comment6.params=left1\ left2\ left3
+comment6.target=void\ moveLeft(greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage)
+comment7.params=right1\ right2\ right3
+comment7.target=void\ moveRight(greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage)
+numComments=8

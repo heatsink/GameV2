@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Trap()
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Trap.\n\ \n
+comment1.params=
+comment1.target=void\ prepareHUD()
+comment2.params=
+comment2.target=Ninja\ getNinja()
+comment3.params=
+comment3.target=Boy\ getBoy()
+comment4.params=
+comment4.target=void\ makeAllIcons()
+comment5.params=
+comment5.target=void\ infernostart()
+comment6.params=
+comment6.target=void\ gameover()
+numComments=7

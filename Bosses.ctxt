@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ act()
+comment1.params=distance
+comment1.target=void\ moveLeft(int)
+comment2.params=distance
+comment2.target=void\ moveRight(int)
+comment3.params=distance
+comment3.target=void\ moveUp(int)
+comment4.params=distance
+comment4.target=void\ moveDown(int)
+comment5.params=
+comment5.target=boolean\ finishedMovingHorizontally()
+comment6.params=
+comment6.target=boolean\ finishedMovingVeritcally()
+comment7.params=move0\ move1\ move2\ move3\ move4\ move5\ move6\ move7
+comment7.target=void\ animateSeven(greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage)
+comment8.params=move0\ move1\ move2\ move3\ move4\ move5
+comment8.target=void\ animateSix(greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage)
+numComments=9

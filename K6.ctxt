@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=ninja
+comment0.target=K6(Ninja)
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ K6.\n\ \n
+comment1.params=
+comment1.target=void\ prepare()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ checkDoor()
+comment4.params=
+comment4.target=Ninja\ getNinja()
+comment5.params=
+comment5.target=Trap\ getThisWorld()
+comment6.params=
+comment6.target=void\ gameover()
+numComments=7
