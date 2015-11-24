@@ -281,6 +281,7 @@ public class Ninja extends Heroes
     {
         if (ninjahp <= 0)
         {
+            ninjaDeathSound.setVolume(40);
             ninjaDeathSound.play();
                         if (getWorld() instanceof K2)
             {
@@ -718,8 +719,8 @@ public class Ninja extends Heroes
         public void addShuriken(){
         Actor SP  = getOneIntersectingObject(addShuriken.class);
         if (SP != null){
-            shurikennumber += 3;
-            maxShurikens += 3;
+            shurikennumber += 5;
+            maxShurikens += 5;
             getWorld().removeObject(SP);
         }
     } 

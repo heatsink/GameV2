@@ -36,7 +36,7 @@ public class T22 extends Trap
                 Stump fence = new Stump();
                 addObject(fence, 25+j*700, 50*i+25);
         }
-        for(int i = 1;i<24; i++)
+        for(int i = 1;i<15; i++)
             for(int j = 0; j<2; j++)
             {
                 Stump fence = new Stump();
@@ -96,6 +96,7 @@ public class T22 extends Trap
 
     public void act()
     {
+        counterDelay++;
          if(!played)
         {
         billin.playLoop();

@@ -24,7 +24,7 @@ public class ForestBoss extends Bosses
     private GreenfootImage InfernoMove5 = new GreenfootImage("ForestGhost/Ghost6.png");
     
     
-    
+    int delay = 0;
     private int counter = 0;
     private int counterBuffer = 100;
     public ForestBoss(int infernoBossHealth)
@@ -37,50 +37,39 @@ public class ForestBoss extends Bosses
         getHealth();
         ninjaattack();
         
-        if (counter >= 0 && counter < 75) // 1 unit +50 + 25
+        if(delay<60)
         {
-            setLocation(getX(), getY() + 1);
+            getImage().setTransparency(250);
+            move(5);
+            setRotation(0);
+            delay++;
         }
-        if (counter >= 75 && counter < 150) // 1 unit + 50 + 25
+        if(delay>=60&&delay<120)
         {
-            setLocation(getX() - 1, getY());
+            getImage().setTransparency(100);
+            setRotation(90);
+            move(5);
+            setRotation(0);
+            delay++;
         }
-        if (counter >= 150 && counter < 300) //2 units + 100 + 50
+        if(delay>=120&&delay<180)
         {
-            setLocation(getX(), getY() - 1);
+            getImage().setTransparency(250);
+            setRotation(180);
+            move(5);
+            setRotation(0);
+            delay++;
         }
-        if (counter >= 300 && counter < 450) //2 units + 100 + 50
+        if(delay>=180&&delay<240)
         {
-            setLocation(getX() + 1, getY());
+            getImage().setTransparency(100);
+            setRotation(270);
+            move(5);
+            setRotation(0);
+            delay++;
         }
-        if (counter >= 450 && counter < 675) //3 units + 150 + 75
-        {
-            setLocation(getX(), getY() + 1);
-        }
-        if (counter >= 675 && counter < 900) //3 units + 150 + 75
-        {
-            setLocation(getX() - 1, getY());
-        }
-        if (counter >= 900 && counter < 1200) //4 units + 200 + 100
-        {
-            setLocation(getX(), getY() - 1);
-        }
-        if (counter >= 1200 && counter < 1500) //4 units + 200 + 100
-        {
-            setLocation(getX() + 1, getY());
-        }
-        if (counter >= 1500 && counter < 1650) //2 units + 100 + 50
-        {
-            setLocation(getX(), getY() + 1);
-        }
-        if (counter >= 1650 && counter < 1800) //2 units + 100 + 50
-        {
-            setLocation(getX() - 1, getY());
-        }
-        if (counter == 1800)
-        {
-            counter = 0;
-        }
+        if(delay>=240)
+        delay = 0;
         animateSix(InfernoMove0, InfernoMove1, InfernoMove2, InfernoMove3, InfernoMove4, InfernoMove5);
         counter++;
         IBDied();

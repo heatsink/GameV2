@@ -16,6 +16,7 @@ public class T25 extends Trap
     Counter healthCounter = new HealthCounter(getThisWorld(), "Health: ");
     private List<NPCS> npcs;
     private int counterDelay = 0;
+    private boolean createdDoor = false;
     Ninja ninja;
     int delay = 11;
     public T25(Ninja ninja)
@@ -34,13 +35,13 @@ public class T25 extends Trap
                 Stump fence = new Stump();
                 addObject(fence, 25+j*700, 50*i+25);
         }
-        for(int i = 1;i<24; i++)
+        for(int i = 1;i<15; i++)
             for(int j = 0; j<2; j++)
             {
                 Stump fence = new Stump();
                 addObject(fence, 50*i+25, 25+j*700);
         }
-        BillBoss kyle = new BillBoss(5, 5);
+        ForestBoss kyle = new ForestBoss(25);
         addObject(kyle, 150, 150);
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
@@ -64,6 +65,7 @@ public class T25 extends Trap
 
     public void act()
     {
+        counterDelay++;
          if(!played)
         {
         billin.playLoop();
@@ -84,7 +86,7 @@ public class T25 extends Trap
             shurikenCounter.setValue(ninja.getSHURIKENNUMBER());
             powerCounter.setValue(ninja.getPOWERBAR());
             counterDelay-= 10;
-            checkDoor();
+            checkDoorT21();
             /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
 
             /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
@@ -101,7 +103,6 @@ public class T25 extends Trap
 
     public void checkDoor()
     {
-
     }
 
     public Ninja getNinja()
@@ -126,7 +127,7 @@ public class T25 extends Trap
        Greenfoot.setWorld(new T25(ninja));
     }
      public boolean isbossthere(){
-        List<Bosses> list = getObjects(BillBoss.class);
+        List<Bosses> list = getObjects(ForestBoss.class);
         if (list.size() >0){
             return true;
         }
@@ -135,10 +136,11 @@ public class T25 extends Trap
         }
     }
      public void createdoor(){
-        if(isbossthere() == false){
+        if(isbossthere() == false &&  createdDoor == false){
         doorT10 doort10 = new doorT10();
         addObject(doort10, 375, 660);
         ninja.setProgress(2);
+        createdDoor = true;
         }
     }
 }

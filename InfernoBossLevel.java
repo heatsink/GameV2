@@ -18,12 +18,13 @@ public class InfernoBossLevel extends Trap
     private int delay = 11;
     private int fireballDelay = 11;
     private int counterDelay = 0;
-    private GreenfootImage heavensGate = new GreenfootImage("Diablo 3 OST - Heaven's Gate (#20)");
+    private GreenfootSound heavensGate = new GreenfootSound("Diablo 3 OST - Heaven's Gate (#20).mp3");
     public InfernoBossLevel(Ninja ninja)
     {
         super();
         this.ninja = ninja;
         prepare();
+        heavensGate.setVolume(30);
         
     }
     
@@ -78,7 +79,7 @@ public class InfernoBossLevel extends Trap
         armpool3.setLocation(629, 213);
         armpool2.setLocation(213, 122);
         armpool.setLocation(206, 504);
-        infernofence2.setLocation(608, 136);
+        infernofence2.setLocation(608, 126);
         armpool3.setLocation(619, 185);
         infernofence3.setLocation(607, 560);
         armpool4.setLocation(551, 566);
@@ -112,6 +113,7 @@ public class InfernoBossLevel extends Trap
 
     public void act()
     {
+        heavensGate.playLoop();
         counterDelay++;
        //makeSmokeFireball();
        if (Greenfoot.isKeyDown("h")&&delay>10) 
@@ -189,7 +191,10 @@ public class InfernoBossLevel extends Trap
     public void checkDoor()
     {
         if(ninja.checkInfernoDoor()==true)
+        {
+            heavensGate.stop();
             Greenfoot.setWorld(new Cinematic1(ninja));
+        }
     }
    public Ninja getNinja()
    {
@@ -202,5 +207,6 @@ public class InfernoBossLevel extends Trap
    public void gameover(){
        ninja.setHP(ninja.getArmor());
        Greenfoot.setWorld(new InfernoBossLevel(ninja));
+       heavensGate.stop();
     }
 }

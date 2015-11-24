@@ -12,6 +12,8 @@ public class Inferno4 extends Trap
     Counter powerCounter = new PowerCounter("Power: ");
     Counter levelCounter = new Counter("Stage: ");
     Counter healthCounter = new HealthCounter(getThisWorld(), "Health: ");
+    GreenfootSound burningSteppes = new GreenfootSound("Music of Cataclysm - Burning Steppes.mp3");
+    
     private List<NPCS> npcs;
     Ninja ninja;
     int delay = 11;
@@ -22,6 +24,7 @@ public class Inferno4 extends Trap
         this.ninja = ninja;
         ninja.addPowerUp(4);
         prepare();
+        burningSteppes.setVolume(40);
     }
 
     private void prepare()
@@ -112,6 +115,7 @@ public class Inferno4 extends Trap
 
     public void act()
     {
+        burningSteppes.playLoop();
         counterDelay++;
        if (Greenfoot.isKeyDown("h")&&delay>10) 
        {
@@ -150,7 +154,10 @@ public class Inferno4 extends Trap
     public void checkDoor()
     {
         if(ninja.checkInfernoDoor()==true)
+        {
+            burningSteppes.stop();
             Greenfoot.setWorld(new InfernoBossLevel(ninja));
+        }
     }
    public Ninja getNinja()
    {
@@ -161,6 +168,7 @@ public class Inferno4 extends Trap
        return this;
    }
        public void gameover(){
+           burningSteppes.stop();
        ninja.setHP(ninja.getArmor());
        Greenfoot.setWorld(new Inferno4(ninja));
     }

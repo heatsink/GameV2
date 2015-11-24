@@ -11,6 +11,8 @@ public class Fireball extends Projectiles
     
     //Sprite taken from http://void-project-1.googlecode.com/svn/trunk/Game%20Engines/rpgMakerVX/Graphics/Characters/
     // (it's under fireball.png)
+    // http://soundbible.com/1356-Flame-Arrow.html
+    GreenfootSound fireballSound = new GreenfootSound("Flame Arrow-SoundBible.com-618067908.mp3");
     GreenfootImage fireball1 = new GreenfootImage("Fireball/Fireball1.png");
     GreenfootImage fireball2 = new GreenfootImage("Fireball/Fireball2.png");
     GreenfootImage fireball3 = new GreenfootImage("Fireball/Fireball3.png");
@@ -44,9 +46,8 @@ public class Fireball extends Projectiles
         
         Actor ninja = getOneIntersectingObject(Ninja.class);
             if (ninja != null){
-                
-                sliceSound.setVolume(80);
-                sliceSound.play();
+                fireballSound.setVolume(35);
+                fireballSound.play();
                 getWorld().removeObject(this);
             }
             else if (atWorldEdge())
@@ -71,11 +72,15 @@ public class Fireball extends Projectiles
          else if (st >= 48 && st < 54)
          {
              move(2);
-             if (this != null)
+            // if (this != null)
              {
-                 getWorld().removeObject(this);
+                // getWorld().removeObject(this);
              }
          }
+         else if (st == 54)
+         {
+             getWorld().removeObject(this);
+            }
          
     }    
     public int getDamage()

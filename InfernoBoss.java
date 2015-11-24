@@ -15,7 +15,10 @@ public class InfernoBoss extends Bosses
     public int delay2 = 11;
     public int infernoBossHealth;
     
+    // http://soundbible.com/tags-fireball.html
+    
     // Sprite from http://www.spriters-resource.com/pc_computer/maplestory/sheet/69039/
+    GreenfootSound spawn = new GreenfootSound("Depth Charge-SoundBible.com-320539466.mp3");
     private GreenfootImage InfernoMove0 = new GreenfootImage("InfernoBoss/move_0.png");
     private GreenfootImage InfernoMove1 = new GreenfootImage("InfernoBoss/move_1.png");
     private GreenfootImage InfernoMove2 = new GreenfootImage("InfernoBoss/move_2.png");
@@ -40,6 +43,8 @@ public class InfernoBoss extends Bosses
     private int counterBuffer = 100;
     public InfernoBoss(int infernoBossHealth)
     {
+        spawn.setVolume(60);
+        spawn.play();
         this.infernoBossHealth = infernoBossHealth;
     }
 

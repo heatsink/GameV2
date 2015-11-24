@@ -215,8 +215,10 @@ public class Inferno1 extends Trap
     public void checkDoor()
     {
         if(ninja.checkInfernoDoor()==true)
+{
         burningSteppes.stop();
             Greenfoot.setWorld(new Inferno2(ninja));
+        }
     }
    public Ninja getNinja()
    {

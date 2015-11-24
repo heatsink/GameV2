@@ -11,6 +11,8 @@ public class SecondFireball extends Projectiles
     
     //Sprite taken from http://www.spriters-resource.com/snes/stoneprotectors/sheet/39048/
     // (it's part of the lava monster sprite sheet)
+    GreenfootSound fireballSound = new GreenfootSound("Flame Arrow-SoundBible.com-618067908.mp3");
+    
     GreenfootImage fireball1 = new GreenfootImage("SecondFireball/SecondFireball1.png");
     GreenfootImage fireball2 = new GreenfootImage("SecondFireball/SecondFireball2.png");
     private double frame = 1;
@@ -39,9 +41,8 @@ public class SecondFireball extends Projectiles
         
         Actor ninja = getOneIntersectingObject(Ninja.class);
             if (ninja != null){
-                
-                sliceSound.setVolume(80);
-                sliceSound.play();
+                fireballSound.setVolume(35);
+                fireballSound.play();
                 getWorld().removeObject(this);
             }
             else if (atWorldEdge())

@@ -7,7 +7,7 @@ import greenfoot.*;
  * @version (a version number or a date)
  */
 public class BillBoss extends NPCS
-{
+{/*
     int delay = 0;
     public BillBoss(int RMHP, int damage)
     {
@@ -49,4 +49,5 @@ public class BillBoss extends NPCS
         if(delay>=240)
         delay = 0;
     }    
+    */
 }
