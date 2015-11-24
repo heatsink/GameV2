@@ -40,7 +40,7 @@ public class Inferno3 extends Trap
             for(int j = 0; j<2; j++)
             {
                 InfernoFence inferoFence = new InfernoFence();
-                addObject(inferoFence, 50*i+25, 25+j*700);
+                addObject(inferoFence, 50*i+25, 25+j*(700-50));
         }
         for(int i = 0; i<15; i++)
             for(int j = 0; j<2; j++)

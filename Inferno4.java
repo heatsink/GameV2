@@ -29,17 +29,17 @@ public class Inferno4 extends Trap
 
     private void prepare()
     {
-        for(int i = 0; i<15; i++)
+        for(int i = 0; i<14; i++)
             for(int j = 0; j<2; j++)
             {
                 InfernoFence inferoFence = new InfernoFence();
                 addObject(inferoFence, 25+j*700, 50*i+25);
         }
-        for(int i = 1;i<15; i++)
+        for(int i = 1;i<14; i++)
             for(int j = 0; j<2; j++)
             {
                 InfernoFence inferoFence = new InfernoFence();
-                addObject(inferoFence, 50*i+25, 25+j*700);
+                addObject(inferoFence, 50*i+25, 25+j*(700-50));
         }
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());

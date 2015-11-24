@@ -33,7 +33,7 @@ public class Inferno1 extends Trap
         InfernoDoor door = new InfernoDoor();
         addObject(door, 663-50, 651-50);
 
-        for(int i = 0; i<15; i++)
+        for(int i = 0; i<14; i++)
             for(int j = 0; j<2; j++)
             {
                 InfernoFence infernoFence = new InfernoFence();
@@ -43,7 +43,7 @@ public class Inferno1 extends Trap
             for(int j = 0; j<2; j++)
             {
                 InfernoFence infernoFence = new InfernoFence();
-                addObject(infernoFence, 50*i+25, j*700-25);
+                addObject(infernoFence, 50*i+25, 25+j*(700-50));
         }
 
         for(int i = 0; i<9; i++)

@@ -25,7 +25,7 @@ public class Trap extends World
     public void prepareHUD()
     {
         HUD hud = new HUD();
-        addObject(hud, 852, 373);
+        addObject(hud, 852+50, 373);
         NinjaImage ninjaImage = new NinjaImage();
         addObject(ninjaImage, 808, 55);
         ActionBar actionBar = new ActionBar();

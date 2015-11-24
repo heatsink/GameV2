@@ -40,7 +40,7 @@ public class T22 extends Trap
             for(int j = 0; j<2; j++)
             {
                 Stump fence = new Stump();
-                addObject(fence, 50*i+25, 25+j*700);
+                addObject(fence, 50*i+25, 25+j*(700-25));
         }
         for(int i = 1; i<13; i++)
         {

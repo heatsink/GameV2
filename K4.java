@@ -38,7 +38,7 @@ public class K4 extends Trap
             for(int j = 0; j<2; j++)
             {
                 Fence fence = new Fence();
-                addObject(fence, 50*i+25, 25+j*700);
+                addObject(fence, 50*i+25, 25+j*(700-50));
             }
         
         doorT10 doort10 = new doorT10();

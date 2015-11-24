@@ -29,19 +29,19 @@ public class T25 extends Trap
 
     private void prepare()
     {
-        for(int i = 0; i<15; i++)
+        for(int i = 0; i<14; i++)
             for(int j = 0; j<2; j++)
             {
                 Stump fence = new Stump();
                 addObject(fence, 25+j*700, 50*i+25);
         }
-        for(int i = 1;i<15; i++)
+        for(int i = 1;i<14; i++)
             for(int j = 0; j<2; j++)
             {
                 Stump fence = new Stump();
-                addObject(fence, 50*i+25, 25+j*700);
+                addObject(fence, 50*i+25, 25+j*(700-50));
         }
-        ForestBoss kyle = new ForestBoss(25);
+        BillBoss kyle = new BillBoss(5,25);
         addObject(kyle, 150, 150);
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());

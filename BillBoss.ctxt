@@ -1,2 +1,8 @@
 #BlueJ class context
-numComments=0
+comment0.params=RMHP\ damage
+comment0.target=BillBoss(int,\ int)
+comment1.params=
+comment1.target=void\ act()
+comment2.params=move0\ move1\ move2\ move3\ move4\ move5
+comment2.target=void\ animateSix(greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage,\ greenfoot.GreenfootImage)
+numComments=3

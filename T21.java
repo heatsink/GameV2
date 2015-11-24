@@ -30,7 +30,7 @@ public class T21 extends Trap
     {
         doorT21 doort21 = new doorT21();
         addObject(doort21, 125, 625);
-        for(int i = 0; i<15; i++)
+        for(int i = 0; i<14; i++)
             for(int j = 0; j<2; j++)
             {
                 Stump fence = new Stump();
@@ -40,7 +40,7 @@ public class T21 extends Trap
             for(int j = 0; j<2; j++)
             {
                 Stump fence = new Stump();
-                addObject(fence, 50*i+25, 25+j*700);
+                addObject(fence, 50*i+25, 25+j*(700-50));
         }
         for(int i = 0; i<12; i++)
         {
@@ -119,7 +119,7 @@ public class T21 extends Trap
     public void act()
     {
         counterDelay++;
-        if(!played==true)
+        if(!played)
         {
         billin.playLoop();
         played = !played;

@@ -30,17 +30,17 @@ public class T23 extends Trap
     {
         doorT21 doort21 = new doorT21();
         addObject(doort21, 125, 625);
-        for(int i = 0; i<15; i++)
+        for(int i = 0; i<14; i++)
             for(int j = 0; j<2; j++)
             {
                 Stump fence = new Stump();
                 addObject(fence, 25+j*700, 50*i+25);
         }
-        for(int i = 1;i<15; i++)
+        for(int i = 1;i<14; i++)
             for(int j = 0; j<2; j++)
             {
                 Stump fence = new Stump();
-                addObject(fence, 50*i+25, 25+j*700);
+                addObject(fence, 50*i+25, 25+j*(700-50));
         }
         for(int i = 1; i<7; i++)
         {
