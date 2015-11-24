@@ -28,7 +28,7 @@ public class Kyobashi2 extends Trap
     private void prepare()
     {
         TextBoxKyo1 textboxkyo1 = new TextBoxKyo1();
-        addObject (textboxkyo1, 380, 640);
+        addObject (textboxkyo1, 380, 640-40);
         
         addObject(ninja, 100, 100);
         for(int i = 0; i<15; i++)
@@ -41,12 +41,12 @@ public class Kyobashi2 extends Trap
             for(int j = 0; j<2; j++)
             {
                 Fence fence = new Fence();
-                addObject(fence, 50*i+25, 25+j*700);
+                addObject(fence, 50*i+25, 25+j*(700-50));
             }
-            for (int i = 0; i<16; i++)
+            for (int i = 0; i<15; i++)
         {
             Fence fence = new Fence();
-            addObject(fence, 50*i, 550);
+            addObject(fence, 50*i, 550-40);
         }
             
         addObject(healthCounter, 70, 730);
@@ -65,14 +65,14 @@ public class Kyobashi2 extends Trap
         addObject(levelCounter, 355, 730);
         levelCounter.setValue(level);
         doorT10 door = new doorT10();
-        addObject(door, 100, 475);
+        addObject(door, 100, 475-40);
         
         
         SnowDoor snowdoor = new SnowDoor();
-        addObject(snowdoor, 650, 475);
+        addObject(snowdoor, 650, 475-50);
         
         addShuriken s = new addShuriken();
-        addObject(s, 375, 475);
+        addObject(s, 375, 475-50);
         HealthGlobe hg = new HealthGlobe();
         addObject(hg, 650, 325);
     }

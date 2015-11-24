@@ -30,17 +30,17 @@ public class T22 extends Trap
     {
         doorT21 doort21 = new doorT21();
         addObject(doort21, 625, 125);
-        for(int i = 0; i<15; i++)
+        for(int i = 0; i<14; i++)
             for(int j = 0; j<2; j++)
             {
                 Stump fence = new Stump();
                 addObject(fence, 25+j*700, 50*i+25);
         }
-        for(int i = 1;i<15; i++)
+        for(int i = 1;i<14; i++)
             for(int j = 0; j<2; j++)
             {
                 Stump fence = new Stump();
-                addObject(fence, 50*i+25, 25+j*(700-25));
+                addObject(fence, 50*i+25, 25+j*(700-50));
         }
         for(int i = 1; i<13; i++)
         {
@@ -85,7 +85,7 @@ public class T22 extends Trap
 
         addObject(levelCounter, 950, 15);
         levelCounter.setValue(22);
-        addObject(ninja, 75, 675);
+        addObject(ninja, 75, 675-50-50);
         npcs = getObjects(NPCS.class);
         for(int i = 0; i<npcs.size(); i++)
         {

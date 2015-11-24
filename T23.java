@@ -29,7 +29,7 @@ public class T23 extends Trap
     private void prepare()
     {
         doorT21 doort21 = new doorT21();
-        addObject(doort21, 125, 625);
+        addObject(doort21, 125-25, 625-25);
         for(int i = 0; i<14; i++)
             for(int j = 0; j<2; j++)
             {

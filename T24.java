@@ -63,9 +63,9 @@ public class T24 extends Trap
         addObject(teleport2, 375, 325);
         Teleport teleport3 = new Teleport();
         instaPower instaPower1 = new instaPower();
-        addObject(instaPower1, 125, 675);
+        addObject(instaPower1, 125, 675-50);
         instaPower instaPower2 = new instaPower();
-        addObject(instaPower2, 175, 675);
+        addObject(instaPower2, 175, 675-50);
         addObject(teleport3, 375, 375);
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
@@ -78,7 +78,7 @@ public class T24 extends Trap
 
         addObject(levelCounter, 950, 15);
         levelCounter.setValue(24);
-        addObject(ninja, 75, 675);
+        addObject(ninja, 75, 675-50);
         npcs = getObjects(NPCS.class);
         for(int i = 0; i<npcs.size(); i++)
         {
