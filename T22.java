@@ -68,7 +68,7 @@ public class T22 extends Trap
         instaPower instaPower1 = new instaPower();
         instaPower instaPower2 = new instaPower();
         instaPower instaPower3 = new instaPower();
-        addObject(instaPower1, 525, 675);
+        addObject(instaPower1, 525, 675-50);
         addObject(instaPower2, 375, 425);
         addObject(teleport1, 75, 475);
         addObject(teleport2, 225, 425);
@@ -85,7 +85,8 @@ public class T22 extends Trap
 
         addObject(levelCounter, 950, 15);
         levelCounter.setValue(22);
-        addObject(ninja, 75, 675-50-50);
+        addObject(ninja, 75, 675-50);
+        makeAllIcons();
         npcs = getObjects(NPCS.class);
         for(int i = 0; i<npcs.size(); i++)
         {
@@ -123,7 +124,15 @@ public class T22 extends Trap
         }
         delay++;
     }
-
+    public void makeAllIcons()
+    {
+        SwordIcon swordicon = new SwordIcon();
+        addObject(swordicon, 889, 360);
+        ShurikenIcon shurikenicon = new ShurikenIcon();
+        addObject(shurikenicon, 838, 360);
+        DashIcon dashicon = new DashIcon();
+        addObject(dashicon, 819, 308);
+    }
    public void checkDoorT21()
     {
          if(ninja.checkDoorT21()==true)

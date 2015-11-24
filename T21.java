@@ -108,6 +108,7 @@ public class T21 extends Trap
         addObject(levelCounter, 950, 15);
         levelCounter.setValue(21);
         addObject(ninja, 75, 75);
+        makeAllIcons();
         npcs = getObjects(NPCS.class);
         for(int i = 0; i<npcs.size(); i++)
         {
@@ -115,7 +116,15 @@ public class T21 extends Trap
             addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
         }
     }
-
+    public void makeAllIcons()
+    {
+        SwordIcon swordicon = new SwordIcon();
+        addObject(swordicon, 889, 360);
+        ShurikenIcon shurikenicon = new ShurikenIcon();
+        addObject(shurikenicon, 838, 360);
+        DashIcon dashicon = new DashIcon();
+        addObject(dashicon, 819, 308);
+    }
     public void act()
     {
         counterDelay++;

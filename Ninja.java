@@ -94,7 +94,10 @@ public class Ninja extends Heroes
     {
         if ((Greenfoot.isKeyDown("k") && delay>140))
         {
+            if (powerBar>= 4)
+            {
             powerBar-=4;
+        }
             Lightning l1 = new Lightning(swordRotation);
             if(powerUpThree)
             setPower(getPower()-25);

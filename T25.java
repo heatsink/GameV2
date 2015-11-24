@@ -55,6 +55,7 @@ public class T25 extends Trap
         addObject(levelCounter, 950, 15);
         levelCounter.setValue(25);
         addObject(ninja, 325, 325);
+        makeAllIcons();
         npcs = getObjects(NPCS.class);
         for(int i = 0; i<npcs.size(); i++)
         {
@@ -93,7 +94,15 @@ public class T25 extends Trap
         }
         delay++;
     }
-
+    public void makeAllIcons()
+    {
+        SwordIcon swordicon = new SwordIcon();
+        addObject(swordicon, 889, 360);
+        ShurikenIcon shurikenicon = new ShurikenIcon();
+        addObject(shurikenicon, 838, 360);
+        DashIcon dashicon = new DashIcon();
+        addObject(dashicon, 819, 308);
+    }
     public void checkTeleport(){
         if(ninja.checkTeleport())
         {

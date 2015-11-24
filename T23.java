@@ -76,6 +76,7 @@ public class T23 extends Trap
         addObject(levelCounter, 950, 15);
         levelCounter.setValue(23);
         addObject(ninja, 675, 75);
+        makeAllIcons();
         npcs = getObjects(NPCS.class);
         for(int i = 0; i<npcs.size(); i++)
         {
@@ -113,6 +114,15 @@ public class T23 extends Trap
             /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
         }
         delay++;
+    }
+    public void makeAllIcons()
+    {
+        SwordIcon swordicon = new SwordIcon();
+        addObject(swordicon, 889, 360);
+        ShurikenIcon shurikenicon = new ShurikenIcon();
+        addObject(shurikenicon, 838, 360);
+        DashIcon dashicon = new DashIcon();
+        addObject(dashicon, 819, 308);
     }
     public void checkTeleport(){
         if(ninja.checkTeleport())

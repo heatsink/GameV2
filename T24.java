@@ -75,6 +75,7 @@ public class T24 extends Trap
 
         addObject(powerCounter, 866, 161);
         powerCounter.setValue(ninja.getPOWERBAR());
+        makeAllIcons();
 
         addObject(levelCounter, 950, 15);
         levelCounter.setValue(24);
@@ -117,6 +118,15 @@ public class T24 extends Trap
         delay++;
     }
 
+    public void makeAllIcons()
+    {
+        SwordIcon swordicon = new SwordIcon();
+        addObject(swordicon, 889, 360);
+        ShurikenIcon shurikenicon = new ShurikenIcon();
+        addObject(shurikenicon, 838, 360);
+        DashIcon dashicon = new DashIcon();
+        addObject(dashicon, 819, 308);
+    }
     public void checkTeleport(){
         if(ninja.checkTeleport())
         {
