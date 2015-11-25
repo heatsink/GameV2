@@ -86,7 +86,10 @@ public class BillBoss extends NPCS
             delay++;
         }
         if(delay>=320)
+        {
             delay = 0;
+        }
+        RMDied();
     }    
     public void animateSix(GreenfootImage move0, GreenfootImage move1, GreenfootImage move2, GreenfootImage move3, GreenfootImage move4, GreenfootImage move5)
     {

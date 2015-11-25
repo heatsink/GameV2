@@ -34,6 +34,8 @@ public class Boy extends Heroes
     
     private int ninjaRotation = 0;
     private int swordRotation = 0;
+    private GreenfootSound ninjaDeathSound = new GreenfootSound("Pain-SoundBible.com-1883168362.mp3");
+    
     // Ninja sprite images Start [Tiffany]
     private GreenfootImage up1 = new GreenfootImage("Boy/BoyUp1.png");
     private GreenfootImage up2 = new GreenfootImage("Boy/BoyUp2.png");
@@ -84,6 +86,7 @@ public class Boy extends Heroes
         checkDashSpellbook();
         checkShurikenRack();
         checkWeaponRack();
+        boyDied();
     }    
     public void powerBarCount(){
         powerBarDelay++;
@@ -266,6 +269,46 @@ public class Boy extends Heroes
             getImage().setTransparency(255);
         }
         transparentDelay++;
+    }
+    public void boyDied()
+    {
+        if (ninjahp <= 0)
+        {
+            ninjaDeathSound.setVolume(40);
+            ninjaDeathSound.play();
+            if (getWorld() instanceof NewIntro1)
+            {
+                this.setHP(this.getArmor());
+                
+                Greenfoot.setWorld(new NewIntro1(this));
+            }
+            if (getWorld() instanceof NewIntro2)
+            {
+                this.setHP(this.getArmor());
+                
+                Greenfoot.setWorld(new NewIntro2(this));
+            }
+            if (getWorld() instanceof NewIntro3)
+            {
+                this.setHP(this.getArmor());
+                
+                Greenfoot.setWorld(new NewIntro3(this));
+            }
+            if (getWorld() instanceof NewIntro4)
+            {
+                this.setHP(this.getArmor());
+                
+                Greenfoot.setWorld(new NewIntro4(this));
+            }
+            if (getWorld() instanceof NewIntro5)
+            {
+                this.setHP(this.getArmor());
+                
+                Greenfoot.setWorld(new NewIntro5(this));
+            }
+            
+        }
+        
     }
     /*
     puclic static int[] worldK;

@@ -66,7 +66,7 @@ public class Inferno4 extends Trap
         for(int i = 0; i<3; i++)
         {
             InfernoFence infernoFence = new InfernoFence();
-            addObject(infernoFence, 400+50*i+25, /*175*/ 700+ -50*i);
+            addObject(infernoFence, 400+50*i+25, /*175*/ -25+700+ -50*i);
         }
         InfernoDoor infernodoor = new InfernoDoor();
         addObject(infernodoor, 76+50+25, 226);
@@ -83,12 +83,7 @@ public class Inferno4 extends Trap
         Firebat firebat4 = new Firebat(8, 4);
         addObject(firebat4, 704-40, 198);
 
-        npcs = getObjects(NPCS.class);
-        for(int i = 0; i<npcs.size(); i++)
-        {
-            TempText2 text = new TempText2(npcs.get(i));
-            addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
-        }
+        
         addShuriken addshuriken2 = new addShuriken();
         addObject(addshuriken2, 113, 321);
         addshuriken2.setLocation(105, 317);
@@ -111,6 +106,12 @@ public class Inferno4 extends Trap
         LavaMonster lavamonster3 = new LavaMonster(5, 2, 325, 675, 0, 0);
         addObject(lavamonster3, 326, 303);
         makeAllIcons();
+        npcs = getObjects(NPCS.class);
+        for(int i = 0; i<npcs.size(); i++)
+        {
+            TempText2 text = new TempText2(npcs.get(i));
+            addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
+        }
     }
 
     public void act()

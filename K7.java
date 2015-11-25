@@ -62,13 +62,13 @@ public class K7 extends Trap
         HealthGlobe healthglobe = new HealthGlobe();
         addObject(healthglobe, 669, 660);
         addShuriken addshuriken = new addShuriken();
-        addObject(addshuriken, 660, 598);
-        healthglobe.setLocation(658, 659);
+        addObject(addshuriken, 660, 598-50);
+        healthglobe.setLocation(658, 659-50);
         RedMM redmm = new RedMM(2, 1);
         addObject(redmm, 668, 387);
         RedMM redmm2 = new RedMM(2, 1);
         addObject(redmm2, 669, 466);
-        doort10.setLocation(83, 655);
+        doort10.setLocation(83, 655-50);
         Fence fence97 = new Fence();
         addObject(fence97, 362, 363);
         Fence fence98 = new Fence();
@@ -103,7 +103,7 @@ public class K7 extends Trap
         addObject(levelCounter, 355, 730);
         addObject(ninja, 100, 100);
         levelCounter.setValue(4);
-            
+        makeAllIcons();
             
             
             
@@ -139,7 +139,13 @@ public class K7 extends Trap
         }
         delay++;
     }
-    
+    public void makeAllIcons()
+    {
+        SwordIcon swordicon = new SwordIcon();
+        addObject(swordicon, 889, 360);
+        ShurikenIcon shurikenicon = new ShurikenIcon();
+        addObject(shurikenicon, 838, 360);
+    }
     public void checkDoor()
     {
         if(ninja.checkDoor()==true){

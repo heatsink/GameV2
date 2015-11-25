@@ -136,7 +136,7 @@ public class T25 extends Trap
        Greenfoot.setWorld(new T25(ninja));
     }
      public boolean isbossthere(){
-        List<Bosses> list = getObjects(ForestBoss.class);
+        List<Bosses> list = getObjects(BillBoss.class);
         if (list.size() >0){
             return true;
         }
@@ -146,8 +146,8 @@ public class T25 extends Trap
     }
      public void createdoor(){
         if(isbossthere() == false &&  createdDoor == false){
-        doorT10 doort10 = new doorT10();
-        addObject(doort10, 375, 660);
+        doorT21 doort21 = new doorT21();
+        addObject(doort21, 375, 660-50);
         ninja.setProgress(2);
         createdDoor = true;
         }

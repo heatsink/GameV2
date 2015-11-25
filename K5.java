@@ -130,7 +130,7 @@ public class K5 extends Trap
         addObject(redmm4, 601, 418);
         RedMM redmm5 = new RedMM(2, 1);
         addObject(redmm5, 320, 566); 
-            
+        makeAllIcons();
         
                 npcs = getObjects(NPCS.class);
        for(int i = 0; i<npcs.size(); i++)
@@ -164,7 +164,13 @@ public class K5 extends Trap
         }
         delay++;
     }
-    
+    public void makeAllIcons()
+    {
+        SwordIcon swordicon = new SwordIcon();
+        addObject(swordicon, 889, 360);
+        ShurikenIcon shurikenicon = new ShurikenIcon();
+        addObject(shurikenicon, 838, 360);
+    }
     public void checkDoor()
     {
         if(ninja.checkDoor()==true){

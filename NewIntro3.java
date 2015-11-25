@@ -44,11 +44,10 @@ public class NewIntro3 extends Trap
                 addObject(fence, 50*i+25, 25+j*700);
         }
 
-        for(int i = 1;i<15; i++)
-            for(int j = 0; j<2; j++)
-            {
-                IntroFence fence = new IntroFence();
-                addObject(fence, 50*i+25, 360);
+        for(int i = 1;i<12; i++)
+        {
+            IntroFence fence = new IntroFence();
+            addObject(fence, 200+50*i+25, 360);
         }
 
         for (int i = 0; i < 3; i++)
@@ -59,35 +58,42 @@ public class NewIntro3 extends Trap
         for (int i = 0; i < 4; i++)
         {
             IntroFence fence = new IntroFence();
-            addObject(fence, 250+25, 525+i*50);
+            addObject(fence, 100+250+25, 525+i*50);
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            IntroFence fence = new IntroFence();
+            addObject(fence, 550+25, 200+i*50);
         }
         doorT10 doort10 = new doorT10();
-        addObject(doort10, 100, 640);
+        addObject(doort10, 652, 268);
 
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(boy.getNINJAHP());
-
-        
-
-        
 
         addObject(levelCounter, 950, 15);
         levelCounter.setValue(2);
 
         addObject(boy, 606, 422);
 
-        OldManBot2 oldmanbot = new OldManBot2();
-        addObject(oldmanbot, 220, 268);
-
-        IntroRM bluemm = new IntroRM(1, 1);
-        addObject(bluemm, 354, 442);
         /*
         SwordIcon swordicon = new SwordIcon();
         addObject(swordicon, 840, 493);
-        */
+         */
         IntroShurikenWeaponRack introshurikenweaponrack = new IntroShurikenWeaponRack();
         addObject(introshurikenweaponrack, 610, 525);
         makeAllIcons();
+        TrainingDummyRM trainingdummyrm = new TrainingDummyRM(2, 3);
+        addObject(trainingdummyrm, 144, 616);
+        TrainingDummyRM trainingdummyrm2 = new TrainingDummyRM(2, 3);
+        addObject(trainingdummyrm2, 536, 115);
+        
+        npcs = getObjects(NPCS.class);
+        for(int i = 0; i<npcs.size(); i++)
+        {
+            TempText5 text = new TempText5(npcs.get(i));
+            addObject(text, npcs.get(i).getX()-5, npcs.get(i).getY()-50);
+        }
     }
 
     public void act(){

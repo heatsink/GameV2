@@ -7,10 +7,10 @@ public class Kyobashi1 extends Trap
     public int level = 0;
     private int delay = 11;    //Constructor for objects of class Kyobashi
     private Ninja ninja;
-    Counter healthCounter = new Counter("Health: "); //HAYDENS
-    Counter shurikenCounter = new Counter("Shurikens: ");
-    Counter powerCounter = new Counter("Power: ");
-    Counter levelCounter = new Counter("Level: ");
+    Counter shurikenCounter = new ShurikenCounter(getThisWorld(),"Shurikens: ");
+    Counter powerCounter = new PowerCounter("Power: ");
+    Counter levelCounter = new Counter("Stage: ");
+    Counter healthCounter = new HealthCounter(getThisWorld(), "Health: ");
     GreenfootSound backgroundTheme = new GreenfootSound("ninja_backgroundtheme.mp3");
     // Levels
     DeathWorld deathWorld;
@@ -49,17 +49,16 @@ public class Kyobashi1 extends Trap
             Fence fence = new Fence();
             addObject(fence, 50*i, 550-35);
         }
-        addObject(healthCounter, 70, 730);
+        addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
-        // Shurikens [Sean]
-        
-        addObject(shurikenCounter, 225, 730);
+
+        addObject(shurikenCounter, 866, 201);
         shurikenCounter.setValue(ninja.getSHURIKENNUMBER());
-        
-        addObject(powerCounter, 500, 730);
+
+        addObject(powerCounter, 866, 161);
         powerCounter.setValue(ninja.getPOWERBAR());
-        
-        addObject(levelCounter, 355, 730);
+
+        addObject(levelCounter, 950, 15);
         levelCounter.setValue(level);
         doorT10 door = new doorT10();
         addObject(door, 100, 475-50+15);
@@ -71,6 +70,7 @@ public class Kyobashi1 extends Trap
         addObject(s, 375, 475-50);
         HealthGlobe hg = new HealthGlobe();
         addObject(hg, 650, 325);
+        makeAllIcons();
     }
     
    public void act()
@@ -132,7 +132,19 @@ public class Kyobashi1 extends Trap
        checkInfernoDoor();
        t2Start();
    }
-   
+   public void makeAllIcons()
+    {
+        SwordIcon swordicon = new SwordIcon();
+        addObject(swordicon, 889, 360);
+        ShurikenIcon shurikenicon = new ShurikenIcon();
+        addObject(shurikenicon, 838, 360);
+        StealthIcon stealthicon = new StealthIcon();
+        addObject(stealthicon, 923, 308);
+        DashIcon dashicon = new DashIcon();
+        addObject(dashicon, 819, 308);
+        DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
+        addObject(doubledamageicon, 871, 308);
+    }
    public Kyobashi1 getThisWorld()
    {
        return this;

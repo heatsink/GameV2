@@ -43,7 +43,7 @@ public class Kyobashi4 extends Trap
                 Fence fence = new Fence();
                 addObject(fence, 50*i+25, 25+j*700);
             }
-                        for (int i = 0; i<16; i++)
+                        for (int i = 0; i<15; i++)
         {
             Fence fence = new Fence();
             addObject(fence, 50*i, 550);

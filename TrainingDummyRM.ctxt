@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=RMHP\ damage
+comment0.target=TrainingDummyRM(int,\ int)
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ detect()
+numComments=3

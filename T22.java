@@ -144,7 +144,7 @@ public class T22 extends Trap
     public void checkTeleport(){
         if(ninja.checkTeleport())
         {
-            ninja.setLocation(75, 675);
+            ninja.setLocation(75, 625);
         }
     }
     public Ninja getNinja()

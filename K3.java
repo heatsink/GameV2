@@ -9,10 +9,10 @@ import java.util.*;
 public class K3 extends Trap
 {
     Ninja ninja;
-    Counter healthCounter = new Counter("Health: "); //HAYDENS
-    Counter shurikenCounter = new Counter("Shurikens: ");
-    Counter levelCounter = new Counter("Level: ");
-    Counter powerCounter = new Counter("Power: ");
+    Counter shurikenCounter = new ShurikenCounter(getThisWorld(),"Shurikens: ");
+    Counter powerCounter = new PowerCounter("Power: ");
+    Counter levelCounter = new Counter("Stage: ");
+    Counter healthCounter = new HealthCounter(getThisWorld(), "Health: ");
     int delay = 11;
     private int counterDelay = 0;
     private List<NPCS> npcs;
@@ -57,23 +57,26 @@ public class K3 extends Trap
             Fence fence = new Fence();
             addObject(fence, 25+j*700, 50*i+25);
             }
-        for(int i = 1;i<24; i++)
+        for(int i = 1;i<15; i++)
             for(int j = 0; j<2; j++)
             {
                 Fence fence = new Fence();
-                addObject(fence, 50*i+25, 25+j*700);
+                addObject(fence, 50*i+25, 25+j*(700-50));
             }
         
         doorT10 doort10 = new doorT10();
         addObject(doort10, 670, 80);
 
-        addObject(healthCounter, 70, 730);
+        addObject(healthCounter, 866, 120);
+        healthCounter.setValue(ninja.getNINJAHP());
 
-        addObject(shurikenCounter, 225, 730);
-        
-        addObject(powerCounter, 500, 730);
+        addObject(shurikenCounter, 866, 201);
+        shurikenCounter.setValue(ninja.getSHURIKENNUMBER());
 
-        addObject(levelCounter, 355, 730);
+        addObject(powerCounter, 866, 161);
+        powerCounter.setValue(ninja.getPOWERBAR());
+
+        addObject(levelCounter, 950, 15);
         addObject(ninja, 100, 100);
         levelCounter.setValue(3);
         addObject(ninja, 100, 100);
@@ -112,7 +115,7 @@ public class K3 extends Trap
         addObject(blackrm5, 305, 394);
         BlackMM blackrm6 = new BlackMM(2, 1);
         addObject(blackrm6, 416, 276);
-        checkDoor();
+        makeAllIcons();
         
                 npcs = getObjects(NPCS.class);
        for(int i = 0; i<npcs.size(); i++)
@@ -121,7 +124,13 @@ public class K3 extends Trap
            addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
        }
     }
-
+    public void makeAllIcons()
+    {
+        SwordIcon swordicon = new SwordIcon();
+        addObject(swordicon, 889, 360);
+        ShurikenIcon shurikenicon = new ShurikenIcon();
+        addObject(shurikenicon, 838, 360);
+    }
     
     public void checkDoor()
     {

@@ -38,7 +38,7 @@ public class NPCS extends Actor
         }
         else if(lightning != null && delay==0)
         {
-            Trap trap = (Trap) getWorld();
+        Trap trap = (Trap) getWorld();
             if (trap.getNinja() != null)
             {
                 if(trap.getNinja().getPower3())
@@ -53,20 +53,20 @@ public class NPCS extends Actor
                     delay = 11;
                 }
         }
-            if (trap.getBoy() != null)
+        if (trap.getBoy() != null)
+        {
+            if(trap.getBoy().getPower3())
             {
-                if(trap.getBoy().getPower3())
-                {
-                    RMHP = RMHP-trap.getBoy().getMeleeDamage()*2;
-                    delay = 11;
-                    trap.getBoy().setPower(trap.getBoy().getPower()-25);
-                }
-                else
-                {
-                    RMHP = RMHP-trap.getBoy().getMeleeDamage();
-                    delay = 11;
-                }
+                RMHP = RMHP-trap.getBoy().getMeleeDamage()*2;
+                delay = 11;
+                trap.getBoy().setPower(trap.getBoy().getPower()-25);
             }
+            else
+            {
+                RMHP = RMHP-trap.getBoy().getMeleeDamage();
+                delay = 11;
+            }
+        }
         }
         else if(delay>0){
             delay--;

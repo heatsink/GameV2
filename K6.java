@@ -48,7 +48,7 @@ public class K6 extends Trap
             Fence fence = new Fence();
             addObject(fence, 50*i+200, 50*i+200);
         }
-        addObject(ninja, 675, 675);
+        addObject(ninja, 675, 675-50);
         
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
@@ -85,14 +85,14 @@ public class K6 extends Trap
         RedMM redmm4 = new RedMM(2, 2);
         addObject(redmm4, 451, 172);
         BlueRM bluerm3 = new BlueRM(4, 2);
-        addObject(bluerm3, 88, 652);
+        addObject(bluerm3, 88, 652-50);
         BlueRM bluerm4 = new BlueRM(4, 2);
         addObject(bluerm4, 649, 106);
         RedMM redmm5 = new RedMM(2, 2);
         addObject(redmm5, 537, 415);
         RedMM redmm6 = new RedMM(2, 2);
         addObject(redmm6, 420, 546);
-        
+        makeAllIcons();
                 npcs = getObjects(NPCS.class);
        for(int i = 0; i<npcs.size(); i++)
        {
@@ -125,7 +125,13 @@ public class K6 extends Trap
         }
         delay++;
     }
-    
+    public void makeAllIcons()
+    {
+        SwordIcon swordicon = new SwordIcon();
+        addObject(swordicon, 889, 360);
+        ShurikenIcon shurikenicon = new ShurikenIcon();
+        addObject(shurikenicon, 838, 360);
+    }
     public void checkDoor()
     {
         if(ninja.checkDoor()==true){

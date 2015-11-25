@@ -47,12 +47,12 @@ public class T23 extends Trap
             Teleport teleport = new Teleport();
             addObject(teleport, 100*i+25, 100*i+25);
         }
-        for(int i = 1; i<7; i++)
+        for(int i = 1; i<6; i++)
         {
             ForestRange bluerm = new ForestRange(2, 2);
             addObject(bluerm, 100*i+75, 100*i+75);
         }
-        for(int i = 1; i<9; i++)
+        for(int i = 1; i<8; i++)
         {
             Stump fence = new Stump();
             addObject(fence, 50*i+25, 50*i+225); 
@@ -127,7 +127,7 @@ public class T23 extends Trap
     public void checkTeleport(){
         if(ninja.checkTeleport())
         {
-            ninja.setLocation(675, 75);
+            ninja.setLocation(625, 75);
         }
     }
     public void checkDoorT21()

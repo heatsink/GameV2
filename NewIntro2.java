@@ -41,55 +41,63 @@ public class NewIntro2 extends Trap
             for(int j = 0; j<2; j++)
             {
                 IntroFence fence = new IntroFence();
-                addObject(fence, 50*i+25, 25+j*700);
+                addObject(fence, 50*i+25, 25+j*(700-50));
         }
 
-        for(int i = 1;i<15; i++)
+        for(int i = 1;i<13; i++)
             for(int j = 0; j<2; j++)
             {
                 IntroFence fence = new IntroFence();
-                addObject(fence, 50*i+25, 360);
+                addObject(fence, 100+50*i+25, 360);
+        }
+        for(int i = 1;i<11; i++)
+        {
+            IntroFence fence = new IntroFence();
+            addObject(fence, 50*i+25, 200);
         }
         for (int i = 0; i < 4; i++)
         {
             IntroFence fence = new IntroFence();
-            addObject(fence, 500+25, 425+i*50);
+            addObject(fence, 500+25, 425+i*50-50);
         }
         for (int i = 0; i < 4; i++)
         {
             IntroFence fence = new IntroFence();
-            addObject(fence, 305+50*i, 575);
+            addObject(fence, 305+50*i, 525);
         }
-        doorT10 doort10 = new doorT10();
-        addObject(doort10, 100, 640);
+        //doorT10 doort10 = new doorT10();
+        //addObject(doort10, 100, 640);
 
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(boy.getNINJAHP());
 
-
         addObject(levelCounter, 950, 15);
         levelCounter.setValue(1);
 
-        addObject(boy, 600, 600);
+        addObject(boy, 611, 437);
 
-        TextBox2 textbox2 = new TextBox2();
-        addObject(textbox2, 357, 186);
-        OldManBot2 oldmanbot = new OldManBot2();
-        addObject(oldmanbot, 220, 268);
-
-        IntroRedMM bluemm = new IntroRedMM(1, 1);
-        addObject(bluemm, 252, 653-20);
-        removeObject(textbox2);
-        boy.setLocation(611, 437);
-        IntroWeaponRack introweaponrack = new IntroWeaponRack();
-        addObject(introweaponrack, 603, 598);
-        introweaponrack.setLocation(591, 593);
-        introweaponrack.setLocation(588, 596);
+        //IntroRedMM bluemm = new IntroRedMM(1, 1);
+        //addObject(bluemm, 252, 653-20);
+        TrainingDummy trainingdummy = new TrainingDummy(3, 1);
+        addObject(trainingdummy, 98, 356);
+        TrainingDummy trainingdummy2 = new TrainingDummy(3, 1);
+        addObject(trainingdummy2, 449, 441);
+        TrainingDummy trainingdummy3 = new TrainingDummy(3, 1);
+        addObject(trainingdummy3, 651, 108);
+        doorT10 doort10 = new doorT10();
+        addObject(doort10, 98, 113);
+        
+        npcs = getObjects(NPCS.class);
+        for(int i = 0; i<npcs.size(); i++)
+        {
+            TempText5 text = new TempText5(npcs.get(i));
+            addObject(text, npcs.get(i).getX()-5, npcs.get(i).getY()-50);
+        }
     }
 
     public void act(){
         bloodBourne.playLoop();
-      delay++;
+       delay++;
         counterDelay++;
        if (Greenfoot.isKeyDown("h")&&delay>10) 
        {
@@ -110,7 +118,7 @@ public class NewIntro2 extends Trap
         counterDelay-= 10;
        }
       makeSwordIcon();
-       checkDoor();
+      checkDoor();
        
       
     }

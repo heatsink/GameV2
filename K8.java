@@ -69,10 +69,10 @@ public class K8 extends Trap
        
 
         
-                addObject(ninja, 600, 100);
+                addObject(ninja, 600, 500);
 
         
-        doort10.setLocation(86, 651);
+        doort10.setLocation(86, 651-50);
         Fence fence101 = new Fence();
         addObject(fence101, 380, 512);
         Fence fence102 = new Fence();
@@ -110,7 +110,7 @@ public class K8 extends Trap
         addObject(redmm3, 635, 288);
         RedMM redmm4 = new RedMM(2, 2);
         addObject(redmm4, 640, 449);
-            
+        makeAllIcons();
         
         
         
@@ -148,7 +148,13 @@ public class K8 extends Trap
         
         
     }
-    
+    public void makeAllIcons()
+    {
+        SwordIcon swordicon = new SwordIcon();
+        addObject(swordicon, 889, 360);
+        ShurikenIcon shurikenicon = new ShurikenIcon();
+        addObject(shurikenicon, 838, 360);
+    }
     public void checkDoor()
     {
         if(ninja.checkDoor()==true){

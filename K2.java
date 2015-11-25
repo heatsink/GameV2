@@ -43,7 +43,7 @@ public class K2 extends Trap
             }
         
         doorT10 doort10 = new doorT10();
-        addObject(doort10, 85, 650);
+        addObject(doort10, 85, 650-50);
 
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
@@ -148,8 +148,6 @@ public class K2 extends Trap
         addObject(swordicon, 889, 360);
         ShurikenIcon shurikenicon = new ShurikenIcon();
         addObject(shurikenicon, 838, 360);
-        DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
-        addObject(doubledamageicon, 871, 308);
     }
     public void checkDoor()
     {

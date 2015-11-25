@@ -15,6 +15,7 @@ public class NewIntro1 extends Trap
     private List<NPCS> npcs;
     private GreenfootSound bloodBourne = new GreenfootSound("Bloodborne - Celestial Emissary.mp3");
     private int counterDelay = 0;
+    private boolean madeSwordIcon = false;
     Boy boy;
     int delay = 0;
     /**
@@ -40,7 +41,7 @@ public class NewIntro1 extends Trap
             for(int j = 0; j<2; j++)
             {
                 IntroFence fence = new IntroFence();
-                addObject(fence, 50*i+25, 25+j*700);
+                addObject(fence, 50*i+25, 25+j*(700-50));
         }
 
         for (int i = 0; i< 7; i++)
@@ -60,20 +61,16 @@ public class NewIntro1 extends Trap
         }
 
         doorT10 doort10 = new doorT10();
-        addObject(doort10, 100, 640);
+        addObject(doort10, 100, 640-50);
 
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(boy.getNINJAHP());
 
-        addObject(shurikenCounter, 866, 201);
-        shurikenCounter.setValue(boy.getSHURIKENNUMBER());
 
-        addObject(powerCounter, 866, 161);
-        powerCounter.setValue(boy.getPOWERBAR());
 
         addObject(levelCounter, 950, 15);
         levelCounter.setValue(1);
-        addObject(boy, 650, 600);
+        addObject(boy, 650, 600-25);
 
         IntroWeaponRack introweaponrack = new IntroWeaponRack();
         addObject(introweaponrack, 515, 258);
@@ -112,12 +109,24 @@ public class NewIntro1 extends Trap
         healthCounter.setValue(boy.getNINJAHP());
         counterDelay-= 10;
        }
-        checkDoor();
+       makeSwordIcon();
+       checkDoor();
        
       
     }
     public void makeAllIcons()
     {
+    }
+    public void makeSwordIcon()
+    {   if (boy.getSwordStatus() == true && madeSwordIcon == false)
+        {/*
+            SwordIcon swordicon = new SwordIcon();
+            addObject(swordicon, 840, 493);
+            */
+           SwordIcon swordicon = new SwordIcon();
+           addObject(swordicon, 889, 360);
+            madeSwordIcon = true;
+        }
     }
       public void checkDoor()
        {

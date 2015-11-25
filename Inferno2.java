@@ -90,12 +90,7 @@ public class Inferno2 extends Trap
         Firebat firebat6 = new Firebat(8, 4);
         addObject(firebat6, 632, 145);
 
-        npcs = getObjects(NPCS.class);
-        for(int i = 0; i<npcs.size(); i++)
-        {
-            TempText2 text = new TempText2(npcs.get(i));
-            addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
-        }
+        
         LavaMonster lavamonster = new LavaMonster(5, 2, 0, 0, 600, 300);
         addObject(lavamonster, 443, 594);
         HealthGlobe healthglobe = new HealthGlobe();
@@ -109,6 +104,12 @@ public class Inferno2 extends Trap
         instaPower instapower2 = new instaPower();
         addObject(instapower2, 682, 80);
         makeAllIcons();
+        npcs = getObjects(NPCS.class);
+        for(int i = 0; i<npcs.size(); i++)
+        {
+            TempText2 text = new TempText2(npcs.get(i));
+            addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
+        }
     }
 
     public void act()

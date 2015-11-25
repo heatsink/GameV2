@@ -107,12 +107,7 @@ public class Inferno1 extends Trap
         addObject(ninja, 75, 75);
         ninja.setLocation(100, 75);
 
-        npcs = getObjects(NPCS.class);
-        for(int i = 0; i<npcs.size(); i++)
-        {
-            TempText2 text = new TempText2(npcs.get(i));
-            addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
-        }
+        
         HealthGlobe healthglobe = new HealthGlobe();
         addObject(healthglobe, 668, 57);
         healthglobe.setLocation(674, 54);
@@ -131,6 +126,12 @@ public class Inferno1 extends Trap
         addObject(instapower2, 429, 627);
         instapower2.setLocation(431, 625);
         makeAllIcons();
+        npcs = getObjects(NPCS.class);
+        for(int i = 0; i<npcs.size(); i++)
+        {
+            TempText2 text = new TempText2(npcs.get(i));
+            addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
+        }
     }
 
     public void act()

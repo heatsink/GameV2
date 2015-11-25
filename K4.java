@@ -27,25 +27,26 @@ public class K4 extends Trap
         this.ninja = ninja;
         prepare();
     }
+    
     private void prepare(){
-                for(int i = 0; i<15; i++)
+        for(int i = 0; i<15; i++)
             for(int j = 0; j<2; j++)
             {
-            Fence fence = new Fence();
-            addObject(fence, 25+j*700, 50*i+25);
-            }
+                Fence fence = new Fence();
+                addObject(fence, 25+j*700, 50*i+25);
+        }
         for(int i = 1;i<15; i++)
             for(int j = 0; j<2; j++)
             {
                 Fence fence = new Fence();
                 addObject(fence, 50*i+25, 25+j*(700-50));
-            }
-        
+        }
+
         doorT10 doort10 = new doorT10();
         addObject(doort10, 670, 80);
-        
+
         doorT11 doort11 = new doorT11();
-        addObject(doort11, 670, 670);
+        addObject(doort11, 670, 670-75);
 
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
@@ -59,8 +60,8 @@ public class K4 extends Trap
         addObject(levelCounter, 950, 15);
         addObject(ninja, 100, 375);
         levelCounter.setValue(2);
-            
-                Fence fence77 = new Fence();
+
+        Fence fence77 = new Fence();
         addObject(fence77, 684, 382);
         Fence fence78 = new Fence();
         addObject(fence78, 645, 389);
@@ -121,22 +122,21 @@ public class K4 extends Trap
         addObject(bluerm, 485, 546);
         BlueRM bluerm2 = new BlueRM(3, 1);
         addObject(bluerm2, 492, 198);
-                HealthGlobe healthglobe = new HealthGlobe();
+        HealthGlobe healthglobe = new HealthGlobe();
         addObject(healthglobe, 560, 301);
         healthglobe.setLocation(175, 359);
         addShuriken addshuriken = new addShuriken();
         addObject(addshuriken, 179, 477);
-        
-        checkDoor();
-        checkDoor1();
-        
-                npcs = getObjects(NPCS.class);
-       for(int i = 0; i<npcs.size(); i++)
-       {
-           TempText2 text = new TempText2(npcs.get(i));
-           addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
-       }
+        makeAllIcons();
+
+        npcs = getObjects(NPCS.class);
+        for(int i = 0; i<npcs.size(); i++)
+        {
+            TempText2 text = new TempText2(npcs.get(i));
+            addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
+        }
     }
+
         public void act()
     {
         counterDelay++;
@@ -162,6 +162,13 @@ public class K4 extends Trap
             /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
         }
         delay++;
+    }
+    public void makeAllIcons()
+    {
+        SwordIcon swordicon = new SwordIcon();
+        addObject(swordicon, 889, 360);
+        ShurikenIcon shurikenicon = new ShurikenIcon();
+        addObject(shurikenicon, 838, 360);
     }
     public void checkDoor()
     {

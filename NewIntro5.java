@@ -44,15 +44,52 @@ public class NewIntro5 extends Trap
             for(int j = 0; j<2; j++)
             {
                 IntroFence fence = new IntroFence();
-                addObject(fence, 50*i+25, 25+j*700);
+                addObject(fence, 50*i+25, 25+j*(700-50));
         }
 
-        for(int i = 1;i<15; i++)
-            for(int j = 0; j<2; j++)
+        for(int i = 1;i<10; i++)
             {
                 IntroFence fence = new IntroFence();
-                addObject(fence, 50*i+25, 360);
+                addObject(fence, 50*i+25, 320);
         }
+        for(int i = 1;i<12; i++)
+            {
+                IntroFence fence = new IntroFence();
+                addObject(fence, 651, 50*i+50);
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            IntroFence fence = new IntroFence();
+            addObject(fence, 175, 625-50*i);
+        }
+        for (int i =0; i< 3; i++)
+        {
+            IntroFence fence = new IntroFence();
+            addObject(fence, 325,600-50-50*i-50);
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            IntroFence fence = new IntroFence();
+            addObject(fence, 475, 625-50*i);
+        }
+        /*
+        for (int i = 0; i < 2; i++)
+        {
+            IntroFence fence = new IntroFence();
+            addObject(fence, 175, 250-50*i);
+        }
+        for (int i =0; i< 2; i++)
+        {
+            IntroFence fence = new IntroFence();
+            addObject(fence, 325,200-50-50*i);
+        }
+        for (int i = 0; i < 2; i++)
+        {
+            IntroFence fence = new IntroFence();
+            addObject(fence, 475, 250-50*i);
+        }*/
+        
+        
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(boy.getNINJAHP());
 
@@ -64,51 +101,10 @@ public class NewIntro5 extends Trap
         addObject(levelCounter, 950, 15);
         levelCounter.setValue(4);
 
-        addObject(boy, 600, 600);
+        addObject(boy, 100, 646-50);
 
-        OldManBot2 oldmanbot = new OldManBot2();
-        addObject(oldmanbot, 220, 268);
-        /*
-        SwordIcon swordicon = new SwordIcon();
-        addObject(swordicon, 840, 493);
-        ShurikenIcon shurikenicon = new ShurikenIcon();
-        addObject(shurikenicon, 789, 493);
-        */
         Spellbook spellbook = new Spellbook();
-        addObject(spellbook, 523, 564);
-        IntroFence introfence87 = new IntroFence();
-        addObject(introfence87, 221, 652);
-        IntroFence introfence88 = new IntroFence();
-        addObject(introfence88, 105, 515);
-        IntroFence introfence89 = new IntroFence();
-        addObject(introfence89, 186, 524);
-        IntroFence introfence90 = new IntroFence();
-        addObject(introfence90, 267, 522);
-        IntroFence introfence91 = new IntroFence();
-        addObject(introfence91, 349, 517);
-        IntroFence introfence92 = new IntroFence();
-        addObject(introfence92, 433, 519);
-        IntroFence introfence93 = new IntroFence();
-        addObject(introfence93, 510, 523);
-        IntroFence introfence94 = new IntroFence();
-        addObject(introfence94, 592, 533);
-        IntroFence introfence95 = new IntroFence();
-        addObject(introfence95, 593, 595);
-        introfence95.setLocation(560, 596);
-        boy.setLocation(652, 646);
-        introfence95.setLocation(593, 596);
-        introfence88.setLocation(99, 502);
-        introfence89.setLocation(177, 503);
-        introfence89.setLocation(171, 500);
-        introfence90.setLocation(243, 503);
-        introfence91.setLocation(317, 493);
-        introfence91.setLocation(314, 504);
-        introfence92.setLocation(385, 503);
-        introfence93.setLocation(451, 502);
-        introfence94.setLocation(511, 504);
-        introfence95.setLocation(582, 504);
-        spellbook.setLocation(103, 429);
-        introfence87.setLocation(244, 644);
+        addObject(spellbook, 100, 250);
         makeAllIcons();
     }
 
@@ -143,7 +139,7 @@ public class NewIntro5 extends Trap
       {
           madeDoor = true;
           doorT10 doort10 = new doorT10();
-          addObject(doort10, 100, 640);
+          addObject(doort10, 100, 640-50);
         }
       
     }

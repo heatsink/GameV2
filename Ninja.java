@@ -24,12 +24,12 @@ public class Ninja extends Heroes
     public int maxShurikens = 8;
     
     private int delay1 = 71;
-    private int ninjahp = 5;
+    private int ninjahp = 10;
     
     private int points = 0;
     private int meleeDamage = 1;
     private int rangeDamage = 1;
-    private int armor = 5;
+    private int armor = 10;
     // End Hayden Variables
     
     private int ninjaRotation = 0;
@@ -666,6 +666,13 @@ public class Ninja extends Heroes
             NinjaBlood ninjaBlood = new NinjaBlood();
             getWorld().addObject(ninjaBlood, getX(), getY());
         }
+        SecondFireball secondFireball = (SecondFireball) getOneIntersectingObject(SecondFireball.class);
+        if(secondFireball!=null&&!powerUpTwo)
+        {
+            ninjahp--;
+            NinjaBlood ninjaBlood = new NinjaBlood();
+            getWorld().addObject(ninjaBlood, getX(), getY());
+        }
     }
         public void damageRangedDashBoss()
     {
@@ -823,6 +830,7 @@ public class Ninja extends Heroes
         
         if (Greenfoot.isKeyDown("1")&&Greenfoot.isKeyDown("3")&&Greenfoot.isKeyDown("5")&&Greenfoot.isKeyDown("7")){
             ninjahp += 5;
+            armor += 5;
         }
         /*if (thehack.istrue() == true){
              // meleedamage += 5;

@@ -46,7 +46,7 @@ public class K9 extends Trap
             addObject(fence, 375, 50*i+200);
         }
         doorT10 doort10 = new doorT10();
-        addObject(doort10, 80, 670);
+        addObject(doort10, 80, 670-50);
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
 
@@ -57,7 +57,7 @@ public class K9 extends Trap
         powerCounter.setValue(ninja.getPOWERBAR());
 
         addObject(levelCounter, 950, 15);
-        addObject(ninja, 650, 650);
+        addObject(ninja, 650, 650-50);
         levelCounter.setValue(3);
        
 
@@ -93,7 +93,7 @@ public class K9 extends Trap
         addObject(redmm3, 190, 127);
         redmm3.setLocation(190, 120);
         redmm.setLocation(374, 118);
-
+        makeAllIcons();
         
                 npcs = getObjects(NPCS.class);
        for(int i = 0; i<npcs.size(); i++)
@@ -125,7 +125,13 @@ public class K9 extends Trap
         
         
     }
-    
+    public void makeAllIcons()
+    {
+        SwordIcon swordicon = new SwordIcon();
+        addObject(swordicon, 889, 360);
+        ShurikenIcon shurikenicon = new ShurikenIcon();
+        addObject(shurikenicon, 838, 360);
+    }
     public void checkDoor()
     {
         if(ninja.checkDoor()==true)

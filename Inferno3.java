@@ -42,18 +42,6 @@ public class Inferno3 extends Trap
                 InfernoFence inferoFence = new InfernoFence();
                 addObject(inferoFence, 50*i+25, 25+j*(700-50));
         }
-        for(int i = 0; i<15; i++)
-            for(int j = 0; j<2; j++)
-            {
-                InfernoFence inferoFence = new InfernoFence();
-                addObject(inferoFence, 25+j*700, 50*i+25);
-        }
-        for(int i = 1;i<15; i++)
-            for(int j = 0; j<2; j++)
-            {
-                InfernoFence inferoFence = new InfernoFence();
-                addObject(inferoFence, 50*i+25, 25+j*700);
-        }
         for(int i = 0; i<3; i++)
         {
             InfernoFence infernoFence = new InfernoFence();
@@ -62,7 +50,7 @@ public class Inferno3 extends Trap
         for(int i = 0; i<5; i++)
         {
             InfernoFence infernoFence = new InfernoFence();
-            addObject(infernoFence, 50*i+25, /*175*/ 500+ -50*i);
+            addObject(infernoFence, 50*i+25, /*175*/ 500+ -50*i+25);
         }
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
@@ -86,12 +74,7 @@ public class Inferno3 extends Trap
         addObject(firebat3, 279, 458);
         Firebat firebat4 = new Firebat(8, 4);
         addObject(firebat4, 459, 569);
-        npcs = getObjects(NPCS.class);
-        for(int i = 0; i<npcs.size(); i++)
-        {
-            TempText2 text = new TempText2(npcs.get(i));
-            addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
-        }
+        
         HealthGlobe healthglobe = new HealthGlobe();
         addObject(healthglobe, 80, 392);
         healthglobe.setLocation(76, 383);
@@ -108,6 +91,13 @@ public class Inferno3 extends Trap
         LavaMonster lavamonster3 = new LavaMonster(5, 2, 275, 650, 0, 0);
         addObject(lavamonster3, 649, 169);
         makeAllIcons();
+        
+        npcs = getObjects(NPCS.class);
+        for(int i = 0; i<npcs.size(); i++)
+        {
+            TempText2 text = new TempText2(npcs.get(i));
+            addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
+        }
     }
 
     public void act()
