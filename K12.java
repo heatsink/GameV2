@@ -36,7 +36,7 @@ public class K12 extends Trap
             for(int j = 0; j<2; j++)
             {
                 Fence fence = new Fence();
-                addObject(fence, 50*i+25, 25+j*700);
+                addObject(fence, 50*i+25, 25+j*(700-50));
             }
         
         
@@ -65,7 +65,7 @@ public class K12 extends Trap
         HealthGlobe hg = new HealthGlobe();
         addObject(hg, 90, 90);
                 HealthGlobe hg1 = new HealthGlobe();
-        addObject(hg1, 660, 660);
+        addObject(hg1, 660, 660-50);
         
         
         makeAllIcons();

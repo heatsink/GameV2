@@ -1,21 +1,21 @@
 import greenfoot.*;
 
 /**
- * Write a description of class MenuIcon here.
+ * Write a description of class UpgradeIcon here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MenuIcon extends Clickables
+public class UpgradeIcon extends Clickables
 {
     /**
-     * Act - do whatever the MenuIcon wants to do. This method is called whenever
+     * Act - do whatever the UpgradeIcon wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     // http://www.moodlenews.com/wp-content/uploads/upgrade-icon.png
     GreenfootImage button;
     private int delay = 0;
-    public MenuIcon()
+    public UpgradeIcon()
     {
         button = getImage();
     }
@@ -36,5 +36,5 @@ public class MenuIcon extends Clickables
             button.setTransparency(125);
         }
             setImage(button);
-    }    
+    }     
 }

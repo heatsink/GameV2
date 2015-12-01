@@ -111,6 +111,8 @@ public class Kyobashi extends Trap
         addObject(shurikenicon, 838, 360);
         //DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
         //addObject(doubledamageicon, 871, 308);
+        MenuIcon menuIcon = new MenuIcon();
+        addObject(menuIcon, 875, 605);
     }
    public void counterRefresh()
    {

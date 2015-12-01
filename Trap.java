@@ -30,6 +30,8 @@ public class Trap extends World
         addObject(ninjaImage, 808, 55);
         ActionBar actionBar = new ActionBar();
         addObject(actionBar, 816, 255);
+        UpgradeIcon upgradeIcon = new UpgradeIcon();
+        addObject(upgradeIcon, 790, 360);
     }
     public Ninja getNinja()
     {

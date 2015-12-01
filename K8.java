@@ -39,7 +39,7 @@ public class K8 extends Trap
             for(int j = 0; j<2; j++)
             {
                 Fence fence = new Fence();
-                addObject(fence, 50*i+25, 25+j*700);
+                addObject(fence, 50*i+25, 25+j*(700-50));
 
         }
                 for (int i = 0; i<12; i++)
@@ -69,7 +69,7 @@ public class K8 extends Trap
                 //addObject(ninja, 600, 100);
 
         
-        doort10.setLocation(86, 651);
+        doort10.setLocation(86, 651-50);
         Fence fence101 = new Fence();
         addObject(fence101, 380, 512);
         Fence fence102 = new Fence();
@@ -108,9 +108,9 @@ public class K8 extends Trap
         Lv1Melee redmm4 = new Lv1Melee(4, 2);
         addObject(redmm4, 640, 449);
         HealthGlobe hg = new HealthGlobe();
-        addObject(hg, 670, 640);
+        addObject(hg, 670, 640-50);
         addShuriken sb = new addShuriken();
-        addObject(sb, 630, 640);
+        addObject(sb, 630, 640-50);
             
         makeAllIcons();
         

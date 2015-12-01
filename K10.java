@@ -39,7 +39,7 @@ public class K10 extends Trap
             for(int j = 0; j<2; j++)
             {
                 Fence fence = new Fence();
-                addObject(fence, 50*i+25, 25+j*700);
+                addObject(fence, 50*i+25, 25+j*(700-50));
 
         }
                       for (int i = 0; i<6; i++)
@@ -54,7 +54,7 @@ public class K10 extends Trap
             addObject(fence, 50*i+475, 375);
         }
         doorT10 doort10 = new doorT10();
-        addObject(doort10, 670, 620);
+        addObject(doort10, 670-6, 620-20);
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
 
@@ -77,7 +77,7 @@ public class K10 extends Trap
         HealthGlobe healthglobe2 = new HealthGlobe();
         addObject(healthglobe2, 678, 436);
         HealthGlobe healthglobe3 = new HealthGlobe();
-        addObject(healthglobe3, 78, 626);
+        addObject(healthglobe3, 78, 626-50);
         addShuriken addshuriken = new addShuriken();
         addObject(addshuriken, 675, 85);
         addShuriken addshuriken2 = new addShuriken();

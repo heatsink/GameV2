@@ -39,7 +39,7 @@ public class K5 extends Trap
             for(int j = 0; j<2; j++)
             {
                 Fence fence = new Fence();
-                addObject(fence, 50*i+25, 25+j*700);
+                addObject(fence, 50*i+25, 25+j*(700-50));
                 
             
             }
@@ -47,7 +47,7 @@ public class K5 extends Trap
             
             
                 doorT10 doort10 = new doorT10();
-        addObject(doort10, 80, 620);
+        addObject(doort10, 80, 620-40+20);
 
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
@@ -125,11 +125,11 @@ public class K5 extends Trap
         addObject(bluerm, 602, 152);
         bluerm.setLocation(593, 144);
         BlueRM bluerm2 = new BlueRM(3, 1);
-        addObject(bluerm2, 638, 643);
+        addObject(bluerm2, 638, 643-50);
         Lv1Melee redmm4 = new Lv1Melee(2, 1);
         addObject(redmm4, 601, 418);
         Lv1Melee redmm5 = new Lv1Melee(2, 1);
-        addObject(redmm5, 320, 566); 
+        addObject(redmm5, 320, 566-50-40); 
             makeAllIcons();
         
                 npcs = getObjects(NPCS.class);

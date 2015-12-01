@@ -148,6 +148,8 @@ public class Kyobashi2 extends Trap
         addObject(dashicon, 819, 308);
         //DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
         //addObject(doubledamageicon, 871, 308);
+        MenuIcon menuIcon = new MenuIcon();
+        addObject(menuIcon, 875, 605);
     }
    public Kyobashi2 getThisWorld()
    {

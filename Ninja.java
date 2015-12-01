@@ -722,7 +722,7 @@ public class Ninja extends Heroes
 
     public void powerUpTwo()
     {
-        if(progress>1&&powerBar>0&&(Greenfoot.isKeyDown("o")))
+        if(progress>1&&powerBar>0&&(Greenfoot.isKeyDown("i")))
         {
             getImage().setTransparency(100);
             powerBar-=1;
@@ -733,9 +733,9 @@ public class Ninja extends Heroes
     }
 
     public void powerUpThree(){
-        if (progress > 2 && powerBar>3 && (Greenfoot.isKeyDown("i")) && delay>140 && powerUpThree == false)
+        //if (progress > 2 && powerBar>3 && (Greenfoot.isKeyDown("i")) && delay>140 && powerUpThree == false)
         {
-            powerUpThree = true;
+            //powerUpThree = true;
             //setPower(getPower()-25);
         }
         

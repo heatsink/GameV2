@@ -36,7 +36,7 @@ public class K11 extends Trap
             for(int j = 0; j<2; j++)
             {
                 Fence fence = new Fence();
-                addObject(fence, 50*i+25, 25+j*700);
+                addObject(fence, 50*i+25, 25+j*(700-50));
 
         }
                 for (int i = 0; i<12; i++)
@@ -50,7 +50,7 @@ public class K11 extends Trap
             addObject(fence, 50*i+25, 550);
         }
         doorT10 doort10 = new doorT10();
-        addObject(doort10, 80, 670);
+        addObject(doort10, 80, 670-50);
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
 
@@ -69,7 +69,7 @@ public class K11 extends Trap
                 addObject(ninja, 600, 100);
 
         
-        doort10.setLocation(86, 651);
+        doort10.setLocation(86, 651-50);
         Fence fence101 = new Fence();
         addObject(fence101, 380, 512);
         Fence fence102 = new Fence();

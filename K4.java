@@ -39,14 +39,14 @@ public class K4 extends Trap
             for(int j = 0; j<2; j++)
             {
                 Fence fence = new Fence();
-                addObject(fence, 50*i+25, 25+j*700);
+                addObject(fence, 50*i+25, 25+j*(700-50));
             }
         
         doorT10 doort10 = new doorT10();
         addObject(doort10, 670, 80);
         
         doorT11 doort11 = new doorT11();
-        addObject(doort11, 670, 625);
+        addObject(doort11, 670-4, 625-40+15);
 
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());

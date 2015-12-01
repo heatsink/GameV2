@@ -23,6 +23,8 @@ public class Menu extends World
         addObject(button2, 100, 450);
         Button button3 = new Button(3);
         addObject(button3, 100, 650);
+        ReturnToGame returnToGame = new ReturnToGame();
+        addObject(returnToGame, 825, 578);
         if (trap.getNinja() != null)
         {
             text1 = new TempText("Melee Damage: "+Integer.toString(trap.getNinja().getMeleeDamage()));

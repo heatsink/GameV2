@@ -46,7 +46,7 @@ public class K9 extends Trap
             addObject(fence, 375, 50*i+200);
         }
         doorT10 doort10 = new doorT10();
-        addObject(doort10, 80, 670-50);
+        addObject(doort10, 80, 670-50+3-25+5);
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
 
