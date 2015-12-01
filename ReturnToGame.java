@@ -1,5 +1,5 @@
 import greenfoot.*;
-
+// sean's
 /**
  * Write a description of class ReturnToGame here.
  * 
@@ -17,11 +17,11 @@ public class ReturnToGame extends Clickables
      * Act - do whatever the ShurikenIcon wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    // https://cdn2.iconfinder.com/data/icons/e-commerce-4/256/Easy_Returns-512.png
     GreenfootImage button;
     public ReturnToGame()
     {
         button = getImage();
-        button.setTransparency(125);
     }
     public void act() 
     {
