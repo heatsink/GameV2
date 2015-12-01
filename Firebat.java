@@ -39,17 +39,17 @@ public class Firebat extends MeleeMinion //RM Stands for Ranged Minion
             setImage(batMove1);
         }
         
-        if (frame == 5)
+        if (frame == 10)
         {
             setImage(batMove2);
         }
         
-        if (frame == 10)
+        if (frame == 20)
         {
             setImage(batMove3);
         }
         
-        if (frame == 15)
+        if (frame >= 30)
         {
             frame = 0;
         }
@@ -122,12 +122,15 @@ public class Firebat extends MeleeMinion //RM Stands for Ranged Minion
         List<Ninja> list = getObjectsInRange(200, Ninja.class);
         if (list.size()>0)
         {
+            frame++;
             turnTowards(list.get(0).getX(), list.get(0).getY());
-            move(12);
+            move(14);
             if(getOneIntersectingObject(InfernoFence.class)!=null)
-                move(-12);
+            {
+                move(-14);
+            }
             else
-                move(-11);
+                move(-13);
             setRotation(0);
         }
                

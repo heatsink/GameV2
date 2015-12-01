@@ -26,11 +26,11 @@ public class ShurikenIcon extends Clickables
     public void act() 
     {
        MouseInfo mi = Greenfoot.getMouseInfo();
-        if (delay <= 60)
+        if (delay <= 25)
         {
             delay ++;
         }
-        if (delay > 60)
+        if (delay > 25)
         {
             button.setTransparency(255);
         }

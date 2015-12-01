@@ -1,11 +1,5 @@
 import greenfoot.*;
-/**
- * Functionality in this class:
- * Ninja Melee
- * Ninja Ranged
- * Relationship to Melee AI "CURRENTLY CALLED RANGED AI"
- */
-
+// Sean - Near-clone of the ninja class with different sprite for use in intro levels
 public class Boy extends Heroes
 {
    private int progress = 0;
@@ -24,12 +18,12 @@ public class Boy extends Heroes
     public int maxShurikens = 8;
     
     private int delay1 = 71;
-    private int ninjahp = 5;
+    private int ninjahp = 4;
     
     private int points = 5;
     private int meleeDamage = 1;
     private int rangeDamage = 1;
-    private int armor = 5;
+    private int armor = 4;
     // End Hayden Variables
     
     private int ninjaRotation = 0;
@@ -101,8 +95,9 @@ public class Boy extends Heroes
     // Melee Attack Start [Bill]
     public void hitLightning()
     {
-        if ((Greenfoot.isKeyDown("k") && delay>120)&& canUseSword == true)
+        if ((Greenfoot.isKeyDown("k") && delay>140)&& canUseSword == true&& powerBar >= 4)
         {
+            powerBar-=4;
             Lightning l1 = new Lightning(swordRotation);
             if(powerUpThree)
             setPower(getPower()-25);
@@ -299,12 +294,6 @@ public class Boy extends Heroes
                 this.setHP(this.getArmor());
                 
                 Greenfoot.setWorld(new NewIntro4(this));
-            }
-            if (getWorld() instanceof NewIntro5)
-            {
-                this.setHP(this.getArmor());
-                
-                Greenfoot.setWorld(new NewIntro5(this));
             }
             
         }

@@ -67,16 +67,15 @@ public class NewIntro1 extends Trap
         healthCounter.setValue(boy.getNINJAHP());
 
 
-
         addObject(levelCounter, 950, 15);
         levelCounter.setValue(1);
         addObject(boy, 650, 600-25);
 
         IntroWeaponRack introweaponrack = new IntroWeaponRack();
-        addObject(introweaponrack, 515, 258);
-        TrainingDummy trainingdummy2 = new TrainingDummy(3, 1);
+        addObject(introweaponrack, 438, 329);
+        TrainingDummy trainingdummy2 = new TrainingDummy(2, 2);
         addObject(trainingdummy2, 280, 316);
-        TrainingDummy trainingdummy3 = new TrainingDummy(3, 1);
+        TrainingDummy trainingdummy3 = new TrainingDummy(2, 2);
         addObject(trainingdummy3, 363, 495);
 
         npcs = getObjects(NPCS.class);
@@ -107,6 +106,7 @@ public class NewIntro1 extends Trap
       if(getObjects(Boy.class).size() != 0 && counterDelay >= 10)
         {
         healthCounter.setValue(boy.getNINJAHP());
+        powerCounter.setValue(boy.getPOWERBAR());
         counterDelay-= 10;
        }
        makeSwordIcon();
@@ -125,6 +125,8 @@ public class NewIntro1 extends Trap
             */
            SwordIcon swordicon = new SwordIcon();
            addObject(swordicon, 889, 360);
+           addObject(powerCounter, 866, 161);
+           powerCounter.setValue(boy.getPOWERBAR());
             madeSwordIcon = true;
         }
     }

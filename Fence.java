@@ -1,18 +1,12 @@
 import greenfoot.*;
 
-/**
- * Functionality in this class:
- */
+// Fence Image
 public class Fence extends Obstacles
 {
-    // Fence Object Start [Bill]
+    // Sprite from http://www.androidappsgame.com/uk-co-hitech-puzzle-moveboxes-android
     public Fence()
     {
-        //GreenfootImage image = getImage();
-        //image.scale(40, 40);
-        //setImage(image);
     }
-    // Fence Object End [Bill]
     // Fence Collision Detection Start [Tiffany]
     public void act() 
     {

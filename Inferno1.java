@@ -1,10 +1,7 @@
 import greenfoot.*;
 import java.util.*;
 /**
- * Write a description of class K1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Sean's Level
  */
 public class Inferno1 extends Trap
 {
@@ -12,7 +9,9 @@ public class Inferno1 extends Trap
     Counter powerCounter = new PowerCounter("Power: ");
     Counter levelCounter = new Counter("Stage: ");
     Counter healthCounter = new HealthCounter(getThisWorld(), "Health: ");
-    private List<NPCS> npcs;
+    
+    private List <MeleeMinion> meleeMinions;
+    private List <RangedMinion> rangedMinions;
     Ninja ninja;
     // Inferno Themesong https://www.youtube.com/watch?v=kGYRIf6RdS4
     GreenfootSound burningSteppes = new GreenfootSound("Music of Cataclysm - Burning Steppes.mp3");
@@ -126,11 +125,11 @@ public class Inferno1 extends Trap
         addObject(instapower2, 429, 627);
         instapower2.setLocation(431, 625);
         makeAllIcons();
-        npcs = getObjects(NPCS.class);
-        for(int i = 0; i<npcs.size(); i++)
+        meleeMinions = getObjects(MeleeMinion.class);
+        for(int i = 0; i<meleeMinions.size(); i++)
         {
-            TempText2 text = new TempText2(npcs.get(i));
-            addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
+            TempText8 text = new TempText8(meleeMinions.get(i));
+            addObject(text, meleeMinions.get(i).getX(), meleeMinions.get(i).getY()-20);
         }
     }
 
@@ -168,11 +167,11 @@ public class Inferno1 extends Trap
         ShurikenIcon shurikenicon = new ShurikenIcon();
         addObject(shurikenicon, 838, 360);
         StealthIcon stealthicon = new StealthIcon();
-        addObject(stealthicon, 923, 308);
+        addObject(stealthicon, 871, 308);
         DashIcon dashicon = new DashIcon();
         addObject(dashicon, 819, 308);
-        DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
-        addObject(doubledamageicon, 871, 308);
+        //DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
+        //addObject(doubledamageicon, 871, 308);
     }
     /*
     public void makeSmokeFireball()

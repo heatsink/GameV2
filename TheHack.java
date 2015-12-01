@@ -1,11 +1,6 @@
 import greenfoot.*;
 
-/**
- * Write a description of class TheHack here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+// Hayden's secret cheat code
 public class TheHack extends Actor
 {
     
@@ -15,15 +10,5 @@ public class TheHack extends Actor
      */
     public void act() 
     {
-        //istrue();
     }  
-    /*public boolean istrue(){
-        if (Greenfoot.mouseClicked(this) == true || Greenfoot.isKeyDown("p")){
-            return true;
-        }
-        else 
-        {
-            return false;
-        }
-    }*/
 }

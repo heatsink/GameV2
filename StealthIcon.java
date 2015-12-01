@@ -12,6 +12,8 @@ public class StealthIcon extends Clickables
      * Act - do whatever the StealthIcon wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    // http://wow.zamimg.com/images/wow/icons/large/ability_stealth.jpg
     GreenfootImage button;
     private int delay = 0;
     public StealthIcon()

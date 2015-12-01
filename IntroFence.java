@@ -1,19 +1,9 @@
 import greenfoot.*;
-
-/**
- * Write a description of class IntroFence here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+// Hayden - Image of Intro level obstacle
 public class IntroFence extends Obstacles
 {
    
     //http://documentation.flatredball.com/frb/docs/images/6/66/Rock4.png
-    /**
-     * Act - do whatever the IntroFence wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act() 
     {
         Actor projectiles = getOneIntersectingObject(Projectiles.class);

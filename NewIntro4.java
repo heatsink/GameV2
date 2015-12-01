@@ -15,6 +15,7 @@ public class NewIntro4 extends Trap
     private List<NPCS> npcs;
     private GreenfootSound bloodBourne = new GreenfootSound("Bloodborne - Celestial Emissary.mp3");
     Boy boy;
+    Ninja ninja;
     int delay = 0;
     private int counterDelay = 0;
     /**
@@ -26,6 +27,7 @@ public class NewIntro4 extends Trap
         super();
         this.boy = boy;
         bloodBourne.setVolume(25);
+        ninja = new Ninja();
         prepare();
     }
     
@@ -64,6 +66,9 @@ public class NewIntro4 extends Trap
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(boy.getNINJAHP());
 
+        addObject(powerCounter, 866, 161);
+           powerCounter.setValue(boy.getPOWERBAR());
+           
         addObject(shurikenCounter, 866, 201);
         shurikenCounter.setValue(boy.getSHURIKENNUMBER());
 
@@ -91,13 +96,15 @@ public class NewIntro4 extends Trap
         addObject(addshuriken3, 369, 136);
         HealthGlobe healthglobe2 = new HealthGlobe();
         addObject(healthglobe2, 663, 97);
-        
+
         npcs = getObjects(NPCS.class);
         for(int i = 0; i<npcs.size(); i++)
         {
             TempText5 text = new TempText5(npcs.get(i));
             addObject(text, npcs.get(i).getX()-5, npcs.get(i).getY()-50);
         }
+        HealthGlobe healthglobe3 = new HealthGlobe();
+        addObject(healthglobe3, 393, 280);
     }
 
     public void act(){
@@ -115,7 +122,7 @@ public class NewIntro4 extends Trap
       //want to be all keys
       {
           bloodBourne.stop();
-          Greenfoot.setWorld(new NewIntro5(boy));
+          Greenfoot.setWorld(new Kyobashi(ninja));
       }
       if(getObjects(Boy.class).size() != 0 && counterDelay >= 10)
         {
@@ -141,7 +148,7 @@ public class NewIntro4 extends Trap
         {
         bloodBourne.stop();
         
-            Greenfoot.setWorld(new NewIntro5(boy));
+            Greenfoot.setWorld(new Kyobashi(ninja));
         }
        }
       

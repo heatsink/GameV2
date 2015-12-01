@@ -17,6 +17,7 @@ public class K10 extends Trap
     private List<NPCS> npcs;
     GreenfootSound Peaceful = new GreenfootSound("Peaceful.mp3");
     private boolean played = false;
+    private int counterDelay =0;
     /**
      * Constructor for objects of class K8.
      * 
@@ -27,7 +28,7 @@ public class K10 extends Trap
         this.ninja = ninja;
         prepare();
     }
-            private void prepare(){
+          private void prepare(){
                        for(int i = 0; i<15; i++)
             for(int j = 0; j<2; j++)
             {
@@ -53,7 +54,7 @@ public class K10 extends Trap
             addObject(fence, 50*i+475, 375);
         }
         doorT10 doort10 = new doorT10();
-        addObject(doort10, 670, 670);
+        addObject(doort10, 670, 620);
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
 
@@ -76,28 +77,28 @@ public class K10 extends Trap
         HealthGlobe healthglobe2 = new HealthGlobe();
         addObject(healthglobe2, 678, 436);
         HealthGlobe healthglobe3 = new HealthGlobe();
-        addObject(healthglobe3, 78, 666);
+        addObject(healthglobe3, 78, 626);
         addShuriken addshuriken = new addShuriken();
         addObject(addshuriken, 675, 85);
         addShuriken addshuriken2 = new addShuriken();
         addObject(addshuriken2, 84, 438);
         addShuriken addshuriken3 = new addShuriken();
         addObject(addshuriken3, 92, 318);
-        RedMM redmm = new RedMM(3, 3);
+        Lv1Melee redmm = new Lv1Melee(3, 2);
         addObject(redmm, 237, 214);
-        RedMM redmm2 = new RedMM(3, 3);
+        Lv1Melee redmm2 = new Lv1Melee(3, 2);
         addObject(redmm2, 385, 213);
-        RedMM redmm3 = new RedMM(3, 3);
+        Lv1Melee redmm3 = new Lv1Melee(3, 2);
         addObject(redmm3, 532, 214);
         BlueRM bluerm = new BlueRM(5, 3);
         addObject(bluerm, 381, 376);
-        RedMM redmm4 = new RedMM(3, 3);
+        Lv1Melee redmm4 = new Lv1Melee(3, 2);
         addObject(redmm4, 237, 566);
-        RedMM redmm5 = new RedMM(3, 3);
+        Lv1Melee redmm5 = new Lv1Melee(3, 2);
         addObject(redmm5, 400, 559);
         redmm5.setLocation(382, 545);
         redmm4.setLocation(227, 547);
-        
+        makeAllIcons();
                 npcs = getObjects(NPCS.class);
        for(int i = 0; i<npcs.size(); i++)
        {
@@ -108,15 +109,17 @@ public class K10 extends Trap
     }
         public void act()
     {
+        counterDelay++;
         if (!played){
             Peaceful.playLoop();
             played = !played;
         }
-        if (Greenfoot.isKeyDown("h")&&delay>10) 
+        if (Greenfoot.isKeyDown("h")&&delay>10 && counterDelay >= 10) 
         {
             Menu menu = new Menu(getThisWorld());
             Greenfoot.setWorld(menu);
             delay = 0;
+            counterDelay -= 10;
 
         }
         if(getObjects(Ninja.class).size() != 0)

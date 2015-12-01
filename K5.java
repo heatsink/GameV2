@@ -28,7 +28,7 @@ public class K5 extends Trap
         this.ninja = ninja;
         prepare();
     }
-        private void prepare(){
+       private void prepare(){
                 for(int i = 0; i<15; i++)
             for(int j = 0; j<2; j++)
             {
@@ -39,7 +39,7 @@ public class K5 extends Trap
             for(int j = 0; j<2; j++)
             {
                 Fence fence = new Fence();
-                addObject(fence, 50*i+25, 25+j*(700-50));
+                addObject(fence, 50*i+25, 25+j*700);
                 
             
             }
@@ -47,7 +47,7 @@ public class K5 extends Trap
             
             
                 doorT10 doort10 = new doorT10();
-        addObject(doort10, 80, 670);
+        addObject(doort10, 80, 620);
 
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
@@ -115,22 +115,22 @@ public class K5 extends Trap
         fence78.setLocation(223, 124);
         fence79.setLocation(222, 171);
         fence80.setLocation(222, 219);
-        RedMM redmm = new RedMM(3, 2);
+        Lv1Melee redmm = new Lv1Melee(2, 1);
         addObject(redmm, 134, 321);
-        RedMM redmm2 = new RedMM(3, 2);
+        Lv1Melee redmm2 = new Lv1Melee(2, 1);
         addObject(redmm2, 356, 332);
-        RedMM redmm3 = new RedMM(3, 2);
+        Lv1Melee redmm3 = new Lv1Melee(2, 1);
         addObject(redmm3, 364, 144);
         BlueRM bluerm = new BlueRM(3, 1);
         addObject(bluerm, 602, 152);
         bluerm.setLocation(593, 144);
         BlueRM bluerm2 = new BlueRM(3, 1);
         addObject(bluerm2, 638, 643);
-        RedMM redmm4 = new RedMM(3, 2);
+        Lv1Melee redmm4 = new Lv1Melee(2, 1);
         addObject(redmm4, 601, 418);
-        RedMM redmm5 = new RedMM(2, 1);
+        Lv1Melee redmm5 = new Lv1Melee(2, 1);
         addObject(redmm5, 320, 566); 
-        makeAllIcons();
+            makeAllIcons();
         
                 npcs = getObjects(NPCS.class);
        for(int i = 0; i<npcs.size(); i++)

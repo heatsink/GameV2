@@ -7,9 +7,9 @@ public class Kyobashi4 extends Trap
     public int level = 0;
     private int delay = 11;    //Constructor for objects of class Kyobashi3
     private Ninja ninja;
-    Counter healthCounter = new Counter("Health: "); //HAYDENS
-    Counter shurikenCounter = new Counter("Shurikens: ");
-    Counter powerCounter = new Counter("Power: ");
+    Counter healthCounter = new HealthCounter(getThisWorld(), "Health: ");
+    Counter shurikenCounter = new ShurikenCounter(getThisWorld(),"Shurikens: ");
+    Counter powerCounter = new PowerCounter("Power: ");
     Counter levelCounter = new Counter("Level: ");
     GreenfootSound backgroundTheme = new GreenfootSound("ninja_backgroundtheme.mp3");
     // Levels
@@ -29,7 +29,7 @@ public class Kyobashi4 extends Trap
     private void prepare()
     {
         TextBoxKyo3 textboxkyo2 = new TextBoxKyo3();
-        addObject (textboxkyo2, 380, 640);
+        addObject (textboxkyo2, 380, 640-50);
         addObject(ninja, 100, 100);
         for(int i = 0; i<15; i++)
             for(int j = 0; j<2; j++)
@@ -41,44 +41,40 @@ public class Kyobashi4 extends Trap
             for(int j = 0; j<2; j++)
             {
                 Fence fence = new Fence();
-                addObject(fence, 50*i+25, 25+j*700);
+                addObject(fence, 50*i+25, 25+j*(700-50));
             }
                         for (int i = 0; i<15; i++)
         {
             Fence fence = new Fence();
-            addObject(fence, 50*i, 550);
+            addObject(fence, 50*i+25, 550-50);
         }
-        addObject(healthCounter, 70, 730);
+        addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
-        // Shurikens [Sean]
-        
-        addObject(shurikenCounter, 225, 730);
+
+        addObject(shurikenCounter, 866, 201);
         shurikenCounter.setValue(ninja.getSHURIKENNUMBER());
-        
-        addObject(powerCounter, 500, 730);
+
+        addObject(powerCounter, 866, 161);
         powerCounter.setValue(ninja.getPOWERBAR());
-        
+
         TheHack thehack=new TheHack();
         addObject(thehack, 720, 30);
         
-        addObject(levelCounter, 355, 730);
-        levelCounter.setValue(level);
         doorT10 door = new doorT10();
-        addObject(door, 100, 475);
+        addObject(door, 100, 475-50);
         
         InfernoDoor infernoDoor = new InfernoDoor();
         addObject(infernoDoor, 400, 300);
         
         doorT21 doorT21 = new doorT21();
         addObject(doorT21, 650, 100);
-        SnowDoor snowdoor = new SnowDoor();
-        addObject(snowdoor, 650, 475);
         EndlessDoor endlessdoor = new EndlessDoor();
         addObject(endlessdoor, 100, 300);
         addShuriken s = new addShuriken();
-        addObject(s, 375, 475);
+        addObject(s, 375, 475-50);
         HealthGlobe hg = new HealthGlobe();
         addObject(hg, 650, 325);
+        makeAllIcons();
     }
     
    public void act()
@@ -146,6 +142,19 @@ public class Kyobashi4 extends Trap
       }
        t2Start();
    }
+   public void makeAllIcons()
+    {
+        SwordIcon swordicon = new SwordIcon();
+        addObject(swordicon, 889, 360);
+        ShurikenIcon shurikenicon = new ShurikenIcon();
+        addObject(shurikenicon, 838, 360);
+        StealthIcon stealthicon = new StealthIcon();
+        addObject(stealthicon, 871, 308);
+        DashIcon dashicon = new DashIcon();
+        addObject(dashicon, 819, 308);
+        //DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
+        //addObject(doubledamageicon, 871, 308);
+    }
    
    public Kyobashi4 getThisWorld()
    {

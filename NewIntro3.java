@@ -81,19 +81,32 @@ public class NewIntro3 extends Trap
         addObject(swordicon, 840, 493);
          */
         IntroShurikenWeaponRack introshurikenweaponrack = new IntroShurikenWeaponRack();
-        addObject(introshurikenweaponrack, 610, 525);
+        addObject(introshurikenweaponrack, 632, 526);
         makeAllIcons();
         TrainingDummyRM trainingdummyrm = new TrainingDummyRM(2, 3);
         addObject(trainingdummyrm, 144, 616);
         TrainingDummyRM trainingdummyrm2 = new TrainingDummyRM(2, 3);
         addObject(trainingdummyrm2, 536, 115);
-        
+
         npcs = getObjects(NPCS.class);
         for(int i = 0; i<npcs.size(); i++)
         {
             TempText5 text = new TempText5(npcs.get(i));
             addObject(text, npcs.get(i).getX()-5, npcs.get(i).getY()-50);
         }
+        addShuriken addshuriken = new addShuriken();
+        addObject(addshuriken, 87, 354);
+        addshuriken.setLocation(108, 214);
+        addshuriken.setLocation(87, 93);
+        addShuriken addshuriken2 = new addShuriken();
+        addObject(addshuriken2, 512, 288);
+        addshuriken2.setLocation(513, 291);
+        addShuriken addshuriken3 = new addShuriken();
+        addObject(addshuriken3, 379, 451);
+        addshuriken3.setLocation(375, 446);
+        addShuriken addshuriken4 = new addShuriken();
+        addObject(addshuriken4, 82, 637);
+        addshuriken4.setLocation(80, 639);
     }
 
     public void act(){
@@ -116,6 +129,7 @@ public class NewIntro3 extends Trap
       if(getObjects(Boy.class).size() != 0 && counterDelay >= 10)
         {
         healthCounter.setValue(boy.getNINJAHP());
+        powerCounter.setValue(boy.getPOWERBAR());
         shurikenCounter.setValue(boy.getSHURIKENNUMBER());
         counterDelay-= 10;
        }
@@ -141,6 +155,8 @@ public class NewIntro3 extends Trap
             addObject(shurikenicon, 838, 360);
             addObject(shurikenCounter, 866, 201);
             shurikenCounter.setValue(boy.getSHURIKENNUMBER());
+            addObject(powerCounter, 866, 161);
+           powerCounter.setValue(boy.getPOWERBAR());
             madeShurikenIcon = true;
         }
     }

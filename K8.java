@@ -28,7 +28,7 @@ public class K8 extends Trap
         this.ninja = ninja;
         prepare();
     }
-            private void prepare(){
+             private void prepare(){
                        for(int i = 0; i<15; i++)
             for(int j = 0; j<2; j++)
             {
@@ -39,7 +39,7 @@ public class K8 extends Trap
             for(int j = 0; j<2; j++)
             {
                 Fence fence = new Fence();
-                addObject(fence, 50*i+25, 25+j*(700-50));
+                addObject(fence, 50*i+25, 25+j*700);
 
         }
                 for (int i = 0; i<12; i++)
@@ -53,7 +53,7 @@ public class K8 extends Trap
             addObject(fence, 50*i+25, 550);
         }
         doorT10 doort10 = new doorT10();
-        addObject(doort10, 80, 670);
+        addObject(doort10, 80, 620);
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
 
@@ -64,15 +64,12 @@ public class K8 extends Trap
         powerCounter.setValue(ninja.getPOWERBAR());
 
         addObject(levelCounter, 950, 15);
-        addObject(ninja, 100, 100);
+        addObject(ninja, 650, 100);
         levelCounter.setValue(5);
-       
+                //addObject(ninja, 600, 100);
 
         
-                addObject(ninja, 600, 500);
-
-        
-        doort10.setLocation(86, 651-50);
+        doort10.setLocation(86, 651);
         Fence fence101 = new Fence();
         addObject(fence101, 380, 512);
         Fence fence102 = new Fence();
@@ -102,16 +99,20 @@ public class K8 extends Trap
         fence101.setLocation(388, 501);
         fence102.setLocation(386, 209);
         fence107.setLocation(545, 209);
-        RedMM redmm = new RedMM(2, 2);
+        Lv1Melee redmm = new Lv1Melee(4, 2);
         addObject(redmm, 120, 288);
-        RedMM redmm2 = new RedMM(2, 2);
+        Lv1Melee redmm2 = new Lv1Melee(4, 2);
         addObject(redmm2, 125, 443);
-        RedMM redmm3 = new RedMM(2, 2);
+        Lv1Melee redmm3 = new Lv1Melee(4, 2);
         addObject(redmm3, 635, 288);
-        RedMM redmm4 = new RedMM(2, 2);
+        Lv1Melee redmm4 = new Lv1Melee(4, 2);
         addObject(redmm4, 640, 449);
+        HealthGlobe hg = new HealthGlobe();
+        addObject(hg, 670, 640);
+        addShuriken sb = new addShuriken();
+        addObject(sb, 630, 640);
+            
         makeAllIcons();
-        
         
         
                 npcs = getObjects(NPCS.class);

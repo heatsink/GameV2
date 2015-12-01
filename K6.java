@@ -39,7 +39,7 @@ public class K6 extends Trap
             for(int j = 0; j<2; j++)
             {
                 Fence fence = new Fence();
-                addObject(fence, 50*i+25, 25+j*(700-50));
+                addObject(fence, 50*i+25, 25+j*700);
             }
 
         
@@ -48,7 +48,7 @@ public class K6 extends Trap
             Fence fence = new Fence();
             addObject(fence, 50*i+200, 50*i+200);
         }
-        addObject(ninja, 675, 675-50);
+        addObject(ninja, 675, 625);
         
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
@@ -71,26 +71,26 @@ public class K6 extends Trap
         addShuriken addshuriken = new addShuriken();
         addObject(addshuriken, 343, 404);
         addshuriken.setLocation(351, 399);
-        BlueRM bluerm = new BlueRM(3, 2);
+        BlueRM bluerm = new BlueRM(3, 1);
         addObject(bluerm, 304, 245);
-        BlueRM bluerm2 = new BlueRM(3, 2);
+        BlueRM bluerm2 = new BlueRM(3, 1);
         addObject(bluerm2, 255, 300);
         bluerm2.setLocation(252, 300);
-        RedMM redmm = new RedMM(2, 2);
+        Lv1Melee redmm = new Lv1Melee(2, 1);
         addObject(redmm, 444, 313);
-        RedMM redmm2 = new RedMM(2, 2);
+        Lv1Melee redmm2 = new Lv1Melee(2, 1);
         addObject(redmm2, 317, 448);
-        RedMM redmm3 = new RedMM(2, 2);
+        Lv1Melee redmm3 = new Lv1Melee(2, 1);
         addObject(redmm3, 164, 458);
-        RedMM redmm4 = new RedMM(2, 2);
+        Lv1Melee redmm4 = new Lv1Melee(2, 1);
         addObject(redmm4, 451, 172);
-        BlueRM bluerm3 = new BlueRM(4, 2);
-        addObject(bluerm3, 88, 652-50);
-        BlueRM bluerm4 = new BlueRM(4, 2);
+        BlueRM bluerm3 = new BlueRM(3, 1);
+        addObject(bluerm3, 88, 652);
+        BlueRM bluerm4 = new BlueRM(3, 1);
         addObject(bluerm4, 649, 106);
-        RedMM redmm5 = new RedMM(2, 2);
+        Lv1Melee redmm5 = new Lv1Melee(2, 1);
         addObject(redmm5, 537, 415);
-        RedMM redmm6 = new RedMM(2, 2);
+        Lv1Melee redmm6 = new Lv1Melee(2, 1);
         addObject(redmm6, 420, 546);
         makeAllIcons();
                 npcs = getObjects(NPCS.class);

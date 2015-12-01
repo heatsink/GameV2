@@ -63,8 +63,6 @@ public class Kyobashi2 extends Trap
         doorT21 doorT21 = new doorT21();
         addObject(doorT21, 650, 100);
         
-        addObject(levelCounter, 355, 730);
-        levelCounter.setValue(level);
         doorT10 door = new doorT10();
         addObject(door, 100, 475-40);
         
@@ -145,11 +143,11 @@ public class Kyobashi2 extends Trap
         ShurikenIcon shurikenicon = new ShurikenIcon();
         addObject(shurikenicon, 838, 360);
         StealthIcon stealthicon = new StealthIcon();
-        addObject(stealthicon, 923, 308);
+        addObject(stealthicon, 871, 308);
         DashIcon dashicon = new DashIcon();
         addObject(dashicon, 819, 308);
-        DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
-        addObject(doubledamageicon, 871, 308);
+        //DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
+        //addObject(doubledamageicon, 871, 308);
     }
    public Kyobashi2 getThisWorld()
    {

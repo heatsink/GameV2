@@ -43,7 +43,7 @@ public class DragonBot extends Animated
         {
             if (Greenfoot.getRandomNumber(1000) < 25)
             {
-                NinjaBlood ninjaBlood = new NinjaBlood();
+                PurpleBlood ninjaBlood = new PurpleBlood();
                 ninjaBlood.changeColor();
                 getWorld().addObject(ninjaBlood, getX(), getY());
             }

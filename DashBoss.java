@@ -168,6 +168,8 @@ public class DashBoss extends Bosses
             if (shuriken != null && delay2==0){
              Trap trap = (Trap) getWorld();
              DBHP = DBHP-trap.getNinja().getRangeDamage();
+             PurpleBlood purpleBlood = new PurpleBlood();
+             getWorld().addObject(purpleBlood, getX(), getY());
              delay2 = 11;
             }
             else if(lightning != null && delay2==0)

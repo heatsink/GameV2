@@ -89,12 +89,16 @@ public class ForestBoss extends Bosses
             if (shuriken != null && delay2==0){
              Trap trap = (Trap) getWorld();
              infernoBossHealth = infernoBossHealth-trap.getNinja().getRangeDamage();
+             PurpleBlood purpleBlood = new PurpleBlood();
+             getWorld().addObject(purpleBlood, getX(), getY());
              delay2 = 11;
             }
             else if(lightning != null && delay2==0)
             {
                 Trap trap = (Trap) getWorld();
                 infernoBossHealth = infernoBossHealth-trap.getNinja().getMeleeDamage();
+                PurpleBlood purpleBlood = new PurpleBlood();
+                getWorld().addObject(purpleBlood, getX(), getY());
                 delay2 = 11;
             }
             else if(delay2>0){

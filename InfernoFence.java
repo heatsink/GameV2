@@ -1,18 +1,10 @@
 import greenfoot.*;
-
-/**
- * Functionality in this class:
- */
 public class InfernoFence extends Obstacles
 {
-    // Fence Object Start [Bill]
+    // Sprite from http://www.zeldadungeon.net/wiki/images/f/f6/TMC_Boulder.png
     public InfernoFence()
     {
-        //GreenfootImage image = getImage();
-        //image.scale(40, 40);
-        //setImage(image);
     }
-    // Fence Object End [Bill]
     // Fence Collision Detection Start [Tiffany]
     public void act() 
     {
@@ -22,5 +14,5 @@ public class InfernoFence extends Obstacles
             Actor ator = getOneIntersectingObject (Fence.class);
         }
     }    
-    // Fence Collision Detection End[Bill]
+    // Fence Collision Detection End[Tiffany]
 }

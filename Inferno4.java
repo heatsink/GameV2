@@ -1,10 +1,7 @@
 import greenfoot.*;
 import java.util.*;
 /**
- * Write a description of class K1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Sean's Level
  */
 public class Inferno4 extends Trap
 {
@@ -14,7 +11,8 @@ public class Inferno4 extends Trap
     Counter healthCounter = new HealthCounter(getThisWorld(), "Health: ");
     GreenfootSound burningSteppes = new GreenfootSound("Music of Cataclysm - Burning Steppes.mp3");
     
-    private List<NPCS> npcs;
+    private List <MeleeMinion> meleeMinions;
+    private List <RangedMinion> rangedMinions;
     Ninja ninja;
     int delay = 11;
     private int counterDelay = 0;
@@ -106,11 +104,19 @@ public class Inferno4 extends Trap
         LavaMonster lavamonster3 = new LavaMonster(5, 2, 325, 675, 0, 0);
         addObject(lavamonster3, 326, 303);
         makeAllIcons();
-        npcs = getObjects(NPCS.class);
-        for(int i = 0; i<npcs.size(); i++)
+        
+        rangedMinions = getObjects(RangedMinion.class);
+        for(int i = 0; i<rangedMinions.size(); i++)
         {
-            TempText2 text = new TempText2(npcs.get(i));
-            addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
+            TempText7 text = new TempText7(rangedMinions.get(i));
+            addObject(text, rangedMinions.get(i).getX(), rangedMinions.get(i).getY()-20);
+        }
+        
+        meleeMinions = getObjects(MeleeMinion.class);
+        for(int i = 0; i<meleeMinions.size(); i++)
+        {
+            TempText8 text = new TempText8(meleeMinions.get(i));
+            addObject(text, meleeMinions.get(i).getX(), meleeMinions.get(i).getY()-20);
         }
     }
 
@@ -146,11 +152,11 @@ public class Inferno4 extends Trap
         ShurikenIcon shurikenicon = new ShurikenIcon();
         addObject(shurikenicon, 838, 360);
         StealthIcon stealthicon = new StealthIcon();
-        addObject(stealthicon, 923, 308);
+        addObject(stealthicon, 871, 308);
         DashIcon dashicon = new DashIcon();
         addObject(dashicon, 819, 308);
-        DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
-        addObject(doubledamageicon, 871, 308);
+        //DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
+        //addObject(doubledamageicon, 871, 308);
     }
     public void checkDoor()
     {

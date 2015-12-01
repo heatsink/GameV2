@@ -39,11 +39,11 @@ public class K2 extends Trap
             for(int j = 0; j<2; j++)
             {
                 Fence fence = new Fence();
-                addObject(fence, 50*i+25, 25+j*(700-50));
+                addObject(fence, 50*i+25, 25+j*700);
             }
         
         doorT10 doort10 = new doorT10();
-        addObject(doort10, 85, 650-50);
+        addObject(doort10, 85, 640);
 
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
@@ -89,17 +89,17 @@ public class K2 extends Trap
         fence82.setLocation(326, 170);
         fence83.setLocation(374, 170);
         fence86.setLocation(422, 170);
-        RedRM redRM = new RedRM(2, 1);
+        BlueRM redRM = new BlueRM(1, 1);
         addObject(redRM, 253, 523);
-        RedRM redRM2 = new RedRM(2, 1);
+        Lv1Melee redRM2 = new Lv1Melee(1, 1);
         addObject(redRM2, 557, 327);
-        RedRM redRM3 = new RedRM(2, 1);
+        BlueRM redRM3 = new BlueRM(1, 1);
         addObject(redRM3, 90, 236);
-        RedRM redRM4 = new RedRM(2, 1);
-        addObject(redRM4, 659, 666);
-        RedMM redrm = new RedMM(2, 1);
+        BlueRM redRM4 = new BlueRM(1, 1);
+        addObject(redRM4, 659, 600);
+        Lv1Melee redrm = new Lv1Melee(1, 1);
         addObject(redrm, 314, 339);
-        RedMM redrm2 = new RedMM(2, 1);
+        Lv1Melee redrm2 = new Lv1Melee(1, 1);
         addObject(redrm2, 513, 543);
         Fence fence88 = new Fence();
         addObject(fence88, 683, 442);
@@ -115,7 +115,6 @@ public class K2 extends Trap
            addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
        }
     }
-
     public void act()
     {
         counterDelay++;

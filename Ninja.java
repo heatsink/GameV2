@@ -8,30 +8,30 @@ import greenfoot.*;
 
 public class Ninja extends Heroes
 {
-   private int progress = 0;
-   private boolean powerUpTwo = false;
+    private int progress = 0;
+    private boolean powerUpTwo = false;
     boolean powerUpThree;
     private boolean transparent = false;
-   private int transparentDelay = 36;
-    
+    private int transparentDelay = 36;
+
     static int speedMultiplier = 2;
     private int delay = 21;
     // Start Hayden Variables
     public int powerBar = 100;
     public int powerBarDelay = 0;
-    
+
     public int shurikennumber = 8;
     public int maxShurikens = 8;
-    
+
     private int delay1 = 71;
     private int ninjahp = 10;
-    
+
     private int points = 0;
     private int meleeDamage = 1;
     private int rangeDamage = 1;
     private int armor = 10;
     // End Hayden Variables
-    
+
     private int ninjaRotation = 0;
     private int swordRotation = 0;
     // Ninja sprite images Start [Tiffany]
@@ -40,24 +40,25 @@ public class Ninja extends Heroes
     private GreenfootImage placeholder;
     private GreenfootImage down1 = new GreenfootImage("Ninja2/Ninja Down/Ninja Down. Left Step.png");
     private GreenfootImage down2 = new GreenfootImage("Ninja2/Ninja Down/Ninja Down. Right Step.png");
-    
+
     private GreenfootImage left1 = new GreenfootImage("Ninja2/Ninja Left/Ninja Left. Left Step.png");
     private GreenfootImage left2 = new GreenfootImage("Ninja2/Ninja Left/Ninja Left. Right Step.png");
-    
+
     private GreenfootImage right1 = new GreenfootImage("Ninja2/Ninja Right/Ninja Right. Left Step.png");
     private GreenfootImage right2 = new GreenfootImage("Ninja2/Ninja Right/Ninja Right. Right Step.png");
-    
+
     private GreenfootSound ninjaDeathSound = new GreenfootSound("Pain-SoundBible.com-1883168362.mp3");
     // Ninja sprite images End [Tiffany]
-    
+
     // http://soundbible.com/1898-Spin-Jump.html
     GreenfootSound sliceSound = new GreenfootSound("spin_jump-Brandino480-2020916281.mp3");
-    
+
     private GreenfootSound swordSound = new GreenfootSound("Blade1.wav");
     public Ninja()
     {
         swordSound.setVolume(30);
     }
+
     public void act() 
     {
         TheHackIs();
@@ -79,6 +80,7 @@ public class Ninja extends Heroes
         ninjaDied();
         cutorb();
     }    
+
     public void powerBarCount(){
         powerBarDelay++;
         if (powerBarDelay >= 40){
@@ -88,20 +90,16 @@ public class Ninja extends Heroes
             }
         }
     }
-    
+
     // Melee Attack Start [Bill]
     public void hitLightning()
     {
-        if ((Greenfoot.isKeyDown("k") && delay>140))
+        if ((Greenfoot.isKeyDown("k") && delay>140) && powerBar >= 4)
         {
-            if (powerBar>= 4)
-            {
             powerBar-=4;
-        }
             Lightning l1 = new Lightning(swordRotation);
-            if(powerUpThree)
-            setPower(getPower()-25);
             SwordSwing swordSwing = new SwordSwing(getSwordRotation());
+            
             swordSound.play();
             if(this.getImage()==up1||this.getImage()==up2)
             {
@@ -189,8 +187,8 @@ public class Ninja extends Heroes
             sliceSound.play();
             Shuriken s1 = new Shuriken(getRangeDamage());
             shurikennumber--;
-            if(powerUpThree)
-                setPower(getPower()-25);
+            //if(powerUpThree)
+              //  setPower(getPower()-25);
             // Convert to cart sqrt
             // get x^2 + get y^2 = R
             // add 10 to R
@@ -233,7 +231,7 @@ public class Ninja extends Heroes
         delay++;
     }
     // Ranged Attack End [Sean]
-    
+
     // "Currently under ranged minion" Melee minion AI Reaction Start [Hayden] 
     public void minionAttack()
     {
@@ -241,22 +239,23 @@ public class Ninja extends Heroes
         if (delay1 >= 35){
             delay1 = 0;
             NPCS actor = (NPCS) getOneIntersectingObject(MeleeMinion.class);
-           if (actor != null&&!powerUpTwo)
-           {
+            if (actor != null&&!powerUpTwo)
+            {
                 ninjahp-= actor.getDamage();
                 transparentDelay = 0;
                 NinjaBlood ninjaBlood = new NinjaBlood();
                 getWorld().addObject(ninjaBlood, getX(), getY());
                 TempText6 temptext5 = new TempText6(this, actor.getDamage());
                 getWorld().addObject(temptext5, getX(), getY()-40);
-           }
-           if (actor != null)
-           {
-               MinionClaw minionClaw = new MinionClaw();
-               getWorld().addObject(minionClaw, getX(), getY());
-           }
+            }
+            if (actor != null)
+            {
+                MinionClaw minionClaw = new MinionClaw();
+                getWorld().addObject(minionClaw, getX(), getY());
+            }
         }
     }
+
     public void transparent()
     {
         if(transparentDelay<35)
@@ -269,33 +268,34 @@ public class Ninja extends Heroes
         }
         transparentDelay++;
     }
+
     /*
     puclic static int[] worldK;
     worldK[] = new array worldK[15];
     if(int k = 0; k < 15; k++){
-        if (getWorld() instanceof KworldK[k])
-        {
-            this.setHP(this.getArmor());
-            Greenfoot.setWorld(new KworldK(this);
+    if (getWorld() instanceof KworldK[k])
+    {
+    this.setHP(this.getArmor());
+    Greenfoot.setWorld(new KworldK(this);
     }
-    */
-    
+     */
+
     public void ninjaDied()
     {
         if (ninjahp <= 0)
         {
             ninjaDeathSound.setVolume(40);
             ninjaDeathSound.play();
-                        if (getWorld() instanceof K2)
+            if (getWorld() instanceof K2)
             {
                 this.setHP(this.getArmor());
-                
+
                 if(this.getShurikens()<=3){
                     this.setShurikens(this.getShurikens()+3);
                 }
                 Greenfoot.setWorld(new K2(this));
             }
-                        if (getWorld() instanceof K3)
+            if (getWorld() instanceof K3)
             {
                 this.setHP(this.getArmor());
                 if(this.getShurikens()<=3){
@@ -303,7 +303,7 @@ public class Ninja extends Heroes
                 }
                 Greenfoot.setWorld(new K3(this));
             }
-                        if (getWorld() instanceof K4)
+            if (getWorld() instanceof K4)
             {
                 this.setHP(this.getArmor());
                 if(this.getShurikens()<=3){
@@ -311,7 +311,7 @@ public class Ninja extends Heroes
                 }
                 Greenfoot.setWorld(new K4(this));
             }
-                        if (getWorld() instanceof K5)
+            if (getWorld() instanceof K5)
             {
                 this.setHP(this.getArmor());
                 if(this.getShurikens()<=3){
@@ -319,7 +319,7 @@ public class Ninja extends Heroes
                 }
                 Greenfoot.setWorld(new K5(this));
             }
-                        if (getWorld() instanceof K6)
+            if (getWorld() instanceof K6)
             {
                 this.setHP(this.getArmor());
                 if(this.getShurikens()<=3){
@@ -327,7 +327,7 @@ public class Ninja extends Heroes
                 }
                 Greenfoot.setWorld(new K6(this));
             }
-                        if (getWorld() instanceof K7)
+            if (getWorld() instanceof K7)
             {
                 this.setHP(this.getArmor());
                 if(this.getShurikens()<=3){
@@ -335,7 +335,7 @@ public class Ninja extends Heroes
                 }
                 Greenfoot.setWorld(new K7(this));
             }
-                        if (getWorld() instanceof K8)
+            if (getWorld() instanceof K8)
             {
                 this.setHP(this.getArmor());
                 if(this.getShurikens()<=3){
@@ -343,7 +343,7 @@ public class Ninja extends Heroes
                 }
                 Greenfoot.setWorld(new K8(this));
             }
-                        if (getWorld() instanceof K9)
+            if (getWorld() instanceof K9)
             {
                 this.setHP(this.getArmor());
                 if(this.getShurikens()<=3){
@@ -351,7 +351,7 @@ public class Ninja extends Heroes
                 }
                 Greenfoot.setWorld(new K9(this));
             }
-                        if (getWorld() instanceof K10)
+            if (getWorld() instanceof K10)
             {
                 this.setHP(this.getArmor());
                 if(this.getShurikens()<=3){
@@ -359,7 +359,7 @@ public class Ninja extends Heroes
                 }
                 Greenfoot.setWorld(new K10(this));
             }
-                        if (getWorld() instanceof K11)
+            if (getWorld() instanceof K11)
             {
                 this.setHP(this.getArmor());
                 if(this.getShurikens()<=3){
@@ -367,7 +367,7 @@ public class Ninja extends Heroes
                 }
                 Greenfoot.setWorld(new K11(this));
             }
-                        if (getWorld() instanceof K12)
+            if (getWorld() instanceof K12)
             {
                 this.setHP(this.getArmor());
                 if(this.getShurikens()<=3){
@@ -375,7 +375,7 @@ public class Ninja extends Heroes
                 }
                 Greenfoot.setWorld(new K12(this));
             }
-                        if (getWorld() instanceof Snow1)
+            if (getWorld() instanceof Snow1)
             {
                 this.setHP(this.getArmor());
                 if(this.getShurikens()<=3){
@@ -383,16 +383,16 @@ public class Ninja extends Heroes
                 }
                 Greenfoot.setWorld(new Snow1(this));
             }
-                       if (getWorld() instanceof Snow2)
+            if (getWorld() instanceof Snow2)
             {
                 this.setHP(this.getArmor());
                 if(this.getShurikens()<=3){
                     this.setShurikens(this.getShurikens()+3);
                 }
                 Greenfoot.setWorld(new Snow2(this));
-                
+
             }
-                        if (getWorld() instanceof Snow3)
+            if (getWorld() instanceof Snow3)
             {
                 this.setHP(this.getArmor());
                 if(this.getShurikens()<=3){
@@ -400,7 +400,7 @@ public class Ninja extends Heroes
                 }
                 Greenfoot.setWorld(new Snow3(this));
             }
-                        if (getWorld() instanceof Inferno1)
+            if (getWorld() instanceof Inferno1)
             {
                 this.setHP(this.getArmor());
                 if(this.getShurikens()<=3){
@@ -480,7 +480,7 @@ public class Ninja extends Heroes
                 }
                 Greenfoot.setWorld(new T25(this));
             }
-             if (getWorld() instanceof Endless)
+            if (getWorld() instanceof Endless)
             {
                 this.setHP(this.getArmor());
                 if(this.getShurikens()<=3){
@@ -491,163 +491,174 @@ public class Ninja extends Heroes
             /*
             if (getWorld() instanceof NewIntro0)
             {
-                this.setHP(this.getArmor());
-                Greenfoot.setWorld(new NewIntro0(this));
+            this.setHP(this.getArmor());
+            Greenfoot.setWorld(new NewIntro0(this));
             }
             if (getWorld() instanceof NewIntro1)
             {
-                this.setHP(this.getArmor());
-                Greenfoot.setWorld(new Intro1(this));
+            this.setHP(this.getArmor());
+            Greenfoot.setWorld(new Intro1(this));
             }
             if (getWorld() instanceof NewIntro2)
             {
-                this.setHP(this.getArmor());
-                Greenfoot.setWorld(new Intro2(this));
+            this.setHP(this.getArmor());
+            Greenfoot.setWorld(new Intro2(this));
             }
             if (getWorld() instanceof NewIntro3)
             {
-                this.setHP(this.getArmor());
-                Greenfoot.setWorld(new Intro3(this));
+            this.setHP(this.getArmor());
+            Greenfoot.setWorld(new Intro3(this));
             }
             if (getWorld() instanceof NewIntro4)
             {
-                this.setHP(this.getArmor());
-                Greenfoot.setWorld(new Intro4(this));
+            this.setHP(this.getArmor());
+            Greenfoot.setWorld(new Intro4(this));
             }
             if (getWorld() instanceof NewIntro5)
             {
-                this.setHP(this.getArmor());
-                Greenfoot.setWorld(new Intro5(this));
+            this.setHP(this.getArmor());
+            Greenfoot.setWorld(new Intro5(this));
             }
-            */
+             */
         }
-        
+
     }
-    
+
     public boolean checkDoorT21()
     {
         if(getWorld().getObjects(Ninja.class).size()!=0)
         {
-        Actor actor = getOneIntersectingObject(doorT21.class);
-        if(actor!=null)
-            return true;
-        else 
-            return false;
+            Actor actor = getOneIntersectingObject(doorT21.class);
+            if(actor!=null)
+                return true;
+            else 
+                return false;
         }
         return false;
     }
-  public boolean checkEndlessDoor()
+
+    public boolean checkEndlessDoor()
     {
         if(getWorld().getObjects(Ninja.class).size()!=0)
         {
-        Actor actor = getOneIntersectingObject(EndlessDoor.class);
-        if(actor!=null)
-            return true;
-        else 
-            return false;
+            Actor actor = getOneIntersectingObject(EndlessDoor.class);
+            if(actor!=null)
+                return true;
+            else 
+                return false;
         }
         return false;
     }
-   public int getMeleeDamage()
+
+    public int getMeleeDamage()
     {
         return meleeDamage;
     }
-    
+
     public int getRangeDamage()
     {
         if(powerUpThree)
-        return rangeDamage*2;
+            return rangeDamage*2;
         return rangeDamage;
     }
-    
+
     public int getArmor()
     {
         return armor;
     }
-    
+
     public void setMeleeDamage(int a)
     {
         meleeDamage = a;
     }
-    
+
     public void setRangeDamage(int a)
     {
         rangeDamage = a;
     }
-    
+
     public void setArmor(int a)
     {
         armor = a;
     }
+
     public int getSHURIKENNUMBER(){
         return shurikennumber;
     }
+
     public int getNINJAHP(){
         return ninjahp;
     }
-        public int getPOWERBAR(){
+
+    public int getPOWERBAR(){
         return powerBar;
     }
+
     public boolean checkDoor()
     {
         if(getWorld().getObjects(Pictures.class).size()!=0)
         {
-        Actor actor = getOneIntersectingObject(doorT10.class);
-        if(actor!=null)
-            return true;
-        else 
-            return false;
+            Actor actor = getOneIntersectingObject(doorT10.class);
+            if(actor!=null)
+                return true;
+            else 
+                return false;
         }
         return false;
     }
+
     public boolean checkDoor1()
     {
         if(getWorld().getObjects(Pictures.class).size()!=0)
         {
-        Actor actor = getOneIntersectingObject(doorT11.class);
-        if(actor!=null)
-            return true;
-        else 
-            return false;
+            Actor actor = getOneIntersectingObject(doorT11.class);
+            if(actor!=null)
+                return true;
+            else 
+                return false;
         }
         return false;
     }
-       public boolean checkSnowDoor()
+
+    public boolean checkSnowDoor()
     {
         if(getWorld().getObjects(Pictures.class).size()!=0)
         {
-        Actor actor = getOneIntersectingObject(SnowDoor.class);
-        if(actor!=null)
-            return true;
-        else 
-            return false;
+            Actor actor = getOneIntersectingObject(SnowDoor.class);
+            if(actor!=null)
+                return true;
+            else 
+                return false;
         }
         return false;
     }
+
     public boolean checkInfernoDoor()
     {
         if(getWorld().getObjects(Pictures.class).size()!=0)
         {
-        Actor actor = getOneIntersectingObject(InfernoDoor.class);
-        if(actor!=null)
-            return true;
-        else
-            return false;
+            Actor actor = getOneIntersectingObject(InfernoDoor.class);
+            if(actor!=null)
+                return true;
+            else
+                return false;
         }
         return false;
     }
+
     public boolean checkInfernoDoor1()
     {
         if(getWorld().getObjects(Pictures.class).size()!=0)
         {
-        Actor actor = getOneIntersectingObject(InfernoDoor1.class);
-        if(actor!=null)
-            return true;
-        else
-            return false;
+            Actor actor = getOneIntersectingObject(InfernoDoor1.class);
+            if(actor!=null)
+                return true;
+            else
+                return false;
         }
         return false;
     }
+
     public void damageRangedMinion()
     {
         Darkness darkness = (Darkness) getOneIntersectingObject(Darkness.class);
@@ -674,7 +685,8 @@ public class Ninja extends Heroes
             getWorld().addObject(ninjaBlood, getX(), getY());
         }
     }
-        public void damageRangedDashBoss()
+
+    public void damageRangedDashBoss()
     {
         DashDarkness dashdarkness = (DashDarkness) getOneIntersectingObject(DashDarkness.class);
         if(dashdarkness!=null&&!powerUpTwo)
@@ -687,11 +699,11 @@ public class Ninja extends Heroes
         }
 
     }
-    
+
     // "Currently under ranged minion" Melee minion AI End [Hayden] 
-       public void powerUpOne(){
+    public void powerUpOne(){
         if (progress >0&&powerBar >= 1  && (canMoveUp() || canMoveDown() || canMoveLeft() || canMoveRight())){
-            
+
             if (Greenfoot.isKeyDown("u"))
             {
                 powerBar -= 1;
@@ -707,26 +719,29 @@ public class Ninja extends Heroes
             speedMultiplier = 2;
         }
     }
-       public void powerUpTwo(){
-            if(progress>1&&powerBar>0&&(Greenfoot.isKeyDown("'") || Greenfoot.isKeyDown("r")))
-            {
-                getImage().setTransparency(100);
-                powerBar-=1;
-                powerUpTwo = true;
-            }
-            else
-                powerUpTwo = false;
-                
+
+    public void powerUpTwo()
+    {
+        if(progress>1&&powerBar>0&&(Greenfoot.isKeyDown("o")))
+        {
+            getImage().setTransparency(100);
+            powerBar-=1;
+            powerUpTwo = true;
+        }
+        else 
+            powerUpTwo = false;
     }
-    
-        public void powerUpThree(){
-        if (progress > 2&&powerBar>24&&(Greenfoot.isKeyDown("l"))){
+
+    public void powerUpThree(){
+        if (progress > 2 && powerBar>3 && (Greenfoot.isKeyDown("i")) && delay>140 && powerUpThree == false)
+        {
             powerUpThree = true;
+            //setPower(getPower()-25);
         }
-        else
-            powerUpThree = false;
-        }
-        public void addShuriken(){
+        
+    }
+
+    public void addShuriken(){
         Actor SP  = getOneIntersectingObject(addShuriken.class);
         if (SP != null){
             shurikennumber += 5;
@@ -734,10 +749,12 @@ public class Ninja extends Heroes
             getWorld().removeObject(SP);
         }
     } 
+
     public int getMaxShurikens()
     {
         return maxShurikens;
     }
+
     public void addPower(){
         Actor PP  = getOneIntersectingObject(instaPower.class);
         if (PP != null){
@@ -749,22 +766,24 @@ public class Ninja extends Heroes
             {
                 powerBar+= (100-powerBar);
             }
-            
+
             getWorld().removeObject(PP);
         }
     }
+
     public boolean checkTeleport()
     {
         if(getWorld().getObjects(Ninja.class).size()!=0)
         {
-        Actor actor = getOneIntersectingObject(Teleport.class);
-        if(actor!=null)
-            return true;
-        else 
-            return false;
+            Actor actor = getOneIntersectingObject(Teleport.class);
+            if(actor!=null)
+                return true;
+            else 
+                return false;
         }
         return false;
     }
+
     public void addHealth(){
         Actor HP  = getOneIntersectingObject(HealthGlobe.class);
         if (HP != null){
@@ -774,74 +793,92 @@ public class Ninja extends Heroes
                 ninjahp = armor;
         }
     }
+
     public void setShurikens(int a){
         shurikennumber = a;
     }
+
     public int getShurikens(){
         return shurikennumber;
     }
+
     public void setPoints(int a)
     {
         points = a;
     }
+
     public int getPoints()
     {
         return points;
     }
+
     public int getHP()
     {
         return ninjahp;
     }
+
     public void setHP(int a)
     {
         ninjahp = a;
     }
+
     public void setProgress(int a)
     {
         progress = a;
     }
+
     public int getProgress(int a)
     {
         return progress;
     }
+
     public boolean getPower3()
     {
         return powerUpThree;
+    }
+
+    public void powerUpThreeFalse()
+    {
+        powerUpThree = false;
     }
     public int getPower()
     {
         return powerBar;
     }
+
     public void setPower(int a)
     {
         powerBar = a;
     }
+
     public void cutorb(){
         Actor O = getOneIntersectingObject(Darkness.class);
         if (delay >=40 && Greenfoot.isKeyDown("k") && O!=null){
             getWorld().removeObject(O);
         }
     }
+
     public void TheHack(){
         int point = 100;
     }
+
     public void TheHackIs(){
         TheHack thehack = new TheHack();
-        
+
         if (Greenfoot.isKeyDown("1")&&Greenfoot.isKeyDown("3")&&Greenfoot.isKeyDown("5")&&Greenfoot.isKeyDown("7")){
             ninjahp += 5;
             armor += 5;
         }
         /*if (thehack.istrue() == true){
-             // meleedamage += 5;
-             //rangeddamage += 5;
-             ninjahp += 5;
+        // meleedamage += 5;
+        //rangeddamage += 5;
+        ninjahp += 5;
         }*/
-   }
-   public void addPowerUp(int prog)
-   {
-       progress = prog;
-       if (prog >= 2) powerUpTwo = true;
-       if (prog >= 3) powerUpThree = true;
-   }
+    }
+
+    public void addPowerUp(int prog)
+    {
+        progress = prog;
+    }
+    
 }

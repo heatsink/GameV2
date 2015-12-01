@@ -56,12 +56,10 @@ public class Kyobashi3 extends Trap
         addObject(powerCounter, 866, 161);
         powerCounter.setValue(ninja.getPOWERBAR());
 
-        addObject(levelCounter, 950, 15);
         
         TheHack thehack=new TheHack();
         addObject(thehack, 720, 30);
         
-        levelCounter.setValue(level);
         doorT10 door = new doorT10();
         addObject(door, 100, 475-40);
         
@@ -146,11 +144,11 @@ public class Kyobashi3 extends Trap
         ShurikenIcon shurikenicon = new ShurikenIcon();
         addObject(shurikenicon, 838, 360);
         StealthIcon stealthicon = new StealthIcon();
-        addObject(stealthicon, 923, 308);
+        addObject(stealthicon, 871, 308);
         DashIcon dashicon = new DashIcon();
         addObject(dashicon, 819, 308);
-        DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
-        addObject(doubledamageicon, 871, 308);
+        //DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
+        //addObject(doubledamageicon, 871, 308);
     }
    public Kyobashi3 getThisWorld()
    {

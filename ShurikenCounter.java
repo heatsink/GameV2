@@ -1,5 +1,5 @@
 /**
- * THIS IS THE IMPORTED COUNTER CLASS
+ * Sean - Made slight modifications to the imported counter class to function as the shuriken bar
  */
 import greenfoot.*;
 import java.awt.Color;
@@ -17,10 +17,6 @@ public class ShurikenCounter extends Counter
     public ShurikenCounter(Trap trap)
     {
     }
-
-    /**
-     * Create a new counter, initialised to 0.
-     */
     public ShurikenCounter(Trap trap, String prefix)
     {
         value = 0;
@@ -29,10 +25,6 @@ public class ShurikenCounter extends Counter
         this.trap = trap;
         updateImage();
     }
-    
-    /**
-     * Animate the display to count up (or down) to the current target value.
-     */
     public void act() 
     {
         if (trap.getNinja() != null)
@@ -52,47 +44,25 @@ public class ShurikenCounter extends Counter
             updateImage();
         }
     }
-
-    /**
-     * Add a new score to the current counter value.  This will animate
-     * the counter over consecutive frames until it reaches the new value.
-     */
     public void add(int score)
     {
         target += score;
     }
-
-    /**
-     * Return the current counter value.
-     */
     public int getValue()
     {
         return target;
     }
-
-    /**
-     * Set a new counter value.  This will not animate the counter.
-     */
     public void setValue(int newValue)
     {
         target = newValue;
         value = newValue;
         updateImage();
     }
-    
-    /**
-     * Sets a text prefix that should be displayed before
-     * the counter value (e.g. "Score: ").
-     */
     public void setPrefix(String prefix)
     {
         this.prefix = prefix;
         updateImage();
     }
-
-    /**
-     * Update the image on screen to show the current value.
-     */
     private void updateImage()
     {
         coefficient =  target*(200/maxShurikens);

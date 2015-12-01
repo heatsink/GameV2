@@ -71,6 +71,9 @@ public class NewIntro2 extends Trap
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(boy.getNINJAHP());
 
+        addObject(powerCounter, 866, 161);
+        powerCounter.setValue(boy.getPOWERBAR());
+           
         addObject(levelCounter, 950, 15);
         levelCounter.setValue(1);
 
@@ -115,6 +118,7 @@ public class NewIntro2 extends Trap
       if(getObjects(Boy.class).size() != 0 && counterDelay >= 10)
         {
         healthCounter.setValue(boy.getNINJAHP());
+        powerCounter.setValue(boy.getPOWERBAR());
         counterDelay-= 10;
        }
       makeSwordIcon();

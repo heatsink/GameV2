@@ -15,6 +15,8 @@ public class K12 extends Trap
     private List<Bosses> dashboss;
     Ninja ninja;
     int delay = 11;
+    private int counterDelay = 0;
+    GreenfootSound finalmusic = new GreenfootSound("lowdowninstramental.mp3");
     public K12(Ninja ninja)
     {
         super();
@@ -37,10 +39,11 @@ public class K12 extends Trap
                 addObject(fence, 50*i+25, 25+j*700);
             }
         
+        
        addObject(ninja, 375, 375);
             
        
-        DashBoss dashboss = new DashBoss(40);
+        DashBoss dashboss = new DashBoss(30);
         addObject(dashboss, 200, 200);
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
@@ -65,7 +68,7 @@ public class K12 extends Trap
         addObject(hg1, 660, 660);
         
         
-        
+        makeAllIcons();
        
            TempText3 text = new TempText3(dashboss);
            addObject(text, dashboss.getX(), dashboss.getY()-20);
@@ -74,6 +77,8 @@ public class K12 extends Trap
     public void act()
     {
         createdoor();
+        counterDelay++;
+        finalmusic.playLoop();
        if (Greenfoot.isKeyDown("h")&&delay>10) 
        {
            Menu menu = new Menu(getThisWorld());
@@ -81,12 +86,13 @@ public class K12 extends Trap
            delay = 0;
            
        }
-        if(getObjects(Ninja.class).size() != 0)
+        if(getObjects(Ninja.class).size() != 0&& counterDelay >= 10)
         {
         checkDoor();
         healthCounter.setValue(ninja.getNINJAHP());
         shurikenCounter.setValue(ninja.getSHURIKENNUMBER());
         powerCounter.setValue(ninja.getPOWERBAR());
+        counterDelay-= 10;
         /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
        
        /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
@@ -95,8 +101,9 @@ public class K12 extends Trap
     }
     public void checkDoor()
     {
-        if(ninja.checkDoor()==true)
-            Greenfoot.setWorld(new Kyobashi1(ninja));
+        if(ninja.checkDoor()==true){
+            finalmusic.stop();
+            Greenfoot.setWorld(new Kyobashi1(ninja));}
     }
    public Ninja getNinja()
    {

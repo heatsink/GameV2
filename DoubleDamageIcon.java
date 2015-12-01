@@ -12,6 +12,8 @@ public class DoubleDamageIcon extends Clickables
      * Act - do whatever the DoubleDamageIcon wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    // http://wowwiki.wikia.com/wiki/File:Ability_warrior_intensifyrage.png
     GreenfootImage button;
     private int delay = 0;
     public DoubleDamageIcon()

@@ -1,10 +1,7 @@
 import greenfoot.*;
 import java.util.*;
 /**
- * Write a description of class K1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Sean's Level
  */
 public class InfernoBossLevel extends Trap
 {

@@ -1,10 +1,7 @@
 import greenfoot.*;
 import java.util.*;
 /**
- * Write a description of class K1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Sean's Level
  */
 public class Inferno2 extends Trap
 {
@@ -12,7 +9,9 @@ public class Inferno2 extends Trap
     Counter powerCounter = new PowerCounter("Power: ");
     Counter levelCounter = new Counter("Stage: ");
     Counter healthCounter = new HealthCounter(getThisWorld(), "Health: ");
-    private List<NPCS> npcs;
+    
+    private List <MeleeMinion> meleeMinions;
+    private List <RangedMinion> rangedMinions;
     GreenfootSound burningSteppes = new GreenfootSound("Music of Cataclysm - Burning Steppes.mp3");
     
     Ninja ninja;
@@ -43,13 +42,6 @@ public class Inferno2 extends Trap
         }
 
         addObject(ninja, 75, 75);
-
-        npcs = getObjects(NPCS.class);
-        for(int i = 0; i<npcs.size(); i++)
-        {
-            TempText2 text = new TempText2(npcs.get(i));
-            addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
-        }
 
         for(int i = 0; i<7; i++)
         {
@@ -104,12 +96,19 @@ public class Inferno2 extends Trap
         instaPower instapower2 = new instaPower();
         addObject(instapower2, 682, 80);
         makeAllIcons();
-        npcs = getObjects(NPCS.class);
-        for(int i = 0; i<npcs.size(); i++)
+        meleeMinions = getObjects(MeleeMinion.class);
+        for(int i = 0; i<meleeMinions.size(); i++)
         {
-            TempText2 text = new TempText2(npcs.get(i));
-            addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
+            TempText8 text = new TempText8(meleeMinions.get(i));
+            addObject(text, meleeMinions.get(i).getX(), meleeMinions.get(i).getY()-20);
         }
+        rangedMinions = getObjects(RangedMinion.class);
+        for(int i = 0; i<rangedMinions.size(); i++)
+        {
+            TempText7 text = new TempText7(rangedMinions.get(i));
+            addObject(text, rangedMinions.get(i).getX(), rangedMinions.get(i).getY()-20);
+        }
+        
     }
 
     public void act()
@@ -145,11 +144,11 @@ public class Inferno2 extends Trap
         ShurikenIcon shurikenicon = new ShurikenIcon();
         addObject(shurikenicon, 838, 360);
         StealthIcon stealthicon = new StealthIcon();
-        addObject(stealthicon, 923, 308);
+        addObject(stealthicon, 871, 308);
         DashIcon dashicon = new DashIcon();
         addObject(dashicon, 819, 308);
-        DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
-        addObject(doubledamageicon, 871, 308);
+        //DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
+        //addObject(doubledamageicon, 871, 308);
     }
     public void checkDoor()
     {

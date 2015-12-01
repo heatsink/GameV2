@@ -12,6 +12,8 @@ public class DashIcon extends Clickables
      * Act - do whatever the DashIcon wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    // http://hydra-media.cursecdn.com/pathofexile.gamepedia.com/c/cf/Flame_Dash_skill_icon.png?version=887e633f7d0e26624519211d5488d345
     GreenfootImage button;
     private int delay = 0;
     public DashIcon()
