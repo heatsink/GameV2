@@ -14,9 +14,6 @@ public class EndlessDoor extends Pictures
      */
     public EndlessDoor()
     {
-        //
-    }
-    public void act()
-    {
+        super();
     }
 }

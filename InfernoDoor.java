@@ -14,6 +14,9 @@ public class InfernoDoor extends Pictures
      */
     public InfernoDoor()
     {
-        super();
+        //super();
     } 
+    public void act()
+    {
+    }
 }
