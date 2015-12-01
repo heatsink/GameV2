@@ -90,6 +90,9 @@ public class NewIntro2 extends Trap
         doorT10 doort10 = new doorT10();
         addObject(doort10, 98, 113);
         
+        MenuIcon menuIcon = new MenuIcon();
+        addObject(menuIcon, 875, 605);
+        
         npcs = getObjects(NPCS.class);
         for(int i = 0; i<npcs.size(); i++)
         {

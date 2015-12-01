@@ -69,9 +69,9 @@ public class Fireball extends Projectiles
          {
              move(3);
          }
-         else if (st >= 48 && st < 54)
+         else if (st >= 48)
          {
-             move(2);
+             move(3);
             // if (this != null)
              {
                 // getWorld().removeObject(this);
@@ -79,8 +79,8 @@ public class Fireball extends Projectiles
          }
          else if (st == 54)
          {
-             getWorld().removeObject(this);
-            }
+             //getWorld().removeObject(this);
+         }
          
     }    
     public int getDamage()

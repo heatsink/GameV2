@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Tue Dec 01 13:26:51 PST 2015
+#Tue Dec 01 14:24:48 PST 2015
 dependency598.type=UsesDependency
 target85.height=50
 dependency651.type=UsesDependency
@@ -1341,7 +1341,7 @@ class.BlackRM.image=DefaultBlackDragon(Down).png
 target96.y=1030
 target96.x=100
 dependency479.type=UsesDependency
-class.Menu.image=blueback.png
+class.Menu.image=Old_Paper_Background.jpg
 dependency385.to=Menu
 target109.name=Smoke
 dependency532.type=UsesDependency
@@ -4966,7 +4966,7 @@ dependency681.to=doorT10
 dependency445.type=UsesDependency
 dependency1135.to=Lv1Melee
 target21.showInterface=false
-simulation.speed=50
+simulation.speed=51
 target40.y=970
 target40.x=10
 class.ForestRange.superclass=RangedMinion
@@ -5044,7 +5044,7 @@ dependency691.from=NewIntro4
 dependency1123.to=RangedMinion
 dependency585.from=ForestBat
 target31.editor.width=900
-world.lastInstantiated=Kyobashi
+world.lastInstantiated=NewIntro1
 target108.type=ClassTarget
 dependency1059.to=PowerCounter
 dependency90.type=UsesDependency
@@ -6014,6 +6014,7 @@ dependency1127.type=UsesDependency
 target167.editor.height=820
 target20.editor.width=900
 dependency511.to=doorT21
+class.IntroMenu.superclass=greenfoot.World
 dependency1053.from=TrainingDummyRM
 dependency722.from=NewIntro0
 dependency616.from=Boy

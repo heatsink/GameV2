@@ -39,7 +39,7 @@ public class ArmPool extends Juice
         {
             animatePool();
         }
-        if (Greenfoot.getRandomNumber(1000) < 2 && shootFireball == true)
+        if (Greenfoot.getRandomNumber(1000) < 4 && shootFireball == true)
         {
             SmokeFireball smokeFireball = new SmokeFireball();
             getWorld().addObject(smokeFireball, getX(), getY());

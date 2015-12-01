@@ -44,7 +44,7 @@ public class NewIntro3 extends Trap
                 addObject(fence, 50*i+25, 25+j*700);
         }
 
-        for(int i = 1;i<12; i++)
+        for(int i = 1;i<11; i++)
         {
             IntroFence fence = new IntroFence();
             addObject(fence, 200+50*i+25, 360);
@@ -76,6 +76,9 @@ public class NewIntro3 extends Trap
 
         addObject(boy, 606, 422);
 
+        MenuIcon menuIcon = new MenuIcon();
+        addObject(menuIcon, 875, 605);
+        
         /*
         SwordIcon swordicon = new SwordIcon();
         addObject(swordicon, 840, 493);

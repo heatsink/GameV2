@@ -97,6 +97,9 @@ public class NewIntro4 extends Trap
         HealthGlobe healthglobe2 = new HealthGlobe();
         addObject(healthglobe2, 663, 97);
 
+        MenuIcon menuIcon = new MenuIcon();
+        addObject(menuIcon, 875, 605);
+        
         npcs = getObjects(NPCS.class);
         for(int i = 0; i<npcs.size(); i++)
         {

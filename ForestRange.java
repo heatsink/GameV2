@@ -28,7 +28,7 @@ public class ForestRange extends RangedMinion
     }    
     public void detect()
     {
-        List<Ninja> list = getObjectsInRange(5000, Ninja.class);
+        List<Ninja> list = getObjectsInRange(600, Ninja.class);
         if (list.size()>0&&delay>100)
         {
             turnTowards(list.get(0).getX(), list.get(0).getY());

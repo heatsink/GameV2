@@ -78,6 +78,9 @@ public class NewIntro1 extends Trap
         TrainingDummy trainingdummy3 = new TrainingDummy(2, 2);
         addObject(trainingdummy3, 363, 495);
 
+        MenuIcon menuIcon = new MenuIcon();
+        addObject(menuIcon, 875, 605);
+        
         npcs = getObjects(NPCS.class);
         for(int i = 0; i<npcs.size(); i++)
         {

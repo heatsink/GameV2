@@ -1,6 +1,6 @@
 import greenfoot.*;
 
-public class Menu extends World
+public class IntroMenu extends World
 {
     // Menu Variables Start [Bill]
     private Trap trap;
@@ -13,10 +13,10 @@ public class Menu extends World
     private TempText text6;
     private TempText text7;
     private TempText text10;
-    // background from http://www.thedigitalyardsale.com/freebies/freebie-6-old-paper-textures/
+    // clouds from https://en.wikipedia.org/wiki/File:Rain_clouds.JPG
     // Menu Variables End [Bill]
     // Button Constructor Start [Billl]
-    public Menu(Trap trap)
+    public IntroMenu(Trap trap)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
@@ -27,27 +27,8 @@ public class Menu extends World
         addObject(button2, 100, 450-75);
         Button button3 = new Button(3);
         addObject(button3, 100, 650-75);
-	ReturnToGame returnToGame = new ReturnToGame();
+        ReturnToGame returnToGame = new ReturnToGame();
         addObject(returnToGame, 825-25, 578-25);
-        if (trap.getNinja() != null)
-        {
-            text1 = new TempText("Melee Damage: "+Integer.toString(trap.getNinja().getMeleeDamage()));
-            addObject(text1, 250, 250-75);
-            text2 = new TempText("Range Damage: "+Integer.toString(trap.getNinja().getRangeDamage()));
-            addObject(text2, 250, 450-75);
-            text3 = new TempText("Armor: "+Integer.toString(trap.getNinja().getArmor()));
-            addObject(text3, 250, 650-75);
-            text4 = new TempText("Points: "+Integer.toString(trap.getNinja().getPoints()));
-            addObject(text4, 250, 150-75);
-            text5 = new TempText("You need "+trap.getNinja().getMeleeDamage()*5+" points to level up.");
-            addObject(text5, 475, 250-75);
-            text6 = new TempText("You need "+trap.getNinja().getRangeDamage()*5+" points to level up.");
-            addObject(text6, 475, 450-75);
-            text7 = new TempText("You need "+(trap.getNinja().getArmor()-9)*5+" points to level up.");
-            addObject(text7, 475, 650-75);
-            text10 = new TempText("Ninja Level: "+Integer.toString(trap.getNinja().getNinjaLv()));
-            addObject(text10, 450, 100-25);
-        }
         if (trap.getBoy() != null)
         {
             text1 = new TempText("Melee Damage: "+Integer.toString(trap.getBoy().getMeleeDamage()));
@@ -80,17 +61,6 @@ public class Menu extends World
             delay = 0;
         }
         delay++;
-        if (trap.getNinja() != null)
-        {
-            text1.updateImage("Melee Damage: "+Integer.toString(trap.getNinja().getMeleeDamage()));
-            text2.updateImage("Range Damage: "+Integer.toString(trap.getNinja().getRangeDamage()));
-            text3.updateImage("Armor: "+Integer.toString(trap.getNinja().getArmor()));
-            text4.updateImage("Points: "+Integer.toString(trap.getNinja().getPoints()));
-            text5.updateImage("You need "+trap.getNinja().getMeleeDamage()*5+" points to level up.");
-            text6.updateImage("You need "+trap.getNinja().getRangeDamage()*5+" points to level up.");
-            text7.updateImage("You need "+(trap.getNinja().getArmor()-9)*5+" points to level up.");
-            text10.updateImage("Ninja Level: "+Integer.toString(trap.getNinja().getNinjaLv()));
-        }
         if (trap.getBoy() != null)
         {
             text1.updateImage("Melee Damage: "+Integer.toString(trap.getBoy().getMeleeDamage()));
