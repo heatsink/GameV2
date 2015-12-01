@@ -56,7 +56,7 @@ public class Ninja extends Heroes
     private GreenfootSound swordSound = new GreenfootSound("Blade1.wav");
     public Ninja()
     {
-        swordSound.setVolume(30);
+        swordSound.setVolume(75);
     }
 
     public void act() 
@@ -827,7 +827,7 @@ public class Ninja extends Heroes
         progress = a;
     }
 
-    public int getProgress(int a)
+    public int getProgress()
     {
         return progress;
     }

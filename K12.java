@@ -131,6 +131,7 @@ public class K12 extends Trap
         if(isbossthere() == false){
         doorT10 doort10 = new doorT10();
         addObject(doort10, 375, 660);
+        if(ninja.getProgress()==0)
         ninja.setProgress(1);
         }
     }

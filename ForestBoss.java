@@ -40,7 +40,7 @@ public class ForestBoss extends Bosses
         if(delay<60)
         {
             getImage().setTransparency(250);
-            move(5);
+            move(3);
             setRotation(0);
             delay++;
         }
@@ -48,7 +48,7 @@ public class ForestBoss extends Bosses
         {
             getImage().setTransparency(100);
             setRotation(90);
-            move(5);
+            move(3);
             setRotation(0);
             delay++;
         }
@@ -56,7 +56,7 @@ public class ForestBoss extends Bosses
         {
             getImage().setTransparency(250);
             setRotation(180);
-            move(5);
+            move(3);
             setRotation(0);
             delay++;
         }
@@ -64,7 +64,7 @@ public class ForestBoss extends Bosses
         {
             getImage().setTransparency(100);
             setRotation(270);
-            move(5);
+            move(3);
             setRotation(0);
             delay++;
         }

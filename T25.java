@@ -59,8 +59,8 @@ public class T25 extends Trap
         npcs = getObjects(NPCS.class);
         for(int i = 0; i<npcs.size(); i++)
         {
-            TempText2 text = new TempText2(npcs.get(i));
-            addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
+            TempText5 text = new TempText5(npcs.get(i));
+            addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-50);
         }
     }
 
@@ -148,6 +148,7 @@ public class T25 extends Trap
         if(isbossthere() == false &&  createdDoor == false){
         doorT21 doort21 = new doorT21();
         addObject(doort21, 375, 660-50);
+        if(ninja.getProgress()==1)
         ninja.setProgress(2);
         createdDoor = true;
         }

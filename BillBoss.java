@@ -43,7 +43,7 @@ public class BillBoss extends NPCS
             delay2++;  
             ninjaattack();
             getImage().setTransparency(250);
-            move(5);
+            move(3);
             setRotation(0);
             delay++;
         }
@@ -51,7 +51,7 @@ public class BillBoss extends NPCS
         {
             getImage().setTransparency(100);
             setRotation(90);
-            move(5);
+            move(3);
             setRotation(0);
             delay++;
         }
@@ -73,7 +73,7 @@ public class BillBoss extends NPCS
             ninjaattack();
             getImage().setTransparency(250);
             setRotation(180);
-            move(5);
+            move(3);
             setRotation(0);
             delay2++;
         }
@@ -81,7 +81,7 @@ public class BillBoss extends NPCS
         {
             getImage().setTransparency(100);
             setRotation(270);
-            move(5);
+            move(3);
             setRotation(0);
             delay++;
         }
