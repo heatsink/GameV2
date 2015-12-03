@@ -67,8 +67,8 @@ public class NewIntro4 extends Trap
         healthCounter.setValue(boy.getNINJAHP());
 
         addObject(powerCounter, 866, 161);
-           powerCounter.setValue(boy.getPOWERBAR());
-           
+        powerCounter.setValue(boy.getPOWERBAR());
+
         addObject(shurikenCounter, 866, 201);
         shurikenCounter.setValue(boy.getSHURIKENNUMBER());
 
@@ -97,7 +97,7 @@ public class NewIntro4 extends Trap
 
         MenuIcon menuIcon = new MenuIcon();
         addObject(menuIcon, 875, 605);
-        
+
         npcs = getObjects(NPCS.class);
         for(int i = 0; i<npcs.size(); i++)
         {
@@ -106,6 +106,8 @@ public class NewIntro4 extends Trap
         }
         HealthGlobe healthglobe3 = new HealthGlobe();
         addObject(healthglobe3, 393, 280);
+        StoryPage storypage2 = new StoryPage(1);
+        addObject(storypage2, 101, 494);
     }
 
     public void act(){

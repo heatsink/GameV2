@@ -95,28 +95,28 @@ public class Endless extends Trap
                 random=Greenfoot.getRandomNumber(9);
                 if (random == 0)
                 {
-                    Lv1Melee red=new Lv1Melee(stage,stage);
+                    Lv1Melee red=new Lv1Melee(stage+stage/2,stage/3);
                     addObject(red,Greenfoot.getRandomNumber(getWidth()-367)+67,Greenfoot.getRandomNumber(getHeight()-250)+65);
                     TempText2 text = new TempText2(red);
                     addObject(text, red.getX(), red.getY()-20);
                 }
                 if (random==1)
                 {
-                    Firebat red=new Firebat(stage,stage);
+                    Firebat red=new Firebat(stage+stage/2,stage/3);
                     addObject(red,Greenfoot.getRandomNumber(getWidth()-367)+67,Greenfoot.getRandomNumber(getHeight()-250)+65);
                     TempText2 text = new TempText2(red);
                     addObject(text, red.getX(), red.getY()-20);
                 }
                 if (random==2)
                 {
-                    Lv1Melee red=new Lv1Melee(stage,stage);
+                    Lv1Melee red=new Lv1Melee(stage+stage/2,stage/3);
                     addObject(red,Greenfoot.getRandomNumber(getWidth()-367)+67,Greenfoot.getRandomNumber(getHeight()-250)+65);
                     TempText2 text = new TempText2(red);
                     addObject(text, red.getX(), red.getY()-20);
                 }
                 if (random==3)
                 {
-                    AxisFirebat red=new AxisFirebat(stage,stage);
+                    AxisFirebat red=new AxisFirebat(stage+stage/2,stage/3);
                     addObject(red,Greenfoot.getRandomNumber(getWidth()-367)+67,Greenfoot.getRandomNumber(getHeight()-250)+65);
                     TempText2 text = new TempText2(red);
                     addObject(text, red.getX(), red.getY()-20);
@@ -129,14 +129,14 @@ public class Endless extends Trap
                 }
                 if (random == 5)
                 {
-                    LavaMonster lavaMonster = new LavaMonster(stage, stage, 100, 650, 0, 0);
+                    LavaMonster lavaMonster = new LavaMonster(stage+stage/2, stage/3, 100, 650, 0, 0);
                     addObject(lavaMonster, 400, Greenfoot.getRandomNumber(getHeight()-250)+65);
                     TempText7 text = new TempText7(lavaMonster);
                     addObject(text, lavaMonster.getX(), lavaMonster.getY()-20);
                 }
                 if (random == 6)
                 {
-                    LavaMonster lavaMonster = new LavaMonster(stage, stage, 100, 650, 0, 0);
+                    LavaMonster lavaMonster = new LavaMonster(stage+stage/2, stage/3, 100, 650, 0, 0);
                     addObject(lavaMonster, 400, Greenfoot.getRandomNumber(getHeight()-250)+65);
                     TempText7 text = new TempText7(lavaMonster);
                     addObject(text, lavaMonster.getX(), lavaMonster.getY()-20);

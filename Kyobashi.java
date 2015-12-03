@@ -65,7 +65,6 @@ public class Kyobashi extends Trap
         addObject(powerCounter, 866, 161);
         powerCounter.setValue(ninja.getPOWERBAR());
 
-
         TheHack thehack=new TheHack();
         addObject(thehack, 720, 30);
 
@@ -75,6 +74,12 @@ public class Kyobashi extends Trap
         makeAllIcons();
         //PowerBar powerbar = new PowerBar();
         //addObject(powerbar, 824, 143+50);
+        s1 s1 = new s1();
+        addObject(s1, 402, 289);
+        removeObject(s1);
+        StoryPage storypage = new StoryPage(1);
+        addObject(storypage, 212, 215);
+        storypage.setLocation(175, 146);
     }
     
    public void act()
