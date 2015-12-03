@@ -24,11 +24,11 @@ public class SwordIcon extends Clickables
     public void act() 
     {
         MouseInfo mi = Greenfoot.getMouseInfo();
-        if (delay <= 35)
+        if (delay <= 25)
         {
             delay ++;
         }
-        if (delay > 35)
+        if (delay > 25)
         {
             button.setTransparency(255);
         }

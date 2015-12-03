@@ -15,11 +15,18 @@ public class StaticStoryPage extends Actor
     public void ninjaCollision()
     {
         Ninja ninja = (Ninja) getOneIntersectingObject(Ninja.class);
+        Boy boy = (Boy) getOneIntersectingObject(Boy.class);
         if (ninja!=null)
         {
             changeStoryPage();
             getWorld().removeObject(this);
         }
+        else if (boy!=null)
+        {
+            changeStoryPage();
+            getWorld().removeObject(this);
+        }
+        
     }
     public void changeStoryPage()
     {

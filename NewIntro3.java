@@ -27,7 +27,7 @@ public class NewIntro3 extends Trap
     {
         super();
         this.boy = boy;
-        bloodBourne.setVolume(25);
+        bloodBourne.setVolume(35);
         prepare();
     }
     
@@ -141,10 +141,11 @@ public class NewIntro3 extends Trap
         powerCounter.setValue(boy.getPOWERBAR());
         shurikenCounter.setValue(boy.getSHURIKENNUMBER());
         counterDelay-= 10;
+        makeShurikenIcon();
+       checkDoor();
        }
       
-       makeShurikenIcon();
-       checkDoor();
+       
     }
     public void makeAllIcons()
     {

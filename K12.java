@@ -16,6 +16,7 @@ public class K12 extends Trap
     Ninja ninja;
     int delay = 11;
     static boolean played = false;
+    private boolean madeDoor = false;
     private int counterDelay = 0;
     GreenfootSound finalmusic = new GreenfootSound("lowdowninstramental.mp3");
     public K12(Ninja ninja)
@@ -65,7 +66,7 @@ public class K12 extends Trap
         
         HealthGlobe hg = new HealthGlobe();
         addObject(hg, 90, 90);
-                HealthGlobe hg1 = new HealthGlobe();
+        HealthGlobe hg1 = new HealthGlobe();
         addObject(hg1, 660, 660-50);
         
         
@@ -132,8 +133,16 @@ public class K12 extends Trap
         }
     }
         
+    public void makeAllIcons()
+    {
+        SwordIcon swordicon = new SwordIcon();
+        addObject(swordicon, 889, 360);
+        ShurikenIcon shurikenicon = new ShurikenIcon();
+        addObject(shurikenicon, 838, 360);
+    }
     public void createdoor(){
-        if(isbossthere() == false){
+        if(isbossthere() == false && madeDoor == false){
+            madeDoor = true;
             finalmusic.stop();
         doorT10 doort10 = new doorT10();
         addObject(doort10, 375, 660);

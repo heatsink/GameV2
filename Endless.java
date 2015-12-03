@@ -12,7 +12,9 @@ public class Endless extends Trap
     Counter powerCounter = new PowerCounter("Power: ");
     Counter levelCounter = new Counter("Stage: ");
     Counter healthCounter = new HealthCounter(getThisWorld(), "Health: ");
-    GreenfootSound velocitator = new GreenfootSound("Velocitator.mp3");
+    GreenfootSound velocitator = new GreenfootSound("ninja_backgroundtheme.mp3");
+    
+    //GreenfootSound velocitator = new GreenfootSound("Velocitator.mp3");
      //sound cred http://www.newgrounds.com/audio/listen/656737
     private int d1 = 0;
     private List<NPCS> npcs;

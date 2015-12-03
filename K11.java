@@ -107,7 +107,7 @@ public class K11 extends Trap
         addObject(redmm3, 635, 288);
         RedMM redmm4 = new RedMM(2, 2);
         addObject(redmm4, 640, 449);
-            
+        makeAllIcons();
 
         
        npcs = getObjects(NPCS.class); 
@@ -138,7 +138,13 @@ public class K11 extends Trap
         
         
     }
-    
+    public void makeAllIcons()
+    {
+        SwordIcon swordicon = new SwordIcon();
+        addObject(swordicon, 889, 360);
+        ShurikenIcon shurikenicon = new ShurikenIcon();
+        addObject(shurikenicon, 838, 360);
+    }
     public void checkDoor()
     {
         if(ninja.checkDoor()==true)

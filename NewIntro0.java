@@ -29,7 +29,7 @@ public class NewIntro0 extends Trap
         this.boy = boy;
         
         prepare();        
-        bloodBourne.setVolume(25);
+        bloodBourne.setVolume(35);
     }
     
     public void prepare(){

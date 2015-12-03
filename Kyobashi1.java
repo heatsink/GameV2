@@ -6,6 +6,7 @@ public class Kyobashi1 extends Trap
 {
     public int level = 0;
     private int delay = 11;    //Constructor for objects of class Kyobashi
+    private int counterDelay = 0;
     private Ninja ninja;
     Counter shurikenCounter = new ShurikenCounter(getThisWorld(),"Shurikens: ");
     Counter powerCounter = new PowerCounter("Power: ");
@@ -13,6 +14,8 @@ public class Kyobashi1 extends Trap
     Counter healthCounter = new HealthCounter(getThisWorld(), "Health: ");
     GreenfootSound backgroundTheme = new GreenfootSound("ninja_backgroundtheme.mp3");
     // Levels
+    // https://www.youtube.com/watch?v=9MdqA2oPqN0
+    GreenfootSound goldenLotus = new GreenfootSound("GoldenLotus.mp3");
     DeathWorld deathWorld;
     public Kyobashi1(Ninja ninja)
     {    
@@ -73,6 +76,9 @@ public class Kyobashi1 extends Trap
     
    public void act()
    {
+       counterDelay++;
+       goldenLotus.setVolume(65);
+       goldenLotus.playLoop();
        backgroundTheme.setVolume(65);
        //backgroundTheme.playLoop(); 
        
@@ -123,9 +129,13 @@ public class Kyobashi1 extends Trap
            delay = 0;
         }
        delay++;
+       if (counterDelay >= 10)
+       {
        healthCounter.setValue(ninja.getNINJAHP());
        shurikenCounter.setValue(ninja.getSHURIKENNUMBER());
        powerCounter.setValue(ninja.getPOWERBAR());
+       counterDelay -=10;
+    }
        checkDoor();
        checkSnowDoor();
        checkInfernoDoor();
@@ -180,21 +190,33 @@ public class Kyobashi1 extends Trap
    public void checkDoor()
    {
        if(ninja.checkDoor()==true)
+       {
+           goldenLotus.stop();
             Greenfoot.setWorld(new K2(ninja));
+        }
    }
    public void checkInfernoDoor()
    {
        if(ninja.checkInfernoDoor()== true)
+       {
+           goldenLotus.stop();
             Greenfoot.setWorld(new Inferno1(ninja));
+        }
    }
    public void t2Start()
    {
        if (ninja.checkDoorT21()==true)
+       {
+           goldenLotus.stop();
             Greenfoot.setWorld(new T21(ninja));
+        }
     }
        public void checkSnowDoor()
    {
        if(ninja.checkSnowDoor()==true)
+       {
+           goldenLotus.stop();
             Greenfoot.setWorld(new Snow1(ninja));
+        }
    }
   }

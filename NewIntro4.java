@@ -27,7 +27,7 @@ public class NewIntro4 extends Trap
     {
         super();
         this.boy = boy;
-        bloodBourne.setVolume(25);
+        bloodBourne.setVolume(35);
         ninja = new Ninja();
         prepare();
     }
@@ -139,8 +139,9 @@ public class NewIntro4 extends Trap
         shurikenCounter.setValue(boy.getSHURIKENNUMBER());
         powerCounter.setValue(boy.getPOWERBAR());
         counterDelay-= 10;
+        checkDoor();
        }
-       checkDoor();
+       
        
       
     }
@@ -156,7 +157,6 @@ public class NewIntro4 extends Trap
         if(boy.checkDoor()==true)
         {
         bloodBourne.stop();
-        
             Greenfoot.setWorld(new Kyobashi(ninja));
         }
        }

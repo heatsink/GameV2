@@ -27,7 +27,7 @@ public class NewIntro2 extends Trap
     {
         super(); 
         this.boy = boy;
-        bloodBourne.setVolume(25);
+        bloodBourne.setVolume(35);
         prepare();
     }
     
@@ -129,9 +129,11 @@ public class NewIntro2 extends Trap
         healthCounter.setValue(boy.getNINJAHP());
         powerCounter.setValue(boy.getPOWERBAR());
         counterDelay-= 10;
+        makeSwordIcon();
+        checkDoor();
        }
-      makeSwordIcon();
-      checkDoor();
+      
+      
        
       
     }

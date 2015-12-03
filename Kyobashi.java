@@ -18,6 +18,8 @@ public class Kyobashi extends Trap
     
     GreenfootSound backgroundTheme = new GreenfootSound("ninja_backgroundtheme.mp3");
     // Levels
+    // https://www.youtube.com/watch?v=9MdqA2oPqN0
+    GreenfootSound goldenLotus = new GreenfootSound("GoldenLotus.mp3");
     DeathWorld deathWorld;
     private int counterRefreshDelay = 0;
     public Kyobashi(Ninja ninja)
@@ -78,6 +80,8 @@ public class Kyobashi extends Trap
     
    public void act()
    {
+       goldenLotus.setVolume(65);
+       goldenLotus.playLoop();
        backgroundTheme.setVolume(65);
        //backgroundTheme.playLoop(); 
        
@@ -161,25 +165,40 @@ public class Kyobashi extends Trap
    public void checkDoor()
    {
        if(ninja.checkDoor()==true)
+       {
+           goldenLotus.stop();
             Greenfoot.setWorld(new K2(ninja));
+        }
    }
    public void checkInfernoDoor()
    {
        if(ninja.checkInfernoDoor()== true)
+       {
+           goldenLotus.stop();
             Greenfoot.setWorld(new Inferno1(ninja));
+        }
    }
    public void t2Start()
    {
        if (ninja.checkDoorT21()==true)
+       {
+           goldenLotus.stop();
             Greenfoot.setWorld(new T21(ninja));
+        }
     }
        public void checkSnowDoor()
    {
        if(ninja.checkSnowDoor()==true)
+       {
+           goldenLotus.stop();
             Greenfoot.setWorld(new Snow1(ninja));
+        }
    }
       public void gameover(){
        ninja.setHP(ninja.getArmor());
+       {
+           goldenLotus.stop();
        Greenfoot.setWorld(new Kyobashi(ninja));
+    }
     }
 }

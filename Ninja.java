@@ -99,12 +99,12 @@ public class Ninja extends Heroes
     // Melee Attack Start [Bill]
     public void hitLightning()
     {
-        if ((Greenfoot.isKeyDown("k") && delay>140) && powerBar >= 4)
+        if ((Greenfoot.isKeyDown("k") && delay>100) && powerBar >= 4)
         {
             powerBar-=4;
             Lightning l1 = new Lightning(swordRotation);
             SwordSwing swordSwing = new SwordSwing(getSwordRotation());
-            swordSound.setVolume(50);
+            swordSound.setVolume(25);
             swordSound.play();
             if(this.getImage()==up1||this.getImage()==up2)
             {
@@ -188,7 +188,7 @@ public class Ninja extends Heroes
         }
         if (Greenfoot.isKeyDown("j")  && delay> 50 && shurikennumber >0)
         {
-            sliceSound.setVolume(15);
+            sliceSound.setVolume(25);
             sliceSound.play();
             Shuriken s1 = new Shuriken(getRangeDamage());
             shurikennumber--;

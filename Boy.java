@@ -53,10 +53,13 @@ public class Boy extends Heroes
     private boolean canUseDash = false;
     private boolean canUseDoubleDamage = false;
     
-    private GreenfootSound swordSound = new GreenfootSound("Blade1.wav");
+    GreenfootSound swordSound = new GreenfootSound("Blade1.mp3");
+    GreenfootSound ninjaHitByMelee = new GreenfootSound("MinionCut1.wav");
+    GreenfootSound sliceSound = new GreenfootSound("spin_jump-Brandino480-2020916281.mp3");
+    
     public Boy()
     {
-        swordSound.setVolume(20);
+      
     }
     public void act() 
     {
@@ -102,6 +105,7 @@ public class Boy extends Heroes
             if(powerUpThree)
             setPower(getPower()-25);
             SwordSwing swordSwing = new SwordSwing(getSwordRotation());
+            swordSound.setVolume(18);
             swordSound.play();
             if(this.getImage()==up1||this.getImage()==up2)
             {
@@ -185,6 +189,8 @@ public class Boy extends Heroes
         }
         if (Greenfoot.isKeyDown("j")  && delay> 50 && shurikennumber >0 && canUseShuriken == true)
         {
+            sliceSound.setVolume(25);
+            sliceSound.play();
             Shuriken s1 = new Shuriken(getRangeDamage());
             shurikennumber--;
             if(powerUpThree)
@@ -245,11 +251,15 @@ public class Boy extends Heroes
                 transparentDelay = 0;
                 NinjaBlood ninjaBlood = new NinjaBlood();
                 getWorld().addObject(ninjaBlood, getX(), getY());
+                ninjaHitByMelee.setVolume(65);
+                ninjaHitByMelee.play();
            }
            if (actor != null)
            {
                MinionClaw minionClaw = new MinionClaw();
                getWorld().addObject(minionClaw, getX(), getY());
+               ninjaHitByMelee.setVolume(65);
+                ninjaHitByMelee.play();
            }
         }
     }
