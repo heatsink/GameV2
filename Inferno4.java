@@ -119,7 +119,9 @@ public class Inferno4 extends Trap
             TempText8 text = new TempText8(meleeMinions.get(i));
             addObject(text, meleeMinions.get(i).getX(), meleeMinions.get(i).getY()-20);
         }
-    }
+            StoryPage storypage = new StoryPage(7);
+        addObject(storypage, 311, 78);
+}
 
     public void act()
     {

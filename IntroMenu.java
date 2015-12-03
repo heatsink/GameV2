@@ -32,22 +32,23 @@ public class IntroMenu extends World
         if (trap.getBoy() != null)
         {
             text1 = new TempText("Melee Damage: "+Integer.toString(trap.getBoy().getMeleeDamage()));
-            addObject(text1, 250, 250-75);
+            addObject(text1, 300, 250-75);
             text2 = new TempText("Range Damage: "+Integer.toString(trap.getBoy().getRangeDamage()));
-            addObject(text2, 250, 450-75);
+            addObject(text2, 300, 450-75);
             text3 = new TempText("Armor: "+Integer.toString(trap.getBoy().getArmor()));
             addObject(text3, 250, 650-75);
             text4 = new TempText("Points: "+Integer.toString(trap.getBoy().getPoints()));
             addObject(text4, 250, 150-75);
             text5 = new TempText("You need "+trap.getBoy().getMeleeDamage()*5+" points to level up.");
-            addObject(text5, 475, 250-75);
+            addObject(text5, 440, 250-35);
             text6 = new TempText("You need "+trap.getBoy().getRangeDamage()*5+" points to level up.");
-            addObject(text6, 475, 450-75);
+            addObject(text6, 440, 450-35);
             text7 = new TempText("You need "+(trap.getBoy().getArmor()-3)*5+" points to level up.");
-            addObject(text7, 475, 650-75);
+            addObject(text7, 440, 650-35);
             //text10 = new TempText("Ninja Level: "+Integer.toString(trap.getBoy().getNinjaLv()));
             //addObject(text10, 350, 100);
         }
+
 
         prepare();
     }

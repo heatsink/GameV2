@@ -16,6 +16,7 @@ public class NewIntro1 extends Trap
     private GreenfootSound bloodBourne = new GreenfootSound("Bloodborne - Celestial Emissary.mp3");
     private int counterDelay = 0;
     private boolean madeSwordIcon = false;
+    static boolean played = false;
     Boy boy;
     int delay = 0;
     /**
@@ -66,7 +67,6 @@ public class NewIntro1 extends Trap
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(boy.getNINJAHP());
 
-
         addObject(levelCounter, 950, 15);
         levelCounter.setValue(1);
         addObject(boy, 650, 600-25);
@@ -80,17 +80,23 @@ public class NewIntro1 extends Trap
 
         MenuIcon menuIcon = new MenuIcon();
         addObject(menuIcon, 875, 605);
-        
+
         npcs = getObjects(NPCS.class);
         for(int i = 0; i<npcs.size(); i++)
         {
             TempText5 text = new TempText5(npcs.get(i));
             addObject(text, npcs.get(i).getX()-5, npcs.get(i).getY()-50);
         }
+        StaticStoryPage staticstorypage = new StaticStoryPage(1);
+        addObject(staticstorypage, 614, 419);
     }
 
     public void act(){
+        if(!played)
+        {
         bloodBourne.playLoop();
+        played = !played;
+        }
         delay++;
         counterDelay++;
        if (Greenfoot.isKeyDown("h")&&delay>10) 
@@ -152,6 +158,7 @@ public class NewIntro1 extends Trap
        return this;
      }
        public void gameover(){
+           bloodBourne.stop();
        boy.setHP(boy.getArmor());
        Greenfoot.setWorld(new NewIntro1(boy));
     }

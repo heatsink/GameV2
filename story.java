@@ -15,8 +15,11 @@ public class story extends Pictures
     int delay=0;
     public void act() 
     {
-        delay++;
-        if (Greenfoot.isKeyDown("k") && delay>=30)
+        if (delay < 50)
+        {
+            delay++;
+        }
+        if (Greenfoot.isKeyDown("space") && delay>=30)
         {
             getWorld().removeObject(this);
         }

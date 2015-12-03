@@ -90,10 +90,19 @@ public class T22 extends Trap
         npcs = getObjects(NPCS.class);
         for(int i = 0; i<npcs.size(); i++)
         {
-            TempText2 text = new TempText2(npcs.get(i));
+            TempText9 text = new TempText9(npcs.get(i));
             addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
         }
-    }
+            HealthGlobe healthglobe = new HealthGlobe();
+        addObject(healthglobe, 674, 578);
+        healthglobe.setLocation(674, 569);
+        HealthGlobe healthglobe2 = new HealthGlobe();
+        addObject(healthglobe2, 72, 319);
+        healthglobe2.setLocation(71, 325);
+        HealthGlobe healthglobe3 = new HealthGlobe();
+        addObject(healthglobe3, 228, 365);
+        healthglobe3.setLocation(224, 370);
+}
 
     public void act()
     {

@@ -16,6 +16,7 @@ public class NewIntro0 extends Trap
     Boy boy;
     int delay = 0;
     int timer = 0;
+    static boolean played = false;
     /**
      * Constructor for objects of class Intro0.
      * 
@@ -74,10 +75,21 @@ public class NewIntro0 extends Trap
     }
 
         public void act(){
-      bloodBourne.playLoop();
-       
-      delay++;
       
+      if(!played)
+        {
+        bloodBourne.playLoop();
+        played = !played;
+        } 
+      delay++;
+      if (Greenfoot.isKeyDown("h")&&delay>10) 
+       {
+           clickSound.play();
+           IntroMenu menu = new IntroMenu(getThisWorld());
+           Greenfoot.setWorld(menu);
+           delay = 0;
+           
+       }
       timer++;
       if (Greenfoot.isKeyDown("escape") && delay > 20) 
       //want to be all keys
@@ -108,7 +120,9 @@ public class NewIntro0 extends Trap
      {
        return this;
      }
+     
         public void gameover(){
+       bloodBourne.stop();
        boy.setHP(boy.getArmor());
        Greenfoot.setWorld(new NewIntro0(boy));
     }

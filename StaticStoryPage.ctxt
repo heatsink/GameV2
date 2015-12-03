@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=pageNumber
+comment0.target=StaticStoryPage(int)
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ ninjaCollision()
+comment3.params=
+comment3.target=void\ changeStoryPage()
+numComments=4

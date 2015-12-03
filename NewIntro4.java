@@ -14,6 +14,7 @@ public class NewIntro4 extends Trap
     Counter healthCounter = new HealthCounter(getThisWorld(), "Health: ");
     private List<NPCS> npcs;
     private GreenfootSound bloodBourne = new GreenfootSound("Bloodborne - Celestial Emissary.mp3");
+    static boolean played = false;
     Boy boy;
     Ninja ninja;
     int delay = 0;
@@ -106,14 +107,18 @@ public class NewIntro4 extends Trap
         }
         HealthGlobe healthglobe3 = new HealthGlobe();
         addObject(healthglobe3, 393, 280);
-        StoryPage storypage2 = new StoryPage(1);
-        addObject(storypage2, 101, 494);
+        StaticStoryPage staticstorypage = new StaticStoryPage(2);
+        addObject(staticstorypage, 98, 303);
     }
 
     public void act(){
       delay++;
       counterDelay++;
+      if(!played)
+        {
         bloodBourne.playLoop();
+        played = !played;
+        }
        if (Greenfoot.isKeyDown("h")&&delay>10) 
        {
            clickSound.play();
@@ -166,6 +171,7 @@ public class NewIntro4 extends Trap
        return this;
      }
        public void gameover(){
+       bloodBourne.stop();
        boy.setHP(boy.getArmor());
        Greenfoot.setWorld(new NewIntro4(boy));
     }

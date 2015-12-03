@@ -28,8 +28,9 @@ public class K8 extends Trap
         this.ninja = ninja;
         prepare();
     }
-             private void prepare(){
-                       for(int i = 0; i<15; i++)
+             
+    private void prepare(){
+        for(int i = 0; i<15; i++)
             for(int j = 0; j<2; j++)
             {
                 Fence fence = new Fence();
@@ -42,7 +43,7 @@ public class K8 extends Trap
                 addObject(fence, 50*i+25, 25+j*(700-50));
 
         }
-                for (int i = 0; i<12; i++)
+        for (int i = 0; i<12; i++)
         {
             Fence fence = new Fence();
             addObject(fence, 50*i+175, 160);
@@ -66,9 +67,8 @@ public class K8 extends Trap
         addObject(levelCounter, 950, 15);
         addObject(ninja, 650, 100);
         levelCounter.setValue(5);
-                //addObject(ninja, 600, 100);
+        //addObject(ninja, 600, 100);
 
-        
         doort10.setLocation(86, 651-50);
         Fence fence101 = new Fence();
         addObject(fence101, 380, 512);
@@ -111,17 +111,20 @@ public class K8 extends Trap
         addObject(hg, 670, 640-50);
         addShuriken sb = new addShuriken();
         addObject(sb, 630, 640-50);
-            
+
         makeAllIcons();
-        
-        
-                npcs = getObjects(NPCS.class);
-       for(int i = 0; i<npcs.size(); i++)
-       {
-           TempText2 text = new TempText2(npcs.get(i));
-           addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
-       }
+
+        npcs = getObjects(NPCS.class);
+        for(int i = 0; i<npcs.size(); i++)
+        {
+            TempText2 text = new TempText2(npcs.get(i));
+            addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
+        }
+        StaticStoryPage staticstorypage = new StaticStoryPage(5);
+        addObject(staticstorypage, 564, 71);
+        staticstorypage.setLocation(390, 89);
     }
+
         public void act()
     {
         counterDelay++;

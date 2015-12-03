@@ -14,6 +14,7 @@ public class Ninja extends Heroes
     private boolean transparent = false;
     private int transparentDelay = 36;
 
+    private boolean haungsMode = false;
     static int speedMultiplier = 2;
     private int delay = 21;
     // Start Hayden Variables
@@ -52,12 +53,13 @@ public class Ninja extends Heroes
 
     // http://soundbible.com/1898-Spin-Jump.html
     GreenfootSound sliceSound = new GreenfootSound("spin_jump-Brandino480-2020916281.mp3");
-
+    
+    GreenfootSound ninjaHitByMelee = new GreenfootSound("MinionCut1.wav");
 
     GreenfootSound velocitator = new GreenfootSound("Velocitator.mp3");
      //sound cred http://www.newgrounds.com/audio/listen/656737
     
-    private GreenfootSound swordSound = new GreenfootSound("Blade1.wav");
+    private GreenfootSound swordSound = new GreenfootSound("Blade1.mp3");
     public Ninja()
     {
     }
@@ -102,7 +104,7 @@ public class Ninja extends Heroes
             powerBar-=4;
             Lightning l1 = new Lightning(swordRotation);
             SwordSwing swordSwing = new SwordSwing(getSwordRotation());
-            swordSound.setVolume(75);
+            swordSound.setVolume(50);
             swordSound.play();
             if(this.getImage()==up1||this.getImage()==up2)
             {
@@ -250,6 +252,8 @@ public class Ninja extends Heroes
                 getWorld().addObject(ninjaBlood, getX(), getY());
                 TempText6 temptext5 = new TempText6(this, actor.getDamage());
                 getWorld().addObject(temptext5, getX(), getY()-40);
+                ninjaHitByMelee.setVolume(65);
+                ninjaHitByMelee.play();
             }
             if (actor != null)
             {
@@ -878,7 +882,14 @@ public class Ninja extends Heroes
         if (Greenfoot.isKeyDown("1")&&Greenfoot.isKeyDown("3")&&Greenfoot.isKeyDown("5")&&Greenfoot.isKeyDown("7")){
             ninjahp += 5;
             armor += 5;
+            if (haungsMode == false)
+            {
+                CaptainHaungs captainHaungs = new CaptainHaungs();
+                getWorld().addObject(captainHaungs, 824, 44);
+                haungsMode = true;
+            }
         }
+        
         /*if (thehack.istrue() == true){
         // meleedamage += 5;
         //rangeddamage += 5;

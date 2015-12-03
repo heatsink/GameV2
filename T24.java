@@ -83,7 +83,7 @@ public class T24 extends Trap
         npcs = getObjects(NPCS.class);
         for(int i = 0; i<npcs.size(); i++)
         {
-            TempText2 text = new TempText2(npcs.get(i));
+            TempText9 text = new TempText9(npcs.get(i));
             addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
         }
     }

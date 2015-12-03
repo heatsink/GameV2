@@ -80,9 +80,18 @@ public class T23 extends Trap
         npcs = getObjects(NPCS.class);
         for(int i = 0; i<npcs.size(); i++)
         {
-            TempText2 text = new TempText2(npcs.get(i));
+            TempText9 text = new TempText9(npcs.get(i));
             addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
         }
+        HealthGlobe healthglobe = new HealthGlobe();
+        addObject(healthglobe, 142, 268);
+        healthglobe.setLocation(132, 267);
+        HealthGlobe healthglobe2 = new HealthGlobe();
+        addObject(healthglobe2, 381, 517);
+        healthglobe2.setLocation(382, 520);
+        addShuriken addshuriken = new addShuriken();
+        addObject(addshuriken, 336, 125);
+        addshuriken.setLocation(326, 127);
     }
 
     public void act()

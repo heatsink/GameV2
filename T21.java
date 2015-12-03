@@ -61,11 +61,6 @@ public class T21 extends Trap
         addObject(ha, 125, 275);
         Stump ha2 = new Stump();
         addObject(ha2, 425, 275);
-        for(int i = 0; i<2; i++)
-        {
-            ForestRange rm = new ForestRange(2, 2);
-            addObject(rm, 225+i*100, 225);
-        }
         for(int i = 0; i<5; i++)
         {
             ForestBat fb = new ForestBat(2, 2); // Melee Minion
@@ -116,10 +111,15 @@ public class T21 extends Trap
         npcs = getObjects(NPCS.class);
         for(int i = 0; i<npcs.size(); i++)
         {
-            TempText2 text = new TempText2(npcs.get(i));
+            TempText9 text = new TempText9(npcs.get(i));
             addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-20);
         }
+        HealthGlobe healthglobe = new HealthGlobe();
+        addObject(healthglobe, 82, 313);
+        HealthGlobe healthglobe2 = new HealthGlobe();
+        addObject(healthglobe2, 263, 603);
     }
+
     public void makeAllIcons()
     {
         SwordIcon swordicon = new SwordIcon();

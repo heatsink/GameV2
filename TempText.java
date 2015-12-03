@@ -12,6 +12,6 @@ public class TempText extends Actor
     
     public void updateImage(String text)
     {
-        setImage(new GreenfootImage(text, 18, Color.black, new Color(0,0,0,0)));
+        setImage(new GreenfootImage(text, 36, Color.black, new Color(0,0,0,0)));
     }
 }

@@ -16,6 +16,7 @@ public class NewIntro3 extends Trap
     private GreenfootSound bloodBourne = new GreenfootSound("Bloodborne - Celestial Emissary.mp3");
     Boy boy;
     private boolean madeShurikenIcon = false;
+    static boolean played = false;
     int delay = 0;
     private int counterDelay = 0;
     /**
@@ -115,7 +116,11 @@ public class NewIntro3 extends Trap
     public void act(){
       delay++;
       counterDelay++;
-      bloodBourne.playLoop();
+      if(!played)
+        {
+        bloodBourne.playLoop();
+        played = !played;
+        }
        if (Greenfoot.isKeyDown("h")&&delay>10) 
        {
            clickSound.play();
@@ -182,6 +187,7 @@ public class NewIntro3 extends Trap
        return this;
      }
        public void gameover(){
+           bloodBourne.stop();
        boy.setHP(boy.getArmor());
        Greenfoot.setWorld(new NewIntro3(boy));
     }

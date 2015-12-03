@@ -60,7 +60,7 @@ public class OldManBot4 extends Animated
             trap.getNinja().setPoints(trap.getNinja().getPoints()+50);
             
             InfernoDoor1 door1 = new InfernoDoor1();
-            getWorld().addObject(door1, 660, 375);
+            getWorld().addObject(door1, 800, 375);
             EndStoryKyo3 esk3= new EndStoryKyo3();
             
             infernodoor = getWorld().getObjects(InfernoDoor.class);
