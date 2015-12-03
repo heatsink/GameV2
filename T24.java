@@ -99,6 +99,7 @@ public class T24 extends Trap
         checkTeleport();
         if (Greenfoot.isKeyDown("h")&&delay>10) 
         {
+            clickSound.play();
             Menu menu = new Menu(getThisWorld());
             Greenfoot.setWorld(menu);
             delay = 0;

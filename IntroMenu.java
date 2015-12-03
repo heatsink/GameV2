@@ -21,11 +21,11 @@ public class IntroMenu extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
         this.trap = trap;
-        Button button1 = new Button(1);
+        IntroButton button1 = new IntroButton(1);
         addObject(button1, 100, 250-75);
-        Button button2 = new Button(2);
+        IntroButton button2 = new IntroButton(2);
         addObject(button2, 100, 450-75);
-        Button button3 = new Button(3);
+        IntroButton button3 = new IntroButton(3);
         addObject(button3, 100, 650-75);
         ReturnToGame returnToGame = new ReturnToGame();
         addObject(returnToGame, 825-25, 578-25);
@@ -43,7 +43,7 @@ public class IntroMenu extends World
             addObject(text5, 475, 250-75);
             text6 = new TempText("You need "+trap.getBoy().getRangeDamage()*5+" points to level up.");
             addObject(text6, 475, 450-75);
-            text7 = new TempText("You need "+(trap.getBoy().getArmor()-9)*5+" points to level up.");
+            text7 = new TempText("You need "+(trap.getBoy().getArmor()-3)*5+" points to level up.");
             addObject(text7, 475, 650-75);
             //text10 = new TempText("Ninja Level: "+Integer.toString(trap.getBoy().getNinjaLv()));
             //addObject(text10, 350, 100);
@@ -69,7 +69,7 @@ public class IntroMenu extends World
             text4.updateImage("Points: "+Integer.toString(trap.getBoy().getPoints()));
             text5.updateImage("You need "+trap.getBoy().getMeleeDamage()*5+" points to level up.");
             text6.updateImage("You need "+trap.getBoy().getRangeDamage()*5+" points to level up.");
-            text7.updateImage("You need "+(trap.getBoy().getArmor()-9)*5+" points to level up.");
+            text7.updateImage("You need "+(trap.getBoy().getArmor()-3)*5+" points to level up.");
             //text10.updateImage("Ninja Level: "+Integer.toBoy(trap.getNinja().getNinjaLv()));
         }
     }

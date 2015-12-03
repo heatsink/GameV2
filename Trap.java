@@ -11,6 +11,10 @@ public class Trap extends World
     Ninja ninja;
     Boy boy;
     DeathWorld deathWorld;
+     GreenfootSound velocitator = new GreenfootSound("Velocitator.mp3");
+     //sound cred http://www.newgrounds.com/audio/listen/656737
+    //http://soundbible.com/tags-bounce.html
+    GreenfootSound clickSound = new GreenfootSound("Bounce-SoundBible.com-12678623.mp3");
     /**
      * Constructor for objects of class Trap.
      * 
@@ -29,7 +33,7 @@ public class Trap extends World
         NinjaImage ninjaImage = new NinjaImage();
         addObject(ninjaImage, 808, 55);
         ActionBar actionBar = new ActionBar();
-        addObject(actionBar, 816, 255);
+        addObject(actionBar, 881, 438);
         UpgradeIcon upgradeIcon = new UpgradeIcon();
         addObject(upgradeIcon, 790, 360);
     }
@@ -63,4 +67,9 @@ public class Trap extends World
        ninja.setHP(ninja.getArmor());
        Greenfoot.setWorld(new Kyobashi(ninja));
     }
+     public void stopmusic(){
+        
+        velocitator.stop();
+    }
+
 }

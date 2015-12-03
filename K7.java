@@ -17,7 +17,7 @@ public class K7 extends Trap
     private List<NPCS> npcs;
     private int counterDelay = 0;
     GreenfootSound Peaceful = new GreenfootSound("Peaceful.mp3");
-    private boolean played = false;
+    static boolean played = false;
     /**
      * Constructor for objects of class K5.
      * 

@@ -16,6 +16,7 @@ public class Inferno4 extends Trap
     Ninja ninja;
     int delay = 11;
     private int counterDelay = 0;
+    static boolean played = false;
     public Inferno4(Ninja ninja)
     {
         super();
@@ -49,7 +50,7 @@ public class Inferno4 extends Trap
         powerCounter.setValue(ninja.getPOWERBAR());
 
         addObject(levelCounter, 950, 15);
-        levelCounter.setValue(4);
+        levelCounter.setValue(34);
         addObject(ninja, 75, 75);
         for(int i = 0; i<7; i++)
         {
@@ -67,7 +68,7 @@ public class Inferno4 extends Trap
             addObject(infernoFence, 400+50*i+25, /*175*/ -25+700+ -50*i);
         }
         InfernoDoor infernodoor = new InfernoDoor();
-        addObject(infernodoor, 76+50+25, 226);
+        addObject(infernodoor, 209, 187);
         addShuriken addshuriken = new addShuriken();
         addObject(addshuriken, 574, 678-35);
         instaPower instapower = new instaPower();
@@ -122,10 +123,15 @@ public class Inferno4 extends Trap
 
     public void act()
     {
+        if(!played)
+        {
         burningSteppes.playLoop();
+        played = !played;
+        }
         counterDelay++;
        if (Greenfoot.isKeyDown("h")&&delay>10) 
        {
+           clickSound.play();
            Menu menu = new Menu(getThisWorld());
            Greenfoot.setWorld(menu);
            delay = 0;
@@ -137,13 +143,13 @@ public class Inferno4 extends Trap
         shurikenCounter.setValue(ninja.getSHURIKENNUMBER());
         powerCounter.setValue(ninja.getPOWERBAR());
         counterDelay-= 10;
-        
+        checkDoor();
         /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
        
        /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
        }
        delay++;
-       checkDoor();
+       
     }
     public void makeAllIcons()
     {

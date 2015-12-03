@@ -18,6 +18,7 @@ public class DashDarkness extends Projectiles
         setImage(darkness1);
         this.damage = damage;
     }
+
     public void act() 
     {
         if (frame == 1)
@@ -42,45 +43,50 @@ public class DashDarkness extends Projectiles
             return;
         }
         frame+=0.25;
-        
+
         Actor ninja = getOneIntersectingObject(Ninja.class);
-            if (ninja != null){
-                NinjaBlood ninjaBlood = new NinjaBlood();
-                getWorld().addObject(ninjaBlood, getX(), getY());
-                sliceSound.setVolume(80);
-                sliceSound.play();
+        if (ninja != null){
+            NinjaBlood ninjaBlood = new NinjaBlood();
+            getWorld().addObject(ninjaBlood, getX(), getY());
+            sliceSound.setVolume(80);
+            sliceSound.play();
+            getWorld().removeObject(this);
+        }
+        else if (atWorldEdge())
+            getWorld().removeObject(this);
+        st++;
+        if (st >= 0 && st < 50)
+        {
+            move (4);
+        }
+        else if (st >= 50 && st < 65)
+        {
+            move(3);
+        }
+        else if (st >= 65 && st < 80)
+        {
+            move(2);
+        }
+        else if (st >= 80 && st < 95)
+        {
+            move(1);
+        }
+        else if (st >= 95 && st < 100)
+        {
+            move(1);
+            try{
                 getWorld().removeObject(this);
             }
-            else if (atWorldEdge())
-            getWorld().removeObject(this);
-         st++;
-         if (st >= 0 && st < 50)
-         {
-             move (4);
-         }
-         else if (st >= 50 && st < 65)
-         {
-             move(3);
-         }
-         else if (st >= 65 && st < 80)
-         {
-             move(2);
-         }
-         else if (st >= 80 && st < 95)
-         {
-             move(1);
-         }
-         else if (st >= 95 && st < 100)
-         {
-             move(1);
-             getWorld().removeObject(this);
-         }
+            catch(Exception e)
+            {
+            }
+        }
     }    
+
     public int getDamage()
     {
         return damage;
     }
 }
-    
 
 

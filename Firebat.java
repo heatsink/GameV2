@@ -22,10 +22,11 @@ public class Firebat extends MeleeMinion //RM Stands for Ranged Minion
     }
     public void act() 
     {
+        detect();
+        ninjaattack();
        resetAnimation();
        animate();
-       detect();
-       ninjaattack();
+       
        RMDied();
     }    
     public void animate()
@@ -79,12 +80,14 @@ public class Firebat extends MeleeMinion //RM Stands for Ranged Minion
                 animating = false;
                 delay = 11; 
             }
+            
         }
         else if(lightning != null && delay==0)
         {
         Trap trap = (Trap) getWorld();
             if (trap.getNinja() != null)
             {
+                /*
                 if(trap.getNinja().getPower3())
                 {
                     RMHP = RMHP-trap.getNinja().getMeleeDamage()*2;
@@ -93,7 +96,7 @@ public class Firebat extends MeleeMinion //RM Stands for Ranged Minion
                     animating = false;
                     trap.getNinja().setPower(trap.getNinja().getPower()-25);
                 }
-                else
+                else*/
                 {
                     RMHP = RMHP-trap.getNinja().getMeleeDamage();
                     setImage(batHit);
@@ -122,7 +125,6 @@ public class Firebat extends MeleeMinion //RM Stands for Ranged Minion
         List<Ninja> list = getObjectsInRange(200, Ninja.class);
         if (list.size()>0)
         {
-            frame++;
             turnTowards(list.get(0).getX(), list.get(0).getY());
             move(14);
             if(getOneIntersectingObject(InfernoFence.class)!=null)

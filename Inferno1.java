@@ -18,6 +18,7 @@ public class Inferno1 extends Trap
     private int delay = 11;
     private int fireballDelay = 11;
     private int counterDelay = 0;
+    static boolean played = false;
     public Inferno1(Ninja ninja)
     {
         super();
@@ -30,7 +31,7 @@ public class Inferno1 extends Trap
     private void prepare()
     {
         InfernoDoor door = new InfernoDoor();
-        addObject(door, 663-50, 651-50);
+        addObject(door, 663-50+35+5, 651-50);
 
         for(int i = 0; i<14; i++)
             for(int j = 0; j<2; j++)
@@ -77,7 +78,6 @@ public class Inferno1 extends Trap
         InfernoFence infernoFence = new InfernoFence();
         addObject(infernoFence, 133, 417);
 
-
         InfernoFence infernoFence3 = new InfernoFence();
         addObject(infernoFence3, 164, 571);
 
@@ -102,7 +102,7 @@ public class Inferno1 extends Trap
         powerCounter.setValue(ninja.getPOWERBAR());
 
         addObject(levelCounter, 950, 15);
-        levelCounter.setValue(1);
+        levelCounter.setValue(31);
         addObject(ninja, 75, 75);
         ninja.setLocation(100, 75);
 
@@ -135,11 +135,17 @@ public class Inferno1 extends Trap
 
     public void act()
     {
+        
+        if(!played)
+        {
         burningSteppes.playLoop();
+        played = !played;
+        }
        //makeSmokeFireball();
        counterDelay++;
        if (Greenfoot.isKeyDown("h")&&delay>10) 
        {
+           clickSound.play();
            Menu menu = new Menu(getThisWorld());
            Greenfoot.setWorld(menu);
            delay = 0;
@@ -150,7 +156,7 @@ public class Inferno1 extends Trap
         healthCounter.setValue(ninja.getNINJAHP());
         shurikenCounter.setValue(ninja.getSHURIKENNUMBER());
         powerCounter.setValue(ninja.getPOWERBAR());
-        
+        checkDoor();
         counterDelay-= 10;
         /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
        
@@ -158,7 +164,7 @@ public class Inferno1 extends Trap
        }
        delay++;
        fireballDelay++;
-       checkDoor();
+       
     }
     public void makeAllIcons()
     {
@@ -215,7 +221,7 @@ public class Inferno1 extends Trap
     public void checkDoor()
     {
         if(ninja.checkInfernoDoor()==true)
-{
+         {
         burningSteppes.stop();
             Greenfoot.setWorld(new Inferno2(ninja));
         }

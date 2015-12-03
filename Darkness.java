@@ -19,6 +19,7 @@ public class Darkness extends Projectiles
         setImage(darkness1);
         this.damage = damage;
     }
+
     public void act() 
     {
         if (frame == 1)
@@ -44,41 +45,47 @@ public class Darkness extends Projectiles
         }
         frame+=0.25;
         Actor ninja = getOneIntersectingObject(Ninja.class);
-            if (ninja != null){
-                
-                sliceSound.setVolume(80);
-                sliceSound.play();
+        if (ninja != null){
+
+            sliceSound.setVolume(80);
+            sliceSound.play();
+            getWorld().removeObject(this);
+        }
+        else if (atWorldEdge())
+            getWorld().removeObject(this);
+        st++;
+        if (st >= 0 && st < 12)
+        {
+            move (4);
+        }
+        else if (st >= 12 && st < 24)
+        {
+            move(3);
+        }
+        else if (st >= 24 && st < 36)
+        {
+            move(2);
+        }
+        else if (st >= 36 && st < 48)
+        {
+            move(1);
+        }
+        else if (st >= 48 && st < 54)
+        {
+            move(1);
+        }
+        else if (st == 54)
+        {
+            try{
                 getWorld().removeObject(this);
             }
-            else if (atWorldEdge())
-            getWorld().removeObject(this);
-         st++;
-         if (st >= 0 && st < 12)
-         {
-             move (4);
-         }
-         else if (st >= 12 && st < 24)
-         {
-             move(3);
-         }
-         else if (st >= 24 && st < 36)
-         {
-             move(2);
-         }
-         else if (st >= 36 && st < 48)
-         {
-             move(1);
-         }
-         else if (st >= 48 && st < 54)
-         {
-             move(1);
-         }
-         else if (st == 54)
-         {
-             getWorld().removeObject(this);
-         }
-         
+            catch(Exception e)
+            {
+            }
+        }
+
     }    
+
     public int getDamage()
     {
         return damage;

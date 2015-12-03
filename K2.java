@@ -9,7 +9,7 @@ import java.util.*;
 public class K2 extends Trap
 {
     Ninja ninja;
-    private boolean played = false;
+    static boolean played = false;
     Counter shurikenCounter = new ShurikenCounter(getThisWorld(),"Shurikens: ");
     Counter powerCounter = new PowerCounter("Power: ");
     Counter levelCounter = new Counter("Stage: ");

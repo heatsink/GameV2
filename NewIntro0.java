@@ -57,7 +57,7 @@ public class NewIntro0 extends Trap
             addObject(fence, 540, 425+ 50*i+100-50);
         }
 
-        addObject(boy, 157, 653-50-50);
+        addObject(boy, 157, 653-50-50+10);
         
         addObject(levelCounter, 950, 15);
         levelCounter.setValue(0);
@@ -68,6 +68,9 @@ public class NewIntro0 extends Trap
         addObject(oldmanbotintro0, 270, 647-50-50);
         doorT10 doort10 = new doorT10();
         addObject(doort10, 67+25, 410-50);
+        
+        Keyboard actionBar = new Keyboard();
+        addObject(actionBar, 881, 438);
     }
 
         public void act(){

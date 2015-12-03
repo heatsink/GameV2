@@ -13,6 +13,8 @@ public class Cinematic1 extends Trap
     private List<Flash> flash;
     private List<EndStory0> endstory0;
     private List<InfernoBoss1> infernoboss1;
+    GreenfootSound finalcin = new GreenfootSound("fightloop.mp3");
+    // sound http://www.newgrounds.com/audio/listen/655296
     /**
      * Constructor for objects of class Cinamatic1.
      * 
@@ -25,6 +27,7 @@ public class Cinematic1 extends Trap
         
     }
     public void act(){
+        finalcin.playLoop();
         timec1++;
         flash();
         Texts();
@@ -116,13 +119,15 @@ public class Cinematic1 extends Trap
     }
     public void checkDoor()
     {
-        if(ninja.checkInfernoDoor()==true)
-            Greenfoot.setWorld(new Cinematic2(ninja));
+        if(ninja.checkInfernoDoor()==true){
+            finalcin.stop();
+            Greenfoot.setWorld(new Cinematic2(ninja));}
     }
     public void checkDoor1()
     {
-        if(ninja.checkInfernoDoor1()==true)
-            Greenfoot.setWorld(new Cinematic3(ninja));
+        if(ninja.checkInfernoDoor1()==true){
+            finalcin.stop();
+            Greenfoot.setWorld(new Cinematic3(ninja));}
     }
        public Ninja getNinja()
     {

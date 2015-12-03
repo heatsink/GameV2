@@ -17,6 +17,7 @@ public class Inferno2 extends Trap
     Ninja ninja;
     int delay = 11;
     private int counterDelay = 0;
+    static boolean played = false;
     public Inferno2(Ninja ninja)
     {
         super();
@@ -60,7 +61,7 @@ public class Inferno2 extends Trap
             addObject(infernoFence, 50*i+25, /*175*/ 300+ 50*i+25);
         }
         InfernoDoor infernoDoor = new InfernoDoor();
-        addObject(infernoDoor, 687-50, 687-100);
+        addObject(infernoDoor, 687-50+20, 687-100+10);
 
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
@@ -72,7 +73,7 @@ public class Inferno2 extends Trap
         powerCounter.setValue(ninja.getPOWERBAR());
 
         addObject(levelCounter, 950, 15);
-        levelCounter.setValue(2);
+        levelCounter.setValue(32);
         Firebat firebat2 = new Firebat(8, 4);
         addObject(firebat2, 216, 350);
         Firebat firebat4 = new Firebat(8, 4);
@@ -114,9 +115,14 @@ public class Inferno2 extends Trap
     public void act()
     {
         counterDelay++;
+        if(!played)
+        {
         burningSteppes.playLoop();
+        played = !played;
+        }
        if (Greenfoot.isKeyDown("h")&&delay>10) 
        {
+           clickSound.play();
            Menu menu = new Menu(getThisWorld());
            Greenfoot.setWorld(menu);
            delay = 0;
@@ -128,14 +134,14 @@ public class Inferno2 extends Trap
         shurikenCounter.setValue(ninja.getSHURIKENNUMBER());
         powerCounter.setValue(ninja.getPOWERBAR());
         counterDelay-= 10;
-        
+        checkDoor();
         
         /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
        
        /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
        }
        delay++;
-       checkDoor();
+       
     }
     public void makeAllIcons()
     {

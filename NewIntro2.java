@@ -107,7 +107,8 @@ public class NewIntro2 extends Trap
         counterDelay++;
        if (Greenfoot.isKeyDown("h")&&delay>10) 
        {
-           Menu menu = new Menu(getThisWorld());
+           clickSound.play();
+           IntroMenu menu = new IntroMenu(getThisWorld());
            Greenfoot.setWorld(menu);
            delay = 0;
            

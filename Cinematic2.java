@@ -13,6 +13,8 @@ public class Cinematic2 extends Trap
     private int c2t =0;
     private List<OldManBot5> oldmanbot5;
     private List<Graitful> graitful;
+    GreenfootSound win = new GreenfootSound("win.mp3");
+    // sound http://www.newgrounds.com/audio/listen/375369
     /**
      * Constructor for objects of class Cinematic3.
      * 
@@ -86,7 +88,17 @@ public class Cinematic2 extends Trap
         for (int i = 0; i<16; i++)
         {
             Smoke1 fence = new Smoke1();
-            addObject(fence, 700, 50*i);
+            addObject(fence, 760, 50*i);
+        }
+        for (int i = 0; i<16; i++)
+        {
+            Smoke1 fence = new Smoke1();
+            addObject(fence, 880, 50*i);
+        }
+        for (int i = 0; i<16; i++)
+        {
+            Smoke1 fence = new Smoke1();
+            addObject(fence, 950, 50*i);
         }
         
     }
@@ -103,7 +115,7 @@ public class Cinematic2 extends Trap
     public void checkDoor()
    {
        if(ninja.checkDoor()==true){
-       
+       win.stop();
        ninja.setPoints(ninja.getPoints()+50);
        Greenfoot.setWorld(new Kyobashi4(ninja));
     }
@@ -135,6 +147,7 @@ public class Cinematic2 extends Trap
         }
     }
    public void act(){
+       win.playLoop();
        checkDoor();
        makedoor();
        flash();

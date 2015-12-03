@@ -15,6 +15,7 @@ public class K12 extends Trap
     private List<Bosses> dashboss;
     Ninja ninja;
     int delay = 11;
+    static boolean played = false;
     private int counterDelay = 0;
     GreenfootSound finalmusic = new GreenfootSound("lowdowninstramental.mp3");
     public K12(Ninja ninja)
@@ -43,7 +44,7 @@ public class K12 extends Trap
        addObject(ninja, 375, 375);
             
        
-        DashBoss dashboss = new DashBoss(30);
+        DashBoss dashboss = new DashBoss(20);
         addObject(dashboss, 200, 200);
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
@@ -76,9 +77,13 @@ public class K12 extends Trap
     }
     public void act()
     {
+        
         createdoor();
         counterDelay++;
-        finalmusic.playLoop();
+        if (!played){
+            finalmusic.playLoop();
+            played = !played;
+        }
        if (Greenfoot.isKeyDown("h")&&delay>10) 
        {
            Menu menu = new Menu(getThisWorld());
@@ -102,7 +107,7 @@ public class K12 extends Trap
     public void checkDoor()
     {
         if(ninja.checkDoor()==true){
-            finalmusic.stop();
+            
             Greenfoot.setWorld(new Kyobashi1(ninja));}
     }
    public Ninja getNinja()
@@ -129,10 +134,12 @@ public class K12 extends Trap
         
     public void createdoor(){
         if(isbossthere() == false){
+            finalmusic.stop();
         doorT10 doort10 = new doorT10();
         addObject(doort10, 375, 660);
         if(ninja.getProgress()==0)
         ninja.setProgress(1);
+         finalmusic.stop();
         }
     }
    }

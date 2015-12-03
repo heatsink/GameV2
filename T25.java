@@ -41,7 +41,7 @@ public class T25 extends Trap
                 Stump fence = new Stump();
                 addObject(fence, 50*i+25, 25+j*(700-50));
         }
-        BillBoss kyle = new BillBoss(5,25);
+        BillBoss kyle = new BillBoss(30,25);
         addObject(kyle, 150, 150);
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
@@ -76,6 +76,7 @@ public class T25 extends Trap
         checkTeleport();
         if (Greenfoot.isKeyDown("h")&&delay>10) 
         {
+            clickSound.play();
             Menu menu = new Menu(getThisWorld());
             Greenfoot.setWorld(menu);
             delay = 0;
@@ -123,7 +124,6 @@ public class T25 extends Trap
     {
          if(ninja.checkDoorT21()==true)
          {
-             billin.stop();
             Greenfoot.setWorld(new Kyobashi3(ninja));
         }
     }
@@ -133,6 +133,7 @@ public class T25 extends Trap
     }
        public void gameover(){
        ninja.setHP(ninja.getArmor());
+       
        Greenfoot.setWorld(new T25(ninja));
     }
      public boolean isbossthere(){
@@ -151,6 +152,7 @@ public class T25 extends Trap
         if(ninja.getProgress()==1)
         ninja.setProgress(2);
         createdDoor = true;
+        billin.stop();
         }
     }
 }

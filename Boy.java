@@ -605,6 +605,7 @@ public class Boy extends Heroes
         
         if (Greenfoot.isKeyDown("1")&&Greenfoot.isKeyDown("3")&&Greenfoot.isKeyDown("5")&&Greenfoot.isKeyDown("7")){
             ninjahp += 5;
+            armor += 5;
         }
         /*if (thehack.istrue() == true){
              // meleedamage += 5;

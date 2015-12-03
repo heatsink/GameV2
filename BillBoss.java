@@ -27,14 +27,14 @@ public class BillBoss extends NPCS
     public void act() 
     {
         animateSix(InfernoMove0, InfernoMove1, InfernoMove2, InfernoMove3, InfernoMove4, InfernoMove5);
-        if(delay<80)
+        if(delay<=160)
         {
             List<Ninja> list = getObjectsInRange(5000, Ninja.class);
             if (list.size()>0&&delay2>100)
             {
                 turnTowards(list.get(0).getX(), list.get(0).getY());
                 double x = getRotation();
-                DashDarkness darkness = new DashDarkness(Greenfoot.getRandomNumber(10)+5);
+                DashDarkness darkness = new DashDarkness(Greenfoot.getRandomNumber(5)+1);
                 getWorld().addObject(darkness, getX(), getY());
                 darkness.turnTowards(list.get(0).getX(), list.get(0).getY());
                 delay2 = 0;
@@ -47,7 +47,7 @@ public class BillBoss extends NPCS
             setRotation(0);
             delay++;
         }
-        if(delay>=80&&delay<160)
+        if(delay>=160&&delay<320)
         {
             getImage().setTransparency(100);
             setRotation(90);
@@ -55,14 +55,14 @@ public class BillBoss extends NPCS
             setRotation(0);
             delay++;
         }
-        if(delay>=160&&delay<240)
+        if(delay>=320&&delay<480)
         {
             List<Ninja> list = getObjectsInRange(5000, Ninja.class);
             if (list.size()>0&&delay2>100)
             {
                 turnTowards(list.get(0).getX(), list.get(0).getY());
                 double x = getRotation();
-                DashDarkness darkness = new DashDarkness(Greenfoot.getRandomNumber(10)+5);
+                DashDarkness darkness = new DashDarkness(Greenfoot.getRandomNumber(5)+1);
                 getWorld().addObject(darkness, getX(), getY());
                 darkness.turnTowards(list.get(0).getX(), list.get(0).getY());
                 delay2 = 0;
@@ -77,7 +77,7 @@ public class BillBoss extends NPCS
             setRotation(0);
             delay2++;
         }
-        if(delay>=240&&delay<320)
+        if(delay>=480&&delay<640)
         {
             getImage().setTransparency(100);
             setRotation(270);
@@ -85,7 +85,7 @@ public class BillBoss extends NPCS
             setRotation(0);
             delay++;
         }
-        if(delay>=320)
+        if(delay>=640)
         {
             delay = 0;
         }

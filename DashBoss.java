@@ -46,7 +46,7 @@ public class DashBoss extends Bosses
         {
             turnTowards(list.get(0).getX(), list.get(0).getY());
             double x = getRotation();
-            DashDarkness darkness = new DashDarkness(Greenfoot.getRandomNumber(10)+5);
+            DashDarkness darkness = new DashDarkness(Greenfoot.getRandomNumber(5)+2);
             getWorld().addObject(darkness, getX(), getY());
             darkness.turnTowards(list.get(0).getX(), list.get(0).getY());
             delay = 0;

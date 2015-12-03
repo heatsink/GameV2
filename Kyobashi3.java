@@ -33,16 +33,16 @@ public class Kyobashi3 extends Trap
         for(int i = 0; i<15; i++)
             for(int j = 0; j<2; j++)
             {
-            Fence fence = new Fence();
-            addObject(fence, 25+j*700, 50*i+25);
-            }
+                Fence fence = new Fence();
+                addObject(fence, 25+j*700, 50*i+25);
+        }
         for(int i = 1;i<15; i++)
             for(int j = 0; j<2; j++)
             {
                 Fence fence = new Fence();
                 addObject(fence, 50*i+25, 25+j*(700-50));
-            }
-                        for (int i = 0; i<15; i++)
+        }
+        for (int i = 0; i<15; i++)
         {
             Fence fence = new Fence();
             addObject(fence, 50*i, 550-40);
@@ -56,25 +56,22 @@ public class Kyobashi3 extends Trap
         addObject(powerCounter, 866, 161);
         powerCounter.setValue(ninja.getPOWERBAR());
 
-        
         TheHack thehack=new TheHack();
         addObject(thehack, 720, 30);
-        
+
         doorT10 door = new doorT10();
-        addObject(door, 100, 475-40);
-        
+        addObject(door, 664, 435);
+
         InfernoDoor infernoDoor = new InfernoDoor();
-        addObject(infernoDoor, 400, 300);
-        
+        addObject(infernoDoor, 86, 435);
+
         doorT21 doorT21 = new doorT21();
-        addObject(doorT21, 650, 100);
-        SnowDoor snowdoor = new SnowDoor();
-        addObject(snowdoor, 650, 475-40);
-        
+        addObject(doorT21, 378, 435);
+
         addShuriken s = new addShuriken();
-        addObject(s, 375, 475-40);
+        addObject(s, 95, 196);
         HealthGlobe hg = new HealthGlobe();
-        addObject(hg, 650, 325);
+        addObject(hg, 197, 90);
         makeAllIcons();
     }
     
@@ -88,6 +85,7 @@ public class Kyobashi3 extends Trap
        /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
        if (Greenfoot.isKeyDown("h")&&delay>10) 
        {
+           clickSound.play();
            Menu menu = new Menu(getThisWorld());
            Greenfoot.setWorld(menu);
            delay = 0;

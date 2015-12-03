@@ -53,10 +53,13 @@ public class Ninja extends Heroes
     // http://soundbible.com/1898-Spin-Jump.html
     GreenfootSound sliceSound = new GreenfootSound("spin_jump-Brandino480-2020916281.mp3");
 
+
+    GreenfootSound velocitator = new GreenfootSound("Velocitator.mp3");
+     //sound cred http://www.newgrounds.com/audio/listen/656737
+    
     private GreenfootSound swordSound = new GreenfootSound("Blade1.wav");
     public Ninja()
     {
-        swordSound.setVolume(75);
     }
 
     public void act() 
@@ -99,7 +102,7 @@ public class Ninja extends Heroes
             powerBar-=4;
             Lightning l1 = new Lightning(swordRotation);
             SwordSwing swordSwing = new SwordSwing(getSwordRotation());
-            
+            swordSound.setVolume(75);
             swordSound.play();
             if(this.getImage()==up1||this.getImage()==up2)
             {
@@ -188,7 +191,7 @@ public class Ninja extends Heroes
             Shuriken s1 = new Shuriken(getRangeDamage());
             shurikennumber--;
             //if(powerUpThree)
-              //  setPower(getPower()-25);
+            //  setPower(getPower()-25);
             // Convert to cart sqrt
             // get x^2 + get y^2 = R
             // add 10 to R
@@ -482,6 +485,10 @@ public class Ninja extends Heroes
             }
             if (getWorld() instanceof Endless)
             {
+                Trap world = (Trap) getWorld();
+                
+                world.stopmusic();
+                
                 this.setHP(this.getArmor());
                 if(this.getShurikens()<=3){
                     this.setShurikens(this.getShurikens()+3);
@@ -706,7 +713,8 @@ public class Ninja extends Heroes
 
             if (Greenfoot.isKeyDown("u"))
             {
-                powerBar -= 1;
+                if (Greenfoot.getRandomNumber(4) < 1)
+                    powerBar -= 1;
                 speedMultiplier = 4;
             }
             else
@@ -722,10 +730,11 @@ public class Ninja extends Heroes
 
     public void powerUpTwo()
     {
-        if(progress>1&&powerBar>0&&(Greenfoot.isKeyDown("o")))
+        if(progress>1&&powerBar>0&&(Greenfoot.isKeyDown("i")))
         {
             getImage().setTransparency(100);
-            powerBar-=1;
+            if (Greenfoot.getRandomNumber(3) < 1)
+                powerBar-=1;
             powerUpTwo = true;
         }
         else 
@@ -733,12 +742,12 @@ public class Ninja extends Heroes
     }
 
     public void powerUpThree(){
-        if (progress > 2 && powerBar>3 && (Greenfoot.isKeyDown("i")) && delay>140 && powerUpThree == false)
+        if (progress > 2 && powerBar>3 && (Greenfoot.isKeyDown("o")) && delay>140 && powerUpThree == false)
         {
-            powerUpThree = true;
+            //powerUpThree = true;
             //setPower(getPower()-25);
         }
-        
+
     }
 
     public void addShuriken(){
@@ -841,6 +850,7 @@ public class Ninja extends Heroes
     {
         powerUpThree = false;
     }
+
     public int getPower()
     {
         return powerBar;
@@ -880,7 +890,8 @@ public class Ninja extends Heroes
     {
         progress = prog;
     }
+
     public int getNinjaLv(){//Hayden's Code
-       return (getArmor() + getMeleeDamage() + getRangeDamage() - 11);
+        return (getArmor() + getMeleeDamage() + getRangeDamage() - 11);
     }
 }

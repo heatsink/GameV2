@@ -9,6 +9,8 @@ import greenfoot.*;
 public class Cinematic3 extends Trap
 {
     Ninja ninja;
+    GreenfootSound win = new GreenfootSound("win.mp3");
+    // sound http://www.newgrounds.com/audio/listen/375369
     /**
      * Constructor for objects of class Cinematic3.
      * 
@@ -79,9 +81,18 @@ public class Cinematic3 extends Trap
         for (int i = 0; i<16; i++)
         {
             Smoke1 fence = new Smoke1();
-            addObject(fence, 700, 50*i);
+            addObject(fence, 760, 50*i);
         }
-        
+        for (int i = 0; i<16; i++)
+        {
+            Smoke1 fence = new Smoke1();
+            addObject(fence, 880, 50*i);
+        }
+        for (int i = 0; i<16; i++)
+        {
+            Smoke1 fence = new Smoke1();
+            addObject(fence, 950, 50*i);
+        }
     }
     public void prepareHUD()
     {
@@ -93,10 +104,12 @@ public class Cinematic3 extends Trap
     }
     public void checkDoor()
    {
-       if(ninja.checkDoor()==true)
-            Greenfoot.setWorld(new Kyobashi4(ninja));
+       if(ninja.checkDoor()==true){
+           win.stop();
+            Greenfoot.setWorld(new Kyobashi4(ninja));}
    }
    public void act(){
+       win.playLoop();
        checkDoor();
     }
 }

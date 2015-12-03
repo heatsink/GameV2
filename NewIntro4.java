@@ -85,8 +85,6 @@ public class NewIntro4 extends Trap
         addObject(trainingdummyrm, 522, 118);
         TrainingDummyRM trainingdummyrm2 = new TrainingDummyRM(5, 1);
         addObject(trainingdummyrm2, 105, 113);
-        TrainingDummy trainingdummy2 = new TrainingDummy(5, 1);
-        addObject(trainingdummy2, 100, 478);
         addShuriken addshuriken = new addShuriken();
         addObject(addshuriken, 674, 615);
         addshuriken.setLocation(664, 610);
@@ -116,7 +114,8 @@ public class NewIntro4 extends Trap
         bloodBourne.playLoop();
        if (Greenfoot.isKeyDown("h")&&delay>10) 
        {
-           Menu menu = new Menu(getThisWorld());
+           clickSound.play();
+           IntroMenu menu = new IntroMenu(getThisWorld());
            Greenfoot.setWorld(menu);
            delay = 0;
            

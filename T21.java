@@ -52,12 +52,16 @@ public class T21 extends Trap
             Stump fence = new Stump();
             addObject(fence, 125+i*50, 325);
         }
-        for(int i = 0; i<7; i++)
+        for(int i = 1; i<6; i++)
         {
             ForestRange rm = new ForestRange(2, 2);
             addObject(rm, 125+i*50, 275);
         }
-        for(int i = 0; i<3; i++)
+        Stump ha = new Stump();
+        addObject(ha, 125, 275);
+        Stump ha2 = new Stump();
+        addObject(ha2, 425, 275);
+        for(int i = 0; i<2; i++)
         {
             ForestRange rm = new ForestRange(2, 2);
             addObject(rm, 225+i*100, 225);
@@ -135,6 +139,7 @@ public class T21 extends Trap
         }
         if (Greenfoot.isKeyDown("h")&&delay>10) 
         {
+            clickSound.play();
             Menu menu = new Menu(getThisWorld());
             Greenfoot.setWorld(menu);
             delay = 0;

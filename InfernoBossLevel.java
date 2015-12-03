@@ -15,6 +15,7 @@ public class InfernoBossLevel extends Trap
     private int delay = 11;
     private int fireballDelay = 11;
     private int counterDelay = 0;
+    static boolean played = false;
     private GreenfootSound heavensGate = new GreenfootSound("Diablo 3 OST - Heaven's Gate (#20).mp3");
     public InfernoBossLevel(Ninja ninja)
     {
@@ -115,6 +116,7 @@ public class InfernoBossLevel extends Trap
        //makeSmokeFireball();
        if (Greenfoot.isKeyDown("h")&&delay>10) 
        {
+           clickSound.play();
            Menu menu = new Menu(getThisWorld());
            Greenfoot.setWorld(menu);
            delay = 0;
@@ -126,12 +128,11 @@ public class InfernoBossLevel extends Trap
         shurikenCounter.setValue(ninja.getSHURIKENNUMBER());
         powerCounter.setValue(ninja.getPOWERBAR());
         counterDelay-= 10;
-        
+        checkDoor();
         /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
        
        /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
        }
-       checkDoor();
        delay++;
        fireballDelay++;
     }
@@ -142,11 +143,11 @@ public class InfernoBossLevel extends Trap
         ShurikenIcon shurikenicon = new ShurikenIcon();
         addObject(shurikenicon, 838, 360);
         StealthIcon stealthicon = new StealthIcon();
-        addObject(stealthicon, 923, 308);
+        addObject(stealthicon, 871, 308);
         DashIcon dashicon = new DashIcon();
         addObject(dashicon, 819, 308);
-        DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
-        addObject(doubledamageicon, 871, 308);
+        //DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
+        //addObject(doubledamageicon, 871, 308);
     }
     public void makeSmokeFireball()
     {

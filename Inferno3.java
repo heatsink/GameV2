@@ -16,6 +16,7 @@ public class Inferno3 extends Trap
     Ninja ninja;
     int delay = 11;
     private int counterDelay = 0;
+    static boolean played = false;
     public Inferno3(Ninja ninja)
     {
         super();
@@ -60,10 +61,10 @@ public class Inferno3 extends Trap
         powerCounter.setValue(ninja.getPOWERBAR());
 
         addObject(levelCounter, 950, 15);
-        levelCounter.setValue(3);
+        levelCounter.setValue(33);
 
         InfernoDoor infernodoor = new InfernoDoor();
-        addObject(infernodoor, 71+50, 646-50);
+        addObject(infernodoor, 71+50-25, 646-50);
         Firebat firebat = new Firebat(8, 4);
         addObject(firebat, 68+20, 324);
         Firebat firebat2 = new Firebat(8, 4);
@@ -107,10 +108,15 @@ public class Inferno3 extends Trap
 
     public void act()
     {
+        if(!played)
+        {
         burningSteppes.playLoop();
+        played = !played;
+        }
         counterDelay++;
        if (Greenfoot.isKeyDown("h")&&delay>10) 
        {
+           clickSound.play();
            Menu menu = new Menu(getThisWorld());
            Greenfoot.setWorld(menu);
            delay = 0;
@@ -122,12 +128,13 @@ public class Inferno3 extends Trap
         shurikenCounter.setValue(ninja.getSHURIKENNUMBER());
         powerCounter.setValue(ninja.getPOWERBAR());
         counterDelay-= 10;
+        checkDoor();
         /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
        
        /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
        }
        delay++;
-       checkDoor();
+       
     }
     public void makeAllIcons()
     {

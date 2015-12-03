@@ -28,22 +28,22 @@ public class Kyobashi4 extends Trap
      */
     private void prepare()
     {
-        TextBoxKyo3 textboxkyo2 = new TextBoxKyo3();
+        EndlessKyo textboxkyo2 = new EndlessKyo();
         addObject (textboxkyo2, 380, 640-50);
         addObject(ninja, 100, 100);
         for(int i = 0; i<15; i++)
             for(int j = 0; j<2; j++)
             {
-            Fence fence = new Fence();
-            addObject(fence, 25+j*700, 50*i+25);
-            }
+                Fence fence = new Fence();
+                addObject(fence, 25+j*700, 50*i+25);
+        }
         for(int i = 1;i<15; i++)
             for(int j = 0; j<2; j++)
             {
                 Fence fence = new Fence();
                 addObject(fence, 50*i+25, 25+j*(700-50));
-            }
-                        for (int i = 0; i<15; i++)
+        }
+        for (int i = 0; i<15; i++)
         {
             Fence fence = new Fence();
             addObject(fence, 50*i+25, 550-50);
@@ -59,21 +59,21 @@ public class Kyobashi4 extends Trap
 
         TheHack thehack=new TheHack();
         addObject(thehack, 720, 30);
-        
+
         doorT10 door = new doorT10();
-        addObject(door, 100, 475-50);
-        
+        addObject(door, 647, 428);
+
         InfernoDoor infernoDoor = new InfernoDoor();
-        addObject(infernoDoor, 400, 300);
-        
+        addObject(infernoDoor, 85, 425);
+
         doorT21 doorT21 = new doorT21();
-        addObject(doorT21, 650, 100);
+        addObject(doorT21, 374, 421);
         EndlessDoor endlessdoor = new EndlessDoor();
-        addObject(endlessdoor, 100, 300);
+        addObject(endlessdoor, 637, 112);
         addShuriken s = new addShuriken();
-        addObject(s, 375, 475-50);
+        addObject(s, 89, 197);
         HealthGlobe hg = new HealthGlobe();
-        addObject(hg, 650, 325);
+        addObject(hg, 181, 93);
         makeAllIcons();
     }
     
@@ -87,6 +87,7 @@ public class Kyobashi4 extends Trap
        /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
        if (Greenfoot.isKeyDown("h")&&delay>10) 
        {
+           clickSound.play();
            Menu menu = new Menu(getThisWorld());
            Greenfoot.setWorld(menu);
            delay = 0;
@@ -216,9 +217,10 @@ public class Kyobashi4 extends Trap
    }
    public void checkEndlessDoor()
    {
-       if(ninja.checkEndlessDoor()==true)
+       if(ninja.checkEndlessDoor()==true){
+            ninja.setShurikens(8);
             Greenfoot.setWorld(new Endless(ninja));
-   }
+   }}
       public void gameover(){
        ninja.setHP(ninja.getArmor());
        Greenfoot.setWorld(new Kyobashi3(ninja));

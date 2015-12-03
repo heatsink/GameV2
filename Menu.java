@@ -14,6 +14,9 @@ public class Menu extends World
     private TempText text7;
     private TempText text10;
     // background from http://www.thedigitalyardsale.com/freebies/freebie-6-old-paper-textures/
+    
+    //http://soundbible.com/tags-bounce.html
+    GreenfootSound clickSound = new GreenfootSound("Bounce-SoundBible.com-12678623.mp3");
     // Menu Variables End [Bill]
     // Button Constructor Start [Billl]
     public Menu(Trap trap)
@@ -76,6 +79,7 @@ public class Menu extends World
     {
         if (Greenfoot.isKeyDown("h")&&delay>10) 
         {
+            clickSound.play();
             Greenfoot.setWorld(trap);
             delay = 0;
         }

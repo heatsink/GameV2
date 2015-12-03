@@ -59,15 +59,15 @@ public class Kyobashi1 extends Trap
         powerCounter.setValue(ninja.getPOWERBAR());
 
         doorT10 door = new doorT10();
-        addObject(door, 100, 475-50+15);
+        addObject(door, 650, 475-50+15);
         
         doorT21 snowdoor = new doorT21();
-        addObject(snowdoor, 650, 100);
+        addObject(snowdoor, 375, 475-50+15);
         
         addShuriken s = new addShuriken();
-        addObject(s, 375, 475-50);
+        addObject(s, 95 , 195);
         HealthGlobe hg = new HealthGlobe();
-        addObject(hg, 650, 325);
+        addObject(hg, 197, 90);
         makeAllIcons();
     }
     
@@ -81,6 +81,7 @@ public class Kyobashi1 extends Trap
        /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
        if (Greenfoot.isKeyDown("h")&&delay>10) 
        {
+           clickSound.play();
            Menu menu = new Menu(getThisWorld());
            Greenfoot.setWorld(menu);
            delay = 0;

@@ -14,6 +14,8 @@ public class Kyobashi extends Trap
     Counter healthCounter = new HealthCounter(getThisWorld(), "Health: ");
     //Counter powerCounter = new PowerCounter("Energy: ");
     
+    
+    
     GreenfootSound backgroundTheme = new GreenfootSound("ninja_backgroundtheme.mp3");
     // Levels
     DeathWorld deathWorld;
@@ -68,7 +70,7 @@ public class Kyobashi extends Trap
         addObject(thehack, 720, 30);
 
         doorT10 door = new doorT10();
-        addObject(door, 100, 475-40);
+        addObject(door, 650, 475-40);
 
         makeAllIcons();
         //PowerBar powerbar = new PowerBar();
@@ -85,6 +87,7 @@ public class Kyobashi extends Trap
        /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
        if (Greenfoot.isKeyDown("h")&&delay>10) 
        {
+           clickSound.play();
            Menu menu = new Menu(getThisWorld());
            Greenfoot.setWorld(menu);
            delay = 0;

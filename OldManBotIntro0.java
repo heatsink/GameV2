@@ -39,7 +39,7 @@ public class OldManBotIntro0 extends Animated
             {
                 moveRight(right1, right2, right3);
             }
-            else if (getY() > 435)
+            else if (getY() > 375)
             {
                 moveUp(up1, up2, up3);
             }

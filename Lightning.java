@@ -20,41 +20,41 @@ public class Lightning extends Projectiles
         this.swordRotation = swordRotation;
         sword.rotate(swordRotation - 45);
     }
-    
+
     public void creation()
     {
-            Trap trap = (Trap) getWorld();
-            if (trap.getNinja() != null)
-            {
+        Trap trap = (Trap) getWorld();
+        if (trap.getNinja() != null)
+        {
             xDifference = trap.getNinja().getX()-this.getX();
             yDifference = trap.getNinja().getY()-this.getY();
         }
-            if (trap.getBoy() != null)
-            {
-                xDifference = trap.getBoy().getX()-this.getX();
+        if (trap.getBoy() != null)
+        {
+            xDifference = trap.getBoy().getX()-this.getX();
             yDifference = trap.getBoy().getY()-this.getY();
-            }
-            created = true;
-            real = true;
+        }
+        created = true;
+        real = true;
     }
-    
+
     public void act() 
     {
         if(!created)
             creation();
         Actor NPCS = getOneIntersectingObject(NPCS.class);
-            if (NPCS!=null&&delay>10000){
-                getWorld().removeObject(this);
-                real = false;
-                delay = 0;
-            }
+        if (NPCS!=null&&delay>10000){
+            getWorld().removeObject(this);
+            real = false;
+            delay = 0;
+        }
         if(real)
         {
             Trap trap2 = (Trap) getWorld();
             if (trap2.getNinja() != null)
             {
-            setLocation(trap2.getNinja().getX()-xDifference,trap2.getNinja().getY()-yDifference);
-        }
+                setLocation(trap2.getNinja().getX()-xDifference,trap2.getNinja().getY()-yDifference);
+            }
             if (trap2.getBoy() != null)
             {
                 setLocation(trap2.getBoy().getX()-xDifference,trap2.getBoy().getY()-yDifference);

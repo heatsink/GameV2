@@ -16,7 +16,7 @@ public class K10 extends Trap
     int delay = 11;
     private List<NPCS> npcs;
     GreenfootSound Peaceful = new GreenfootSound("Peaceful.mp3");
-    private boolean played = false;
+    static boolean played = false;
     private int counterDelay =0;
     /**
      * Constructor for objects of class K8.
@@ -122,8 +122,9 @@ public class K10 extends Trap
             counterDelay -= 10;
 
         }
-        if(getObjects(Ninja.class).size() != 0)
+        if(getObjects(Ninja.class).size() != 0 && counterDelay >= 10)
         {
+            counterDelay-= 10;
             healthCounter.setValue(ninja.getNINJAHP());
             shurikenCounter.setValue(ninja.getSHURIKENNUMBER());
             powerCounter.setValue(ninja.getPOWERBAR());

@@ -25,4 +25,16 @@ public class TrainingDummy extends MeleeMinion
         ninjaattack();
        RMDied();
     }    
+    public void RMDied()
+    {
+        if (RMHP <= 0)
+        {
+            Trap trap = (Trap) getWorld();
+            if (trap.getBoy() != null)
+            {
+            trap.getBoy().setPoints(trap.getBoy().getPoints()+1);
+            }
+            getWorld().removeObject(this);
+        }
+    }
 }

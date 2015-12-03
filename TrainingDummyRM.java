@@ -53,4 +53,16 @@ public class TrainingDummyRM extends RangedMinion  //RM Stands for Ranged Minion
         }
         delay++;       
     }
+    public void RMDied()
+    {
+        if (RMHP <= 0)
+        {
+            Trap trap = (Trap) getWorld();
+            if (trap.getBoy() != null)
+            {
+            trap.getBoy().setPoints(trap.getBoy().getPoints()+1);
+            }
+            getWorld().removeObject(this);
+        }
+    }
 }
