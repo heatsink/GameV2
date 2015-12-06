@@ -1,3 +1,4 @@
+// Sean's class
 /**
  * THIS IS THE IMPORTED COUNTER CLASS
  */

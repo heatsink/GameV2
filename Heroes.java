@@ -1,3 +1,4 @@
+// Sean's class except for lines 278-362 and its corresponding variables
 import greenfoot.*;
 /**
  * Functionality in this class:

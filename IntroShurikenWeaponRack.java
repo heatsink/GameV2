@@ -1,3 +1,4 @@
+// Class integrated by Sean
 import greenfoot.*;
 
 /**

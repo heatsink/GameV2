@@ -1,17 +1,6 @@
-import greenfoot.*;
-//Duy
-/**
- * Write a description of class StoryPage here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import greenfoot.*; // Duy's class
 public class StoryPage extends Actor
 {
-    /**
-     * Act - do whatever the StoryPage wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     //http://tibia.wikia.com/wiki/Sheet_of_Tracing_Paper/History
     public int page;
     public StoryPage(int p)//Duy

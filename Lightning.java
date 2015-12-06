@@ -1,5 +1,6 @@
-import greenfoot.*;
 //Bill's class
+import greenfoot.*;
+
 /**
  * Functionality in this class:
  */

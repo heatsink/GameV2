@@ -1,3 +1,4 @@
+// Sean's class
 /**
  * Sean - Made slight modifications to the imported counter class to function as the health bar
  */

@@ -1,3 +1,4 @@
+// Sean's class
 import greenfoot.*; 
 
 /**

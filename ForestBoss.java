@@ -1,3 +1,4 @@
+// Sean's entire class integrated from Bill's code and this class became unused in favor of BillBoss
 import greenfoot.*;
 
 /**

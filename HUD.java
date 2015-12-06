@@ -1,3 +1,4 @@
+// Sean's class
 import greenfoot.*;
 import java.awt.Color;
 /**

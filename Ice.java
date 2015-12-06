@@ -1,3 +1,4 @@
+// Tiffany's entire class
 import greenfoot.*;
 import java.util.*;
 

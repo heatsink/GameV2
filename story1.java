@@ -1,11 +1,5 @@
+// random class floating around Duy probably made this
 import greenfoot.*;
-
-/**
- * Write a description of class story1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class story1 extends Pictures
 {
     /**

@@ -1,10 +1,13 @@
+// Entire class coded by Bill
 import greenfoot.*;
 /**
  * Functionality in this class:
  */
 public class IntroButton extends Actor
 {
-    // Image made by bill on paint.net
+    // Old Image made by bill on paint.net
+    // Current image made by sean using image from // http://www.moodlenews.com/wp-content/uploads/upgrade-icon.png
+    
     private int type;
     private int delay = 21;
     public IntroButton(int type)

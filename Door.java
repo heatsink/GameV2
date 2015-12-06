@@ -1,3 +1,4 @@
+// SEan's class Sean's sprite
 import greenfoot.*;
 import java.util.*;
 /**

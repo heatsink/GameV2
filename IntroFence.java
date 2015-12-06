@@ -1,3 +1,4 @@
+// Hayden's class
 import greenfoot.*;
 // Hayden - Image of Intro level obstacle
 public class IntroFence extends Obstacles

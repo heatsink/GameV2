@@ -1,3 +1,4 @@
+// Entire class coded by Hayden
 import greenfoot.*;
 
 // Hayden's secret cheat code

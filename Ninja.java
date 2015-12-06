@@ -103,9 +103,9 @@ public class Ninja extends Heroes
         {
             powerBar-=4;
             Lightning l1 = new Lightning(swordRotation);
-            SwordSwing swordSwing = new SwordSwing(getSwordRotation());
-            swordSound.setVolume(25);
-            swordSound.play();
+            SwordSwing swordSwing = new SwordSwing(getSwordRotation()); 
+            swordSound.setVolume(25); // Sean
+            swordSound.play(); // Sean
             if(this.getImage()==up1||this.getImage()==up2)
             {
                 getWorld().addObject(l1, getX(), getY()-20);
@@ -263,7 +263,7 @@ public class Ninja extends Heroes
         }
     }
 
-    public void transparent()
+    public void transparent() // Bill method start
     {
         if(transparentDelay<35)
         {
@@ -274,7 +274,7 @@ public class Ninja extends Heroes
             getImage().setTransparency(255);
         }
         transparentDelay++;
-    }
+    } // Bill method end
 
     /*
     puclic static int[] worldK;
@@ -287,7 +287,7 @@ public class Ninja extends Heroes
     }
      */
 
-    public void ninjaDied()
+    public void ninjaDied() // Hayden method start
     {
         if (ninjahp <= 0)
         {
@@ -533,9 +533,9 @@ public class Ninja extends Heroes
              */
         }
 
-    }
+    } // Hayden method end
 
-    public boolean checkDoorT21()
+    public boolean checkDoorT21() // Bill Method start (sean made sprite)
     {
         if(getWorld().getObjects(Ninja.class).size()!=0)
         {
@@ -546,9 +546,9 @@ public class Ninja extends Heroes
                 return false;
         }
         return false;
-    }
+    } // Bill method end (sean made sprite)
 
-    public boolean checkEndlessDoor()
+    public boolean checkEndlessDoor() // Hayden method start (sean made animation)
     {
         if(getWorld().getObjects(Ninja.class).size()!=0)
         {
@@ -559,53 +559,53 @@ public class Ninja extends Heroes
                 return false;
         }
         return false;
-    }
+    } // Hayden method end  (sean made animation)
 
-    public int getMeleeDamage()
+    public int getMeleeDamage() // Bill
     {
         return meleeDamage;
     }
 
-    public int getRangeDamage()
+    public int getRangeDamage()  // Bill
     {
         if(powerUpThree)
             return rangeDamage*2;
         return rangeDamage;
     }
 
-    public int getArmor()
+    public int getArmor()  // Bill
     {
         return armor;
     }
 
-    public void setMeleeDamage(int a)
+    public void setMeleeDamage(int a)  // Bill
     {
         meleeDamage = a;
     }
 
-    public void setRangeDamage(int a)
+    public void setRangeDamage(int a)  // Bill
     {
         rangeDamage = a;
     }
 
-    public void setArmor(int a)
+    public void setArmor(int a)  // Bill
     {
         armor = a;
     }
 
-    public int getSHURIKENNUMBER(){
+    public int getSHURIKENNUMBER(){  // Bill
         return shurikennumber;
     }
 
-    public int getNINJAHP(){
+    public int getNINJAHP(){  // Bill
         return ninjahp;
     }
 
-    public int getPOWERBAR(){
+    public int getPOWERBAR(){  // Bill
         return powerBar;
     }
 
-    public boolean checkDoor()
+    public boolean checkDoor()  // Hayden
     {
         if(getWorld().getObjects(Pictures.class).size()!=0)
         {
@@ -618,7 +618,7 @@ public class Ninja extends Heroes
         return false;
     }
 
-    public boolean checkDoor1()
+    public boolean checkDoor1()// Hayden
     {
         if(getWorld().getObjects(Pictures.class).size()!=0)
         {
@@ -631,7 +631,7 @@ public class Ninja extends Heroes
         return false;
     }
 
-    public boolean checkSnowDoor()
+    public boolean checkSnowDoor() // Tiffany
     {
         if(getWorld().getObjects(Pictures.class).size()!=0)
         {
@@ -644,7 +644,7 @@ public class Ninja extends Heroes
         return false;
     }
 
-    public boolean checkInfernoDoor()
+    public boolean checkInfernoDoor() // Sean
     {
         if(getWorld().getObjects(Pictures.class).size()!=0)
         {
@@ -657,7 +657,7 @@ public class Ninja extends Heroes
         return false;
     }
 
-    public boolean checkInfernoDoor1()
+    public boolean checkInfernoDoor1() // Sean
     {
         if(getWorld().getObjects(Pictures.class).size()!=0)
         {
@@ -670,7 +670,7 @@ public class Ninja extends Heroes
         return false;
     }
 
-    public void damageRangedMinion()
+    public void damageRangedMinion() // Hayden
     {
         Darkness darkness = (Darkness) getOneIntersectingObject(Darkness.class);
         if(darkness!=null&&!powerUpTwo)
@@ -697,7 +697,7 @@ public class Ninja extends Heroes
         }
     }
 
-    public void damageRangedDashBoss()
+    public void damageRangedDashBoss() // Hayden
     {
         DashDarkness dashdarkness = (DashDarkness) getOneIntersectingObject(DashDarkness.class);
         if(dashdarkness!=null&&!powerUpTwo)
@@ -712,7 +712,7 @@ public class Ninja extends Heroes
     }
 
     // "Currently under ranged minion" Melee minion AI End [Hayden] 
-    public void powerUpOne(){
+    public void powerUpOne(){ // Sean
         if (progress >0&&powerBar >= 1  && (canMoveUp() || canMoveDown() || canMoveLeft() || canMoveRight())){
 
             if (Greenfoot.isKeyDown("u"))
@@ -732,7 +732,7 @@ public class Ninja extends Heroes
         }
     }
 
-    public void powerUpTwo()
+    public void powerUpTwo()  // Hayden
     {
         if(progress>1&&powerBar>0&&(Greenfoot.isKeyDown("i")))
         {
@@ -745,7 +745,8 @@ public class Ninja extends Heroes
             powerUpTwo = false;
     }
 
-    public void powerUpThree(){
+    public void powerUpThree() // Bill
+    { 
         if (progress > 2 && powerBar>3 && (Greenfoot.isKeyDown("o")) && delay>140 && powerUpThree == false)
         {
             //powerUpThree = true;
@@ -754,7 +755,8 @@ public class Ninja extends Heroes
 
     }
 
-    public void addShuriken(){
+    public void addShuriken() // Hayden
+    { 
         Actor SP  = getOneIntersectingObject(addShuriken.class);
         if (SP != null){
             shurikennumber += 5;
@@ -763,12 +765,13 @@ public class Ninja extends Heroes
         }
     } 
 
-    public int getMaxShurikens()
+    public int getMaxShurikens() // Sean
     {
         return maxShurikens;
     }
 
-    public void addPower(){
+    public void addPower() // Hayden
+    {
         Actor PP  = getOneIntersectingObject(instaPower.class);
         if (PP != null){
             if (powerBar <= 50)
@@ -784,7 +787,7 @@ public class Ninja extends Heroes
         }
     }
 
-    public boolean checkTeleport()
+    public boolean checkTeleport() // Bill
     {
         if(getWorld().getObjects(Ninja.class).size()!=0)
         {
@@ -797,7 +800,8 @@ public class Ninja extends Heroes
         return false;
     }
 
-    public void addHealth(){
+    public void addHealth() // Hayden
+    {
         Actor HP  = getOneIntersectingObject(HealthGlobe.class);
         if (HP != null){
             ninjahp += 3;
@@ -807,76 +811,78 @@ public class Ninja extends Heroes
         }
     }
 
-    public void setShurikens(int a){
+    public void setShurikens(int a) // Hayden
+    {
         shurikennumber = a;
     }
 
-    public int getShurikens(){
+    public int getShurikens() // Hayden
+    {
         return shurikennumber;
     }
 
-    public void setPoints(int a)
+    public void setPoints(int a) // Bill
     {
         points = a;
     }
 
-    public int getPoints()
+    public int getPoints() // Bill
     {
         return points;
     }
 
-    public int getHP()
+    public int getHP() // Hayden
     {
         return ninjahp;
     }
 
-    public void setHP(int a)
+    public void setHP(int a) // Hayden
     {
         ninjahp = a;
     }
 
-    public void setProgress(int a)
+    public void setProgress(int a) // Bill
     {
         progress = a;
     }
 
-    public int getProgress()
+    public int getProgress() // Bill
     {
         return progress;
     }
 
-    public boolean getPower3()
+    public boolean getPower3() // Bill
     {
         return powerUpThree;
     }
 
-    public void powerUpThreeFalse()
+    public void powerUpThreeFalse() // Bill
     {
         powerUpThree = false;
     }
 
-    public int getPower()
+    public int getPower() // Bill
     {
         return powerBar;
     }
 
-    public void setPower(int a)
+    public void setPower(int a) // Bill
     {
         powerBar = a;
     }
 
-    public void cutorb(){
+    public void cutorb(){// Hayden
         Actor O = getOneIntersectingObject(Darkness.class);
         if (delay >=40 && Greenfoot.isKeyDown("k") && O!=null){
             getWorld().removeObject(O);
         }
     }
 
-    public void TheHack(){
+    public void TheHack(){ // Hayden
         int point = 100;
     }
 
-    public void TheHackIs(){
+    public void TheHackIs(){ // Hayden
         TheHack thehack = new TheHack();
 
         if (Greenfoot.isKeyDown("1")&&Greenfoot.isKeyDown("3")&&Greenfoot.isKeyDown("5")&&Greenfoot.isKeyDown("7")){
@@ -897,7 +903,7 @@ public class Ninja extends Heroes
         }*/
     }
 
-    public void addPowerUp(int prog)
+    public void addPowerUp(int prog) // Bill
     {
         progress = prog;
     }

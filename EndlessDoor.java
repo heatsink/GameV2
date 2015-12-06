@@ -1,3 +1,4 @@
+// Hayden's class Sean's sprite
 import greenfoot.*;
 
 /**

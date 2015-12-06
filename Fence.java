@@ -1,3 +1,4 @@
+// Hayden's class
 import greenfoot.*;
 
 // Fence Image

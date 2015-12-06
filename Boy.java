@@ -1,5 +1,7 @@
+
 import greenfoot.*;
 // Sean - Near-clone of the ninja class with different sprite for use in intro levels
+// The ninja class was created by Sean, Hayden, Bill, and Tiffany
 public class Boy extends Heroes
 {
    private int progress = 0;

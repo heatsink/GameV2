@@ -1,3 +1,5 @@
+// Class integrated by Sean
+// This class was later removed from use in the game
 import greenfoot.*;
 
 // Sprite for teaching the ninja his first ability

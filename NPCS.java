@@ -1,3 +1,4 @@
+// Sean + Bill + Hayden wrote this class
 import greenfoot.*;
 /**
  * Functionality in this class:

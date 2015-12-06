@@ -1,5 +1,5 @@
+// Sean's class
 import greenfoot.*;
-// sean's
 /**
  * Write a description of class ReturnToGame here.
  * 

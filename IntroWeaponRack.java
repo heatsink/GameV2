@@ -1,3 +1,4 @@
+// Sean's entire class and sprite
 import greenfoot.*;
 
 /**

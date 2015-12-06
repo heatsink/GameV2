@@ -1,3 +1,4 @@
+// Sean's class (originally hayden's and changed almost completely)
 import greenfoot.*;
 
 /**

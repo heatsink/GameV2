@@ -1,3 +1,4 @@
+// Tiffany's class
 import greenfoot.*;
 
 // Tiffany - Mushroom Sprite

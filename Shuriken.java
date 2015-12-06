@@ -1,3 +1,4 @@
+// Sean's class (modified by hayden)
 import greenfoot.*; 
 
 /**
@@ -8,7 +9,7 @@ public class Shuriken extends Projectiles
     private int st = 0;
     int damage;
     // Sprite drawn by Edward, Sean's Roommate
-    // http://soundbible.com/1898-Spin-Jump.html
+    // sound from http://soundbible.com/1898-Spin-Jump.html
     GreenfootSound sliceSound = new GreenfootSound("slice.mp3");
     GreenfootSound constructorSound = new GreenfootSound("spin_jump-Brandino480-2020916281.mp3");
     public void act() 
@@ -33,6 +34,7 @@ public class Shuriken extends Projectiles
         else if (atWorldEdge())
             getWorld().removeObject(this);
         st++;
+        // Hayden's decelleration code
         if (st >= 0 && st < 12)
         {
             move (8);
@@ -57,6 +59,7 @@ public class Shuriken extends Projectiles
         {
             move(3);
         }
+        // Hayden's decelleration code end
         else if(st>=72)
         {
             try{

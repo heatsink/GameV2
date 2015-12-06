@@ -1,3 +1,4 @@
+// Sean Imported this class from greenfoot
 import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
 
 /**

@@ -1,3 +1,4 @@
+// Class integrated by Hayden
 import greenfoot.*;
 
 // Sean - Egg sprite to add power to the ninja

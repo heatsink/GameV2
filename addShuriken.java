@@ -1,3 +1,4 @@
+// // Class integrated by Hayden
 import greenfoot.*;
 
 // Adds shurikens when the ninja collides with this

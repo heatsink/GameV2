@@ -1,3 +1,4 @@
+// Bill's class Sean used default greenfoot sprite
 import greenfoot.*;
 
 /**

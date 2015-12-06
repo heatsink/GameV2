@@ -1,3 +1,4 @@
+// Sean's class
 import greenfoot.*;
 // Sean - Image of Bed
 public class Bed extends Obstacles

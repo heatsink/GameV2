@@ -1,3 +1,4 @@
+// Sean's class (all the juice belong to sean :D)
 import greenfoot.*;
 
 /**

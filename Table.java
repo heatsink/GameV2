@@ -1,3 +1,4 @@
+// Sean's class
 import greenfoot.*;
 // Sean - Image of a Table
 public class Table extends Obstacles

@@ -1,3 +1,4 @@
+// Sean's code
 import greenfoot.*; 
 import java.util.*;
 
