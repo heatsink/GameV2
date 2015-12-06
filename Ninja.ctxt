@@ -97,7 +97,7 @@ comment6.params=
 comment6.target=void\ transparent()
 comment7.params=
 comment7.target=void\ ninjaDied()
-comment7.text=\n\ \ \ \ puclic\ static\ int[]\ worldK;\n\ \ \ \ worldK[]\ \=\ new\ array\ worldK[15];\n\ \ \ \ if(int\ k\ \=\ 0;\ k\ <\ 15;\ k++){\n\ \ \ \ if\ (getWorld()\ instanceof\ KworldK[k])\n\ \ \ \ {\n\ \ \ \ this.setHP(this.getArmor());\n\ \ \ \ Greenfoot.setWorld(new\ KworldK(this);\n\ \ \ \ }\n
+comment7.text=\r\n\ \ \ \ puclic\ static\ int[]\ worldK;\r\n\ \ \ \ worldK[]\ \=\ new\ array\ worldK[15];\r\n\ \ \ \ if(int\ k\ \=\ 0;\ k\ <\ 15;\ k++){\r\n\ \ \ \ if\ (getWorld()\ instanceof\ KworldK[k])\r\n\ \ \ \ {\r\n\ \ \ \ this.setHP(this.getArmor());\r\n\ \ \ \ Greenfoot.setWorld(new\ KworldK(this);\r\n\ \ \ \ }\r\n
 comment8.params=
 comment8.target=boolean\ checkDoorT21()
 comment9.params=

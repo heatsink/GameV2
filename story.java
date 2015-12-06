@@ -13,7 +13,7 @@ public class story extends Pictures
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int delay=0;
-    public void act() 
+    public void act() //Sean
     {
         if (delay < 50)
         {

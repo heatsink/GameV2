@@ -23,7 +23,7 @@ public class Pictures extends Actor
     {
         animatePortal();
     }    
-    public void animatePortal()
+    public void animatePortal()//sean
     {
         if (frame == 3)
             {
