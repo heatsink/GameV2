@@ -15,14 +15,14 @@ public class Snow2 extends Trap
     private List<NPCS> npcs;
     Ninja ninja;
     int delay = 11;
-    public Snow2(Ninja ninja)
+    public Snow2(Ninja ninja)//Tiffany
     {
         super();
         this.ninja = ninja;
         prepare();
     }
 
-    private void prepare()
+    private void prepare()//Tiffany
     {
         SnowDoor door = new SnowDoor();
         addObject(door, 656, 415);
@@ -138,7 +138,7 @@ public class Snow2 extends Trap
         
     }
 
-    public void act()
+    public void act()//Bill
     {
        if (Greenfoot.isKeyDown("j")&&delay>10) 
        {
@@ -157,20 +157,20 @@ public class Snow2 extends Trap
        }
        delay++;
     }
-    public void checkDoor()
+    public void checkDoor()//Bill
     {
         if(ninja.checkSnowDoor()==true)
             Greenfoot.setWorld(new Snow3(ninja));
     }
-   public Ninja getNinja()
+   public Ninja getNinja()//Bill
    {
        return ninja;
    }
-   public Trap getThisWorld()
+   public Trap getThisWorld()//Bill
    {
        return this;
    }
-      public void gameover(){
+      public void gameover(){//Hayden
        ninja.setHP(ninja.getArmor());
        Greenfoot.setWorld(new Snow2(ninja));
     }

@@ -1,18 +1,19 @@
 import greenfoot.*;
+//Duy & Tiffany 
 public class StaticStoryPage extends Actor
 {
     // Duy found this sprite from http://tibia.wikia.com/wiki/Sheet_of_Tracing_Paper/History
     public int pageNumber;
     private boolean createdPage = false;
-    public StaticStoryPage(int pageNumber)
+    public StaticStoryPage(int pageNumber)//Tiffany
     {
         this.pageNumber = pageNumber;
     }
-    public void act() 
+    public void act() //Tiffany
     {
         ninjaCollision();
     }    
-    public void ninjaCollision()
+    public void ninjaCollision()//Tiffany
     {
         Ninja ninja = (Ninja) getOneIntersectingObject(Ninja.class);
         Boy boy = (Boy) getOneIntersectingObject(Boy.class);
@@ -28,7 +29,7 @@ public class StaticStoryPage extends Actor
         }
         
     }
-    public void changeStoryPage()
+    public void changeStoryPage()//Duy
     {
         if (pageNumber == 1)
         {

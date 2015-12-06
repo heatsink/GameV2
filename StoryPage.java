@@ -1,5 +1,5 @@
 import greenfoot.*;
-
+//Duy
 /**
  * Write a description of class StoryPage here.
  * 
@@ -14,11 +14,11 @@ public class StoryPage extends Actor
      */
     //http://tibia.wikia.com/wiki/Sheet_of_Tracing_Paper/History
     public int page;
-    public StoryPage(int p)
+    public StoryPage(int p)//Duy
     {
         page=p;
     }
-    public void act() 
+    public void act() //Duy
     {
         untouchable();
         if (noRemainingMonsters()==true)
@@ -31,7 +31,7 @@ public class StoryPage extends Actor
             }
         }    
     }
-    public boolean noRemainingMonsters()
+    public boolean noRemainingMonsters()//Duy
     {
         if (getWorld().getObjects(NPCS.class).size() == 0)
         {
@@ -39,7 +39,7 @@ public class StoryPage extends Actor
         }
         return false;
     }
-    public void showStory()
+    public void showStory()//Duy
     {
         if (page==1)
         {
@@ -92,7 +92,7 @@ public class StoryPage extends Actor
           getWorld().addObject(story, 375, 375);
         }
     }   
-    private void untouchable()
+    private void untouchable()//Duy
     {
         getImage().setTransparency(50);
         if (noRemainingMonsters()==true)

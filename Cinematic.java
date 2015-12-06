@@ -1,4 +1,5 @@
 import greenfoot.*;
+//Hayden Created Original, Edited by Sean
 /**
  * Functionality in this class:
  */

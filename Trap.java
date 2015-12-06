@@ -1,5 +1,5 @@
 import greenfoot.*;
-
+// Bill & Hayden & sean
 /**
  * Write a description of class Trap here.
  * 
@@ -19,14 +19,14 @@ public class Trap extends World
      * Constructor for objects of class Trap.
      * 
      */
-    public Trap()
+    public Trap() //Bill
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
         prepareHUD();
         //makeAllIcons();
     }
-    public void prepareHUD()
+    public void prepareHUD()//bill
     {
         HUD hud = new HUD();
         addObject(hud, 852+50-1, 373);
@@ -37,15 +37,15 @@ public class Trap extends World
         UpgradeIcon upgradeIcon = new UpgradeIcon();
         addObject(upgradeIcon, 790, 360);
     }
-    public Ninja getNinja()
+    public Ninja getNinja()//bill
     {
         return ninja;
     }
-    public Boy getBoy()
+    public Boy getBoy()//bill
     {
         return boy;
     }
-    public void makeAllIcons()
+    public void makeAllIcons()//sean
     {
         SwordIcon swordicon = new SwordIcon();
         addObject(swordicon, 889, 360);
@@ -63,11 +63,11 @@ public class Trap extends World
         deathWorld = new DeathWorld(ninja);
         Greenfoot.setWorld(deathWorld);
    }
-      public void gameover(){
+      public void gameover(){ //Hayden
        ninja.setHP(ninja.getArmor());
        Greenfoot.setWorld(new Kyobashi(ninja));
     }
-     public void stopmusic(){
+     public void stopmusic(){// Hayden
         
         velocitator.stop();
     }

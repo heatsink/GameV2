@@ -17,7 +17,7 @@ public class InfernoBossLevel extends Trap
     private int counterDelay = 0;
     static boolean played = false;
     private GreenfootSound heavensGate = new GreenfootSound("Diablo 3 OST - Heaven's Gate (#20).mp3");
-    public InfernoBossLevel(Ninja ninja)
+    public InfernoBossLevel(Ninja ninja)//Sean
     {
         super();
         this.ninja = ninja;
@@ -26,7 +26,7 @@ public class InfernoBossLevel extends Trap
         
     }
     
-    private void prepare()
+    private void prepare()//Sean
     {
         for(int i = 0; i<14; i++)
             for(int j = 0; j<2; j++)
@@ -109,7 +109,7 @@ public class InfernoBossLevel extends Trap
         addObject(text, infernoboss.getX(), infernoboss.getY()-20);
     }
 
-    public void act()
+    public void act()//Sean
     {
         heavensGate.playLoop();
         counterDelay++;
@@ -136,7 +136,7 @@ public class InfernoBossLevel extends Trap
        delay++;
        fireballDelay++;
     }
-    public void makeAllIcons()
+    public void makeAllIcons()//Sean
     {
         SwordIcon swordicon = new SwordIcon();
         addObject(swordicon, 889, 360);
@@ -149,7 +149,7 @@ public class InfernoBossLevel extends Trap
         //DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
         //addObject(doubledamageicon, 871, 308);
     }
-    public void makeSmokeFireball()
+    public void makeSmokeFireball()//Sean
     {
         if (delay > 100)
         {
@@ -186,7 +186,7 @@ public class InfernoBossLevel extends Trap
             }
         }
     }
-    public void checkDoor()
+    public void checkDoor()//Hayden
     {
         if(ninja.checkInfernoDoor()==true)
         {
@@ -194,15 +194,15 @@ public class InfernoBossLevel extends Trap
             Greenfoot.setWorld(new Cinematic1(ninja));
         }
     }
-   public Ninja getNinja()
+   public Ninja getNinja()//Bill
    {
        return ninja;
    }
-   public Trap getThisWorld()
+   public Trap getThisWorld()//Bill
    {
        return this;
    }
-   public void gameover(){
+   public void gameover(){//Hayden
        ninja.setHP(ninja.getArmor());
        Greenfoot.setWorld(new InfernoBossLevel(ninja));
        heavensGate.stop();

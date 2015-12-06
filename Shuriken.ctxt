@@ -7,5 +7,5 @@ comment2.params=
 comment2.target=void\ NPCS()
 comment3.params=
 comment3.target=int\ getDamage()
-comment3.text=\n\ \ \ \ public\ void\ DASHBOSS(){\n\ \ \ \ Actor\ DashBoss\ \=\ getOneIntersectingObject(DashBoss.class);\n\ \ \ \ if\ (DashBoss\ \!\=\ null){\n\ \ \ \ sliceSound.setVolume(15);\n\ \ \ \ sliceSound.play();\n\ \ \ \ if\ (this\ \!\=\ null)\n\ \ \ \ {\n\ \ \ \ getWorld().removeObject(this);\n\ \ \ \ }\n\ \ \ \ }\n\ \ \ \ }\n
+comment3.text=\r\n\ \ \ \ public\ void\ DASHBOSS(){\r\n\ \ \ \ Actor\ DashBoss\ \=\ getOneIntersectingObject(DashBoss.class);\r\n\ \ \ \ if\ (DashBoss\ \!\=\ null){\r\n\ \ \ \ sliceSound.setVolume(15);\r\n\ \ \ \ sliceSound.play();\r\n\ \ \ \ if\ (this\ \!\=\ null)\r\n\ \ \ \ {\r\n\ \ \ \ getWorld().removeObject(this);\r\n\ \ \ \ }\r\n\ \ \ \ }\r\n\ \ \ \ }\r\n
 numComments=4
