@@ -42,7 +42,7 @@ public class InfernoBossLevel extends Trap
                 InfernoFence inferoFence = new InfernoFence();
                 addObject(inferoFence, 50*i+25, 25+j*650);
         }
-        InfernoBoss infernoboss = new InfernoBoss(50);
+        InfernoBoss infernoboss = new InfernoBoss(30);
         addObject(infernoboss, getWidth()/2 , getHeight()/2);
 
         InfernoFence infernofence = new InfernoFence();
