@@ -87,5 +87,11 @@ public class IntroMenu extends World
      */
     private void prepare()
     {
+        SwordIcon swordicon = new SwordIcon();
+        addObject(swordicon, 183, 297-75);
+        ShurikenIcon shurikenicon = new ShurikenIcon();
+        addObject(shurikenicon, 186, 505-75);
+        swordicon.setLocation(176, 296-75);
+        shurikenicon.setLocation(177, 490-75);
     }
 }

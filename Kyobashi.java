@@ -2,7 +2,7 @@ import greenfoot.*;
 /**
  * Functionality in this class:
  */
-public class Kyobashi extends Trap
+public class Kyobashi extends Trap//Hadyen
 {
     public int level = 0;
     private int delay = 11;    //Constructor for objects of class Kyobashi
@@ -22,7 +22,7 @@ public class Kyobashi extends Trap
     GreenfootSound goldenLotus = new GreenfootSound("GoldenLotus.mp3");
     DeathWorld deathWorld;
     private int counterRefreshDelay = 0;
-    public Kyobashi(Ninja ninja)
+    public Kyobashi(Ninja ninja)//Hayden
     {    
         super(); 
         this.ninja = ninja;
@@ -35,7 +35,7 @@ public class Kyobashi extends Trap
      * Prepare the world for the start of the program. That is: create the initial
      * objects and add them to the world.
      */
-    private void prepare()
+    private void prepare()//Hayden
     {
         TextBoxKyo3 textboxkyo3 = new TextBoxKyo3();
         addObject (textboxkyo3, 380, 640-40);
@@ -78,7 +78,7 @@ public class Kyobashi extends Trap
         //addObject(powerbar, 824, 143+50);
     }
     
-   public void act()
+   public void act()//Hayden
    {
        goldenLotus.setVolume(65);
        goldenLotus.playLoop();
@@ -88,7 +88,7 @@ public class Kyobashi extends Trap
        /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
        
        /**/ // TEMPORAY FUNCTIONS FOR HAYDEN TO CHANGE LEVELS TO MAKE THEM /**/ 
-       if (Greenfoot.isKeyDown("h")&&delay>10) 
+       if (Greenfoot.isKeyDown("h")&&delay>10) //Bill
        {
            clickSound.play();
            Menu menu = new Menu(getThisWorld());
@@ -109,7 +109,7 @@ public class Kyobashi extends Trap
        checkInfernoDoor();
        t2Start();
    }
-   public void makeAllIcons()
+   public void makeAllIcons()//Sean
     {
         SwordIcon swordicon = new SwordIcon();
         addObject(swordicon, 889, 360);
@@ -120,7 +120,7 @@ public class Kyobashi extends Trap
         MenuIcon menuIcon = new MenuIcon();
         addObject(menuIcon, 875, 605);
     }
-   public void counterRefresh()
+   public void counterRefresh()//sean
    {
        counterRefreshDelay++;
         if (counterRefreshDelay > 5)
@@ -131,12 +131,12 @@ public class Kyobashi extends Trap
             powerCounter.setValue(ninja.getPOWERBAR());
         }
     }
-   public Kyobashi getThisWorld()
+   public Kyobashi getThisWorld()//bill
    {
        return this;
    }
    
-   public Ninja getNinja()
+   public Ninja getNinja()//bill
    {
        return ninja;
    }
@@ -153,16 +153,16 @@ public class Kyobashi extends Trap
        K3 k3 = new K3(ninja);
        Greenfoot.setWorld(k3);
    }
-   public void addLevel()
+   public void addLevel()//bill
    {
        level++;
        levelCounter.add(1);
    }
-   public int getLevel()
+   public int getLevel()//bill
    {
        return level;
    }
-   public void checkDoor()
+   public void checkDoor()//Hayden
    {
        if(ninja.checkDoor()==true)
        {
@@ -170,7 +170,7 @@ public class Kyobashi extends Trap
             Greenfoot.setWorld(new K2(ninja));
         }
    }
-   public void checkInfernoDoor()
+   public void checkInfernoDoor()//Hayden
    {
        if(ninja.checkInfernoDoor()== true)
        {
@@ -178,7 +178,7 @@ public class Kyobashi extends Trap
             Greenfoot.setWorld(new Inferno1(ninja));
         }
    }
-   public void t2Start()
+   public void t2Start()//Hayden
    {
        if (ninja.checkDoorT21()==true)
        {
@@ -186,7 +186,7 @@ public class Kyobashi extends Trap
             Greenfoot.setWorld(new T21(ninja));
         }
     }
-       public void checkSnowDoor()
+       public void checkSnowDoor()//Hayden
    {
        if(ninja.checkSnowDoor()==true)
        {
@@ -194,7 +194,7 @@ public class Kyobashi extends Trap
             Greenfoot.setWorld(new Snow1(ninja));
         }
    }
-      public void gameover(){
+      public void gameover(){//Hayden
        ninja.setHP(ninja.getArmor());
        {
            goldenLotus.stop();

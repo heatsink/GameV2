@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class InfernoBoss1 extends Animated
+public class InfernoBoss1 extends Animated//Sean
 {
     private int shaketime = 0;
     private int CountShake = 0;

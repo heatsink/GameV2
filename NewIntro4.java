@@ -1,5 +1,6 @@
 import greenfoot.*;
 import java.util.*;
+//Orginally coded by Hayden, but changed massivly by Sean
 /**
  * Write a description of class Intro1 here.
  * 
@@ -23,7 +24,7 @@ public class NewIntro4 extends Trap
      * Constructor for objects of class Intro1.
      * 
      */
-    public NewIntro4(Boy boy)
+    public NewIntro4(Boy boy)//sean
     {
         super();
         this.boy = boy;
@@ -111,7 +112,7 @@ public class NewIntro4 extends Trap
         addObject(staticstorypage, 98, 303);
     }
 
-    public void act(){
+    public void act(){//sean
       delay++;
       counterDelay++;
       if(!played)
@@ -145,16 +146,16 @@ public class NewIntro4 extends Trap
        
       
     }
-     public void makeAllIcons()
+     public void makeAllIcons()//sean
      {
         SwordIcon swordicon = new SwordIcon();
         addObject(swordicon, 889, 360);
         ShurikenIcon shurikenicon = new ShurikenIcon();
         addObject(shurikenicon, 838, 360);
      }
-     public void checkDoor()
+     public void checkDoor()//sean
        {
-        if(boy.checkDoor()==true)
+        if(boy.checkDoor()==true)//Sean and Hayden
         {
         bloodBourne.stop();
             Greenfoot.setWorld(new Kyobashi(ninja));
@@ -162,15 +163,15 @@ public class NewIntro4 extends Trap
        }
       
        
-      public Boy getBoy()
+      public Boy getBoy()//Bill
       {
        return boy;
       }
-      public Trap getThisWorld()
+      public Trap getThisWorld()//Bill
      {
        return this;
      }
-       public void gameover(){
+       public void gameover(){//Hayden
        bloodBourne.stop();
        boy.setHP(boy.getArmor());
        Greenfoot.setWorld(new NewIntro4(boy));

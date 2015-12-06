@@ -6,7 +6,7 @@ import java.util.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Cinematic1 extends Trap
+public class Cinematic1 extends Trap//ALL CODED BY HAYDEN
 {
     Ninja ninja;
     public int timec1 = 50;

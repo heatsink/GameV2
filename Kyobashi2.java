@@ -1,8 +1,9 @@
 import greenfoot.*;
+//Hayden
 /**
  * Functionality in this class:
  */
-public class Kyobashi2 extends Trap
+public class Kyobashi2 extends Trap//Hayden
 {
     public int level = 0;
     private int delay = 11;    //Constructor for objects of class Kyobashi
@@ -16,7 +17,7 @@ public class Kyobashi2 extends Trap
     // https://www.youtube.com/watch?v=9MdqA2oPqN0
     GreenfootSound goldenLotus = new GreenfootSound("GoldenLotus.mp3");
     DeathWorld deathWorld;
-    public Kyobashi2(Ninja ninja)
+    public Kyobashi2(Ninja ninja)//Hayden
     {    
         super(); 
         this.ninja = ninja;
@@ -27,7 +28,7 @@ public class Kyobashi2 extends Trap
      * Prepare the world for the start of the program. That is: create the initial
      * objects and add them to the world.
      */
-    private void prepare()
+    private void prepare()//Hayden
     {
         TextBoxKyo1 textboxkyo1 = new TextBoxKyo1();
         addObject (textboxkyo1, 380, 640-40);
@@ -72,10 +73,10 @@ public class Kyobashi2 extends Trap
         addObject(s, 98, 191);
         HealthGlobe hg = new HealthGlobe();
         addObject(hg, 197, 91);
-        makeAllIcons();
+        makeAllIcons();//Sean
     }
     
-   public void act()
+   public void act()//Bill, Sean, Hayden
    {
        goldenLotus.setVolume(65);
        goldenLotus.playLoop();
@@ -93,41 +94,7 @@ public class Kyobashi2 extends Trap
            delay = 0;
            
        }
-       if (Greenfoot.isKeyDown("1")&&delay>10) 
-       {
-           Greenfoot.setWorld(new Inferno1(ninja));
-           delay = 0;
-       }
-       if (Greenfoot.isKeyDown("2")&&delay>10) 
-       {
-           Greenfoot.setWorld(new Inferno2(ninja));
-           delay = 0;
-       }
-       if (Greenfoot.isKeyDown("3")&&delay>10) 
-       {
-           Greenfoot.setWorld(new Inferno3(ninja));
-           delay = 0;
-       }
-       if (Greenfoot.isKeyDown("4")&&delay>10) 
-       {
-           Greenfoot.setWorld(new Inferno4(ninja));
-           delay = 0;
-       }
-       if (Greenfoot.isKeyDown("0")&&delay>10) 
-       {
-           Greenfoot.setWorld(new InfernoBossLevel(ninja));
-           delay = 0;
-       }
-       if (Greenfoot.isKeyDown("8")&&delay>10) 
-       {
-           Greenfoot.setWorld(new K12(ninja));
-           delay = 0;
-       }
-       if (Greenfoot.isKeyDown("7")&&delay>10)
-       {
-           Greenfoot.setWorld(new Snow3(ninja));
-           delay = 0;
-        }
+       
        delay++;
        healthCounter.setValue(ninja.getNINJAHP());
        shurikenCounter.setValue(ninja.getSHURIKENNUMBER());
@@ -137,7 +104,7 @@ public class Kyobashi2 extends Trap
        checkInfernoDoor();
        t2Start();
    }
-   public void makeAllIcons()
+   public void makeAllIcons()//Sean
     {
         SwordIcon swordicon = new SwordIcon();
         addObject(swordicon, 889, 360);
@@ -152,12 +119,12 @@ public class Kyobashi2 extends Trap
         MenuIcon menuIcon = new MenuIcon();
         addObject(menuIcon, 875, 605);
     }
-   public Kyobashi2 getThisWorld()
+   public Kyobashi2 getThisWorld()//Bill
    {
        return this;
    }
    
-   public Ninja getNinja()
+   public Ninja getNinja()//bill
    {
        return ninja;
    }
@@ -174,16 +141,16 @@ public class Kyobashi2 extends Trap
        K3 k3 = new K3(ninja);
        Greenfoot.setWorld(k3);
    }
-   public void addLevel()
+   public void addLevel()//Bill
    {
        level++;
        levelCounter.add(1);
    }
-   public int getLevel()
+   public int getLevel()//Bill
    {
        return level;
    }
-   public void checkDoor()
+   public void checkDoor()//Hayden
    {
        if(ninja.checkDoor()==true)
        {
@@ -191,7 +158,7 @@ public class Kyobashi2 extends Trap
             Greenfoot.setWorld(new K2(ninja));
         }
    }
-   public void checkInfernoDoor()
+   public void checkInfernoDoor()//Hayden
    {
        if(ninja.checkInfernoDoor()== true)
        {
@@ -199,7 +166,7 @@ public class Kyobashi2 extends Trap
             Greenfoot.setWorld(new Inferno1(ninja));
         }
    }
-   public void t2Start()
+   public void t2Start()//Hayden
    {
        if (ninja.checkDoorT21()==true)
        {
@@ -207,7 +174,7 @@ public class Kyobashi2 extends Trap
             Greenfoot.setWorld(new T21(ninja));
         }
     }
-       public void checkSnowDoor()
+       public void checkSnowDoor()//Hayden
    {
        if(ninja.checkSnowDoor()==true)
        {

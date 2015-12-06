@@ -1,3 +1,4 @@
+// Bill's entire class
 import greenfoot.*;
 import java.util.*;
 /**
@@ -17,6 +18,7 @@ public class T25 extends Trap
     private List<NPCS> npcs;
     private int counterDelay = 0;
     private boolean createdDoor = false;
+    private int appleRespawn = 0;
     Ninja ninja;
     int delay = 11;
     public T25(Ninja ninja)
@@ -62,11 +64,20 @@ public class T25 extends Trap
             TempText5 text = new TempText5(npcs.get(i));
             addObject(text, npcs.get(i).getX(), npcs.get(i).getY()-50);
         }
+        HealthGlobe healthglobe = new HealthGlobe();
+        addObject(healthglobe, 670, 622);
+        HealthGlobe healthglobe2 = new HealthGlobe();
+        addObject(healthglobe2, 84, 79);
+        addShuriken addshuriken = new addShuriken();
+        addObject(addshuriken, 85, 624);
+        instaPower instapower = new instaPower();
+        addObject(instapower, 682, 73);
     }
 
     public void act()
     {
         counterDelay++;
+        appleRespawn();
          if(!played)
         {
         billin.playLoop();
@@ -153,6 +164,22 @@ public class T25 extends Trap
         ninja.setProgress(2);
         createdDoor = true;
         billin.stop();
+        }
+    }
+    public void appleRespawn()
+    {
+        appleRespawn++;
+        if (appleRespawn >= 3000)
+        {
+            appleRespawn = 0;
+            HealthGlobe healthglobe = new HealthGlobe();
+            addObject(healthglobe, 670, 622);
+            HealthGlobe healthglobe2 = new HealthGlobe();
+            addObject(healthglobe2, 84, 79);
+            addShuriken addshuriken = new addShuriken();
+            addObject(addshuriken, 85, 624);
+            instaPower instapower = new instaPower();
+            addObject(instapower, 682, 73);
         }
     }
 }

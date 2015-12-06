@@ -1,5 +1,6 @@
 import greenfoot.*;
 import java.util.*;
+//Tiffany
 /**
  * Write a description of class K1 here.
  * 
@@ -15,14 +16,14 @@ public class Snow1 extends Trap
     private List<NPCS> npcs;
     Ninja ninja;
     int delay = 11;
-    public Snow1(Ninja ninja)
+    public Snow1(Ninja ninja)//tiffany
     {
         super();
         this.ninja = ninja;
         prepare();
     }
 
-    private void prepare()
+    private void prepare()//tiffany
     {
         SnowDoor door = new SnowDoor();
         addObject(door, 653, 534);
@@ -269,7 +270,7 @@ public class Snow1 extends Trap
         removeObject(snowfence40);
     }
 
-    public void act()
+    public void act()//bill
     {
         if (Greenfoot.isKeyDown("j")&&delay>10) 
         {
@@ -290,22 +291,22 @@ public class Snow1 extends Trap
         delay++;
     }
 
-    public void checkDoor()
+    public void checkDoor()//tiffany
     {
         if(ninja.checkSnowDoor()==true)
             Greenfoot.setWorld(new Snow2(ninja));
     }
 
-    public Ninja getNinja()
+    public Ninja getNinja()//tiffany
     {
         return ninja;
     }
 
-    public Trap getThisWorld()
+    public Trap getThisWorld()//tiffany
     {
         return this;
     }
-       public void gameover(){
+       public void gameover(){//Hayden
        ninja.setHP(ninja.getArmor());
        Greenfoot.setWorld(new Snow1(ninja));
     }

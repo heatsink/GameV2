@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class KeyboardK extends ActionBar
+public class KeyboardK extends ActionBar//sean
 {
     /**
      * Act - do whatever the KeyboardK wants to do. This method is called whenever

@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Smoke1 extends Objects
+public class Smoke1 extends Objects//ALL HADYEN
 {
     private int timec2=0;
     /**

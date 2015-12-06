@@ -2,7 +2,7 @@ import greenfoot.*;
 /**
  * Functionality in this class:
  */
-public class BoyBot extends Animated
+public class BoyBot extends Animated//sean
 {
     private double time = 0;
     // Sprites Drawn by [Edward, Sean's roommate]

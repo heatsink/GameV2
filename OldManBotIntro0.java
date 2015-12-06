@@ -3,7 +3,7 @@ import java.util.*;
 /**
  * Functionality in this class:
  */
-public class OldManBotIntro0 extends Animated
+public class OldManBotIntro0 extends Animated//sean hayden Tiffany
 {
     private double time = 0;
     // Sprites taken from http://kamuipsyus.deviantart.com/art/LOZ-Sprite-Old-Man-Robe-433458612

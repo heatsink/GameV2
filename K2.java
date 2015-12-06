@@ -1,12 +1,13 @@
 import greenfoot.*;
 import java.util.*;
+//Hayden
 /**
  * Write a description of class K2 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class K2 extends Trap
+public class K2 extends Trap//Hayden
 {
     Ninja ninja;
     static boolean played = false;
@@ -19,7 +20,7 @@ public class K2 extends Trap
     private int counterDelay = 0;
     // https://www.youtube.com/watch?v=PZV2nASIe1o
     GreenfootSound Peaceful = new GreenfootSound("Peaceful.mp3");
-    public K2(Ninja ninja)
+    public K2(Ninja ninja)//Hayden
     {
         super();
         this.ninja = ninja;
@@ -27,8 +28,8 @@ public class K2 extends Trap
         
     }
 
-    private void prepare()
-    {
+    private void prepare()//Hayden
+    {//Hayden
         for(int i = 0; i<15; i++)
             for(int j = 0; j<2; j++)
             {
@@ -118,7 +119,7 @@ public class K2 extends Trap
         addObject(staticstorypage, 288, 102);
     }
 
-    public void act()
+    public void act()//Hayden
     {
         counterDelay++;
         if (!played){
@@ -144,14 +145,14 @@ public class K2 extends Trap
         delay++;
     }
 
-    public void makeAllIcons()
+    public void makeAllIcons()//sean
     {
         SwordIcon swordicon = new SwordIcon();
         addObject(swordicon, 889, 360);
         ShurikenIcon shurikenicon = new ShurikenIcon();
         addObject(shurikenicon, 838, 360);
     }
-    public void checkDoor()
+    public void checkDoor()//Hayden
     {
         if(ninja.checkDoor()==true){
             Peaceful.stop();
@@ -159,15 +160,15 @@ public class K2 extends Trap
         }
     }
 
-    public Ninja getNinja()
+    public Ninja getNinja()//bill
     {
         return ninja;
     }
-    public Trap getThisWorld()
+    public Trap getThisWorld()//bill
     {
         return this;
     }
-       public void gameover(){
+       public void gameover(){//Hayden
        ninja.setHP(ninja.getArmor());
        Greenfoot.setWorld(new K2(ninja));
     }

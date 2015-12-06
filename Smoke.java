@@ -7,7 +7,7 @@ public class Smoke extends Objects
 {
     // Sprite taken from http://www.flamesofwar.com/hobby.aspx?art_id=2876
     private int speed;
-    public Smoke(int speed)
+    public Smoke(int speed)//Hadyen
     {
         this.speed = speed;
     }
@@ -17,7 +17,7 @@ public class Smoke extends Objects
         RemoveCloud();
     }    
 
-    public void RemoveCloud()
+    public void RemoveCloud()//Hayden
     {
         if (getX() >= 1000)
         {

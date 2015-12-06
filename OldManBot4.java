@@ -7,7 +7,7 @@ import java.util.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class OldManBot4 extends Animated
+public class OldManBot4 extends Animated//ALL HAYDEN
 {
     public int omb4hp=1;
     private int delay = 0;

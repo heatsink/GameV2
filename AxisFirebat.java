@@ -63,7 +63,7 @@ public class AxisFirebat extends MeleeMinion //RM Stands for Ranged Minion
     }
     public void detect()
     {
-        List<Ninja> list = getObjectsInRange(400, Ninja.class);
+        List<Ninja> list = getObjectsInRange(1500, Ninja.class);
         if (list.size()>0)
         {
             //setLocation(list.get(0).getX()

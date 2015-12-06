@@ -44,6 +44,11 @@ public class ArmPool extends Juice
         {
             SmokeFireball smokeFireball = new SmokeFireball();
             getWorld().addObject(smokeFireball, getX(), getY());
+            if (Greenfoot.getRandomNumber(4) < 1)
+            {
+            AxisFirebat firebat4 = new AxisFirebat(1, 1);
+            getWorld().addObject(firebat4, getX(), getY());
+            }
         }
         
     }    

@@ -6,7 +6,7 @@ import java.util.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Cinematic2 extends Trap
+public class Cinematic2 extends Trap//ALL CODED BY HAYDEN
 {
     Ninja ninja;
     private List<Flash> flash;

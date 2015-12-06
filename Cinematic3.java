@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Cinematic3 extends Trap
+public class Cinematic3 extends Trap//ALL CODED BY HAYDEN
 {
     Ninja ninja;
     GreenfootSound win = new GreenfootSound("win.mp3");

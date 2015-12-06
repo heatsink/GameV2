@@ -6,7 +6,7 @@ import java.awt.Color;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Flash extends Animated
+public class Flash extends Animated//Hayden
 {
     /**
      * Act - do whatever the Flash wants to do. This method is called whenever

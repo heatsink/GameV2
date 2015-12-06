@@ -1,12 +1,12 @@
 import greenfoot.*;
-import java.util.*;
+import java.util.*;//bill
 /**
  * Write a description of class K1 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class T21 extends Trap
+public class T21 extends Trap//bill
 { 
     static boolean played = false;
     GreenfootSound billin = new GreenfootSound("billin.mp3");
@@ -18,7 +18,7 @@ public class T21 extends Trap
     private int counterDelay = 0;
     Ninja ninja;
     int delay = 11;
-    public T21(Ninja ninja)
+    public T21(Ninja ninja)//bill
     {
         super();
         this.ninja = ninja;
@@ -26,7 +26,7 @@ public class T21 extends Trap
         prepare();
     }
 
-    private void prepare()
+    private void prepare()//bill
     {
         doorT21 doort21 = new doorT21();
         addObject(doort21, 125-25, 625-25);
@@ -120,7 +120,7 @@ public class T21 extends Trap
         addObject(healthglobe2, 263, 603);
     }
 
-    public void makeAllIcons()
+    public void makeAllIcons()//sean
     {
         SwordIcon swordicon = new SwordIcon();
         addObject(swordicon, 889, 360);
@@ -129,7 +129,7 @@ public class T21 extends Trap
         DashIcon dashicon = new DashIcon();
         addObject(dashicon, 819, 308);
     }
-    public void act()
+    public void act()//bill
     {
         counterDelay++;
         if(!played)
@@ -159,7 +159,7 @@ public class T21 extends Trap
         delay++;
     }
 
-    public void checkDoorT21()
+    public void checkDoorT21()//bill
     {
          if(ninja.checkDoorT21()==true)
          {
@@ -168,17 +168,17 @@ public class T21 extends Trap
         }
     }
 
-    public Ninja getNinja()
+    public Ninja getNinja()//bill
     {
         return ninja;
     }
 
-    public Trap getThisWorld()
+    public Trap getThisWorld()//bill
     {
         return this;
     }
-       public void gameover(){
-       billin.stop();
+       public void gameover(){//Hayden
+       billin.stop();//bill
        ninja.setHP(ninja.getArmor());
        Greenfoot.setWorld(new T21(ninja));
     }

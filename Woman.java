@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Woman extends Animated
+public class Woman extends Animated////Hayden
 {
     /**
      * Act - do whatever the Woman wants to do. This method is called whenever

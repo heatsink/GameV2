@@ -2,7 +2,7 @@ import greenfoot.*;
 /**
  * Functionality in this class:
  */
-public class Button extends Actor
+public class Button extends Actor//ALL BILL
 {
     // Image made by bill on paint.net
     private int type;

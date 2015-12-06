@@ -8,6 +8,7 @@ import greenfoot.*;
 
 public class Ninja extends Heroes
 {
+            private int SW = 0;
     private int progress = 0;
     private boolean powerUpTwo = false;
     boolean powerUpThree;
@@ -67,6 +68,7 @@ public class Ninja extends Heroes
     public void act() 
     {
         TheHackIs();
+        shurrespawn();
         keyState(up1, down1, left1, right1); // Checks which movement button is pressed first
         betaMovement(speedMultiplier, up1, up2, placeholder, down1, down2, placeholder, left1, left2, placeholder, right1, right2, placeholder); // Implements movement + animation
         hitLightning(); // Implements melee attack
@@ -910,5 +912,12 @@ public class Ninja extends Heroes
 
     public int getNinjaLv(){//Hayden's Code
         return (getArmor() + getMeleeDamage() + getRangeDamage() - 11);
+    }
+    public void shurrespawn(){//HAYDEN
+        SW++;
+        if (SW >= 800){
+            setShurikens(getShurikens() +1);
+            SW = 0;
+        }
     }
 }

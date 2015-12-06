@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class ActionBar extends Objects
+public class ActionBar extends Objects//Sean
 {
     /**
      * Act - do whatever the ActionBar wants to do. This method is called whenever

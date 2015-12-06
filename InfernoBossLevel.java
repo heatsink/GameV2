@@ -1,3 +1,4 @@
+// Sean's entire class
 import greenfoot.*;
 import java.util.*;
 /**
@@ -15,6 +16,7 @@ public class InfernoBossLevel extends Trap
     private int delay = 11;
     private int fireballDelay = 11;
     private int counterDelay = 0;
+    private int appleRespawn = 0;
     static boolean played = false;
     private GreenfootSound heavensGate = new GreenfootSound("Diablo 3 OST - Heaven's Gate (#20).mp3");
     public InfernoBossLevel(Ninja ninja)//Sean
@@ -82,6 +84,15 @@ public class InfernoBossLevel extends Trap
         infernofence3.setLocation(607, 560);
         armpool4.setLocation(551, 566);
 
+        HealthGlobe healthglobe = new HealthGlobe();
+        addObject(healthglobe, 670, 622);
+        HealthGlobe healthglobe2 = new HealthGlobe();
+        addObject(healthglobe2, 84, 79);
+        addShuriken addshuriken = new addShuriken();
+        addObject(addshuriken, 85, 624);
+        instaPower instapower = new instaPower();
+        addObject(instapower, 682, 73);
+
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
 
@@ -97,7 +108,7 @@ public class InfernoBossLevel extends Trap
         ninja.setLocation(100, 75);
 
         makeAllIcons();
-        
+
         npcs = getObjects(NPCS.class);
         for(int i = 0; i<npcs.size(); i++)
         {
@@ -107,12 +118,21 @@ public class InfernoBossLevel extends Trap
 
         TempText4 text = new TempText4(infernoboss);
         addObject(text, infernoboss.getX(), infernoboss.getY()-20);
+        AxisFirebat axisfirebat = new AxisFirebat(1, 1);
+        addObject(axisfirebat, 211, 137);
+        AxisFirebat axisfirebat2 = new AxisFirebat(1, 1);
+        addObject(axisfirebat2, 618, 207);
+        AxisFirebat axisfirebat3 = new AxisFirebat(1, 1);
+        addObject(axisfirebat3, 546, 578);
+        AxisFirebat axisfirebat4 = new AxisFirebat(1, 1);
+        addObject(axisfirebat4, 202, 521);
     }
 
     public void act()//Sean
     {
         heavensGate.playLoop();
         counterDelay++;
+        appleRespawn();
        //makeSmokeFireball();
        if (Greenfoot.isKeyDown("h")&&delay>10) 
        {
@@ -159,30 +179,40 @@ public class InfernoBossLevel extends Trap
                 SmokeFireball smokeFireball = new SmokeFireball();
                 addObject(smokeFireball, 500, 475);
                 delay = 0;
+                Firebat firebat4 = new Firebat(1, 1);
+                addObject(firebat4, 500, 475);
             }
             if (randomNumber >= 50 && randomNumber < 100)
             {
                 SmokeFireball smokeFireball = new SmokeFireball();
                 addObject(smokeFireball, 95, 661);
                 delay = 0;
+                Firebat firebat4 = new Firebat(1, 1);
+                addObject(firebat4, 95, 661);
             }
             if (randomNumber >= 100 && randomNumber < 150)
             {
                 SmokeFireball smokeFireball = new SmokeFireball();
                 addObject(smokeFireball, 160, 493);
                 delay = 0;
+                Firebat firebat4 = new Firebat(1, 1);
+                addObject(firebat4, 160, 493);
             }
             if (randomNumber >= 150 && randomNumber < 200)
             {
                 SmokeFireball smokeFireball = new SmokeFireball();
                 addObject(smokeFireball, 637, 423);
                 delay = 0;
+                Firebat firebat4 = new Firebat(1, 1);
+                addObject(firebat4, 637, 423);
             }
             if (randomNumber >= 200 && randomNumber < 250)
             {
                 SmokeFireball smokeFireball = new SmokeFireball();
                 addObject(smokeFireball, 422, 285);
                 delay = 0;
+                Firebat firebat4 = new Firebat(1, 1);
+                addObject(firebat4, 422, 285);
             }
         }
     }
@@ -206,5 +236,21 @@ public class InfernoBossLevel extends Trap
        ninja.setHP(ninja.getArmor());
        Greenfoot.setWorld(new InfernoBossLevel(ninja));
        heavensGate.stop();
+    }
+    public void appleRespawn()
+    {
+        appleRespawn++;
+        if (appleRespawn >= 3000)
+        {
+            appleRespawn = 0;
+            HealthGlobe healthglobe = new HealthGlobe();
+            addObject(healthglobe, 670, 622);
+            HealthGlobe healthglobe2 = new HealthGlobe();
+            addObject(healthglobe2, 84, 79);
+            addShuriken addshuriken = new addShuriken();
+            addObject(addshuriken, 85, 624);
+            instaPower instapower = new instaPower();
+            addObject(instapower, 682, 73);
+        }
     }
 }

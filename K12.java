@@ -6,7 +6,7 @@ import java.util.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class K12 extends Trap
+public class K12 extends Trap//Hayden
 {
     Counter shurikenCounter = new ShurikenCounter(getThisWorld(),"Shurikens: ");
     Counter powerCounter = new PowerCounter("Power: ");
@@ -18,15 +18,16 @@ public class K12 extends Trap
     static boolean played = false;
     private boolean madeDoor = false;
     private int counterDelay = 0;
+    private int appleRespawn = 0;
     GreenfootSound finalmusic = new GreenfootSound("lowdowninstramental.mp3");
-    public K12(Ninja ninja)
+    public K12(Ninja ninja)//Hayden
     {
         super();
         this.ninja = ninja;
         prepare();
     }
 
-    private void prepare()
+    private void prepare()//Hayden
     {
         for(int i = 0; i<15; i++)
             for(int j = 0; j<2; j++)
@@ -76,12 +77,24 @@ public class K12 extends Trap
            addObject(text, dashboss.getX(), dashboss.getY()-20);
        
     }
-    public void act()
+    public void appleRespawn()
     {
-        
+        appleRespawn++;
+        if (appleRespawn <= 3000)
+        {
+            HealthGlobe hg = new HealthGlobe();
+            addObject(hg, 90, 90);
+            HealthGlobe hg1 = new HealthGlobe();
+            addObject(hg1, 660, 660-50);
+            appleRespawn = 0;
+        }
+    }
+    public void act()//bill/hayden
+    {
+        appleRespawn();
         createdoor();
         counterDelay++;
-        if (!played){
+        if (!played){//Hayden
             finalmusic.playLoop();
             played = !played;
         }
@@ -105,21 +118,21 @@ public class K12 extends Trap
        }
        delay++;
     }
-    public void checkDoor()
+    public void checkDoor()//Hayden
     {
         if(ninja.checkDoor()==true){
             
             Greenfoot.setWorld(new Kyobashi1(ninja));}
     }
-   public Ninja getNinja()
+   public Ninja getNinja()//bill
    {
        return ninja;
    }
-   public Trap getThisWorld()
+   public Trap getThisWorld()//bill
    {
        return this;
    }
-       public void gameover(){
+       public void gameover(){//Hayden
        ninja.setHP(ninja.getArmor());
        Greenfoot.setWorld(new K12(ninja));
     }

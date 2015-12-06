@@ -1,12 +1,13 @@
 import greenfoot.*;
 import java.util.*;
+//Orginally coded by Hayden, but changed massivly by Sean
 /**
  * Write a description of class Intro1 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class NewIntro1 extends Trap
+public class NewIntro1 extends Trap //Sean
 {
     Counter shurikenCounter = new ShurikenCounter(getThisWorld(),"Shurikens: ");
     Counter powerCounter = new PowerCounter("Power: ");
@@ -159,7 +160,7 @@ public class NewIntro1 extends Trap
      {
        return this;
      }
-       public void gameover(){
+       public void gameover(){//Hayden
            bloodBourne.stop();
        boy.setHP(boy.getArmor());
        Greenfoot.setWorld(new NewIntro1(boy));

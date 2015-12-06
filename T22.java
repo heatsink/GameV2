@@ -1,5 +1,5 @@
 import greenfoot.*;
-import java.util.*;
+import java.util.*;//bill
 /**
  * Write a description of class K1 here.
  * 
@@ -18,7 +18,7 @@ public class T22 extends Trap
     private int counterDelay = 0;
     Ninja ninja;
     int delay = 11;
-    public T22(Ninja ninja)
+    public T22(Ninja ninja)//bill
     {
         super();
         billin.setVolume(40);
@@ -26,7 +26,7 @@ public class T22 extends Trap
         prepare();
     }
 
-    private void prepare()
+    private void prepare()//bill
     {
         doorT21 doort21 = new doorT21();
         addObject(doort21, 625, 125);
@@ -104,7 +104,7 @@ public class T22 extends Trap
         healthglobe3.setLocation(224, 370);
 }
 
-    public void act()
+    public void act()//bill
     {
         counterDelay++;
          if(!played)
@@ -134,7 +134,7 @@ public class T22 extends Trap
         }
         delay++;
     }
-    public void makeAllIcons()
+    public void makeAllIcons()//sean
     {
         SwordIcon swordicon = new SwordIcon();
         addObject(swordicon, 889, 360);
@@ -143,7 +143,7 @@ public class T22 extends Trap
         DashIcon dashicon = new DashIcon();
         addObject(dashicon, 819, 308);
     }
-   public void checkDoorT21()
+   public void checkDoorT21()//bill
     {
          if(ninja.checkDoorT21()==true)
          {
@@ -151,22 +151,22 @@ public class T22 extends Trap
             Greenfoot.setWorld(new T23(ninja));
         }
    }
-    public void checkTeleport(){
+    public void checkTeleport(){//bill
         if(ninja.checkTeleport())
         {
             ninja.setLocation(75, 625);
         }
     }
-    public Ninja getNinja()
+    public Ninja getNinja()//bill
     {
         return ninja;
     }
 
-    public Trap getThisWorld()
+    public Trap getThisWorld()//bill
     {
         return this;
     }
-       public void gameover(){
+       public void gameover(){//Hayden
        ninja.setHP(ninja.getArmor());
        Greenfoot.setWorld(new T22(ninja));
     }

@@ -6,7 +6,7 @@ import java.util.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class K10 extends Trap
+public class K10 extends Trap//Hayden
 {
     Ninja ninja;
     Counter shurikenCounter = new ShurikenCounter(getThisWorld(),"Shurikens: ");
@@ -22,13 +22,13 @@ public class K10 extends Trap
      * Constructor for objects of class K8.
      * 
      */
-    public K10(Ninja ninja)
+    public K10(Ninja ninja)//Hayden
     {
                 super();
         this.ninja = ninja;
         prepare();
     }
-          private void prepare(){
+          private void prepare(){//Hayden
                        for(int i = 0; i<15; i++)
             for(int j = 0; j<2; j++)
             {
@@ -107,10 +107,10 @@ public class K10 extends Trap
        }
 
     }
-        public void act()
+        public void act()//biill hayden
     {
         counterDelay++;
-        if (!played){
+        if (!played){//Hayden
             Peaceful.playLoop();
             played = !played;
         }
@@ -135,29 +135,29 @@ public class K10 extends Trap
         
         
     }
-    public void makeAllIcons()
+    public void makeAllIcons()//sean
     {
         SwordIcon swordicon = new SwordIcon();
         addObject(swordicon, 889, 360);
         ShurikenIcon shurikenicon = new ShurikenIcon();
         addObject(shurikenicon, 838, 360);
     }
-    public void checkDoor()
+    public void checkDoor()//Hayden
     {
         if(ninja.checkDoor()==true){
             Peaceful.stop();
             Greenfoot.setWorld(new K12(ninja));}
     }
 
-    public Ninja getNinja()
+    public Ninja getNinja()//bill
     {
         return ninja;
     }
-    public Trap getThisWorld()
+    public Trap getThisWorld()//bill
     {
         return this;
     }
-       public void gameover(){
+       public void gameover(){//Hayden
        ninja.setHP(ninja.getArmor());
        Greenfoot.setWorld(new K10(ninja));
     }

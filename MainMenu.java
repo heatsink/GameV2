@@ -7,7 +7,7 @@ import greenfoot.*;
  * @version (a version number or a date)
  */
 
-public class MainMenu extends World
+public class MainMenu extends World//Hayden sean
 {
     //http://i1333.photobucket.com/albums/w631/megapowerskills/Background_zps510c32af.jpg
     
@@ -20,7 +20,7 @@ public class MainMenu extends World
      * Constructor for objects of class MainMenu.
      * 
      */
-    public MainMenu()
+    public MainMenu()//Hayden
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
@@ -32,7 +32,7 @@ public class MainMenu extends World
      * Prepare the world for the start of the program. That is: create the initial
      * objects and add them to the world.
      */
-    private void prepare()
+    private void prepare()//Hayden
     {
         NinjaFighter ninjafighter = new NinjaFighter();
         addObject(ninjafighter, 373+125, 202);
@@ -40,7 +40,7 @@ public class MainMenu extends World
         addObject(play, 410, 498);
         play.setLocation(374+125, 469);
     }
-    public void act()
+    public void act()//sean
     {
         volumeMonitor++;
         if (volumeMonitor >= 30)

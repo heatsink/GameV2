@@ -1,5 +1,6 @@
 import greenfoot.*;
 import java.util.*;
+//Sean
 /**
  * Sean's Level
  */
@@ -17,7 +18,7 @@ public class Inferno3 extends Trap
     int delay = 11;
     private int counterDelay = 0;
     static boolean played = false;
-    public Inferno3(Ninja ninja)
+    public Inferno3(Ninja ninja)//sean
     {
         super();
         this.ninja = ninja;
@@ -27,7 +28,7 @@ public class Inferno3 extends Trap
         burningSteppes.setVolume(40);
     }
 
-    private void prepare()
+    private void prepare()//Sean
     {
         for(int i = 0; i<15; i++)
             for(int j = 0; j<2; j++)
@@ -106,7 +107,7 @@ public class Inferno3 extends Trap
         }
     }
 
-    public void act()
+    public void act()//Sean & Bill
     {
         if(!played)
         {
@@ -136,7 +137,7 @@ public class Inferno3 extends Trap
        delay++;
        
     }
-    public void makeAllIcons()
+    public void makeAllIcons()//Sean
     {
         SwordIcon swordicon = new SwordIcon();
         addObject(swordicon, 889, 360);
@@ -149,7 +150,7 @@ public class Inferno3 extends Trap
         //DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
         //addObject(doubledamageicon, 871, 308);
     }
-    public void checkDoor()
+    public void checkDoor()//Sean
     {
         if(ninja.checkInfernoDoor()==true)
         {
@@ -157,15 +158,15 @@ public class Inferno3 extends Trap
             Greenfoot.setWorld(new Inferno4(ninja));
         }
     }
-   public Ninja getNinja()
+   public Ninja getNinja()//bill
    {
        return ninja;
    }
-   public Trap getThisWorld()
+   public Trap getThisWorld()//bill
    {
        return this;
    }
-       public void gameover(){
+       public void gameover(){//Hayden
        ninja.setHP(ninja.getArmor());
        burningSteppes.stop();
        Greenfoot.setWorld(new Inferno3(ninja));

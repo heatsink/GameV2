@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class CaptainHaungs extends Animated
+public class CaptainHaungs extends Animated//sean
 {
     /**
      * Act - do whatever the CaptainHaungs wants to do. This method is called whenever

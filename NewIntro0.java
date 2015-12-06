@@ -1,5 +1,6 @@
 import greenfoot.*;
 import java.util.*;
+//Orginally coded by Hayden, but changed massivly by Sean
 /**
  * Write a description of class Intro0 here.
  * 

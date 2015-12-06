@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class OldManBot3 extends Animated
+public class OldManBot3 extends Animated//All Hayden
 {
     /**
      * Act - do whatever the OldManBot3 wants to do. This method is called whenever

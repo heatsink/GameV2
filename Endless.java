@@ -6,7 +6,7 @@ import java.util.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Endless extends Trap
+public class Endless extends Trap//TIFFANY AND DUY
 {
     Counter shurikenCounter = new ShurikenCounter(getThisWorld(),"Shurikens: ");
     Counter powerCounter = new PowerCounter("Power: ");
@@ -16,7 +16,7 @@ public class Endless extends Trap
     
     //GreenfootSound velocitator = new GreenfootSound("Velocitator.mp3");
      //sound cred http://www.newgrounds.com/audio/listen/656737
-    private int d1 = 0;
+    private int d1 = 0;//DUY
     private List<NPCS> npcs;
     Ninja ninja;
     int delay = 11;
@@ -27,13 +27,13 @@ public class Endless extends Trap
      * Constructor for objects of class Endless.
      * 
      */
-    public Endless(Ninja ninja)
+    public Endless(Ninja ninja)//Duy
     {
         super();
         this.ninja = ninja;
         prepare();
     }
-    private void prepare()
+    private void prepare()//Tiffany
     {
         addObject(healthCounter, 866, 120);
         healthCounter.setValue(ninja.getNINJAHP());
@@ -69,13 +69,13 @@ public class Endless extends Trap
             }
        
     }
-    public void act()
+    public void act()//Tiffany and Duy
     {
-        if (d1 > 20)velocitator.playLoop();
-        if (d1 < 30) d1++;
+        if (d1 > 20)velocitator.playLoop();//HAYDEN
+        if (d1 < 30) d1++;//Hayden
         
         counterDelay++;
-        if(getObjects(Ninja.class).size() != 0 && counterDelay >= 10)
+        if(getObjects(Ninja.class).size() != 0 && counterDelay >= 10)//tiffany
         {
         healthCounter.setValue(ninja.getNINJAHP());
         shurikenCounter.setValue(ninja.getSHURIKENNUMBER());
@@ -84,14 +84,14 @@ public class Endless extends Trap
         counterDelay -= 10;
         
         }
-        if (Greenfoot.isKeyDown("h")&&delay>10) 
+        if (Greenfoot.isKeyDown("h")&&delay>10) //bill
         {
             clickSound.play();
             Menu menu = new Menu(getThisWorld());
             Greenfoot.setWorld(menu);
             delay = 0;
         }
-        if (getObjects(NPCS.class).size()==0)
+        if (getObjects(NPCS.class).size()==0)//Duy
         {
             while (getObjects(NPCS.class).size()<stage)
             {
@@ -167,7 +167,7 @@ public class Endless extends Trap
         }
         delay++;
     }
-     public void makeAllIcons()
+     public void makeAllIcons()//sean
     {
         SwordIcon swordicon = new SwordIcon();
         addObject(swordicon, 889, 360);
@@ -180,15 +180,15 @@ public class Endless extends Trap
         //DoubleDamageIcon doubledamageicon = new DoubleDamageIcon();
         //addObject(doubledamageicon, 871, 308);
     }
-    public Ninja getNinja()
+    public Ninja getNinja()//bill
     {
         return ninja;
     }
-    public Trap getThisWorld()
+    public Trap getThisWorld()//bill
     {
         return this;
     }
-    public void stopmusic(){
+    public void stopmusic(){//hayden
         velocitator.stop();
     }
 }
